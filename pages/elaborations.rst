@@ -7,5 +7,5 @@
 .. description: 
 .. type: text
 
-Elaborations.
+Elaborations will be here.
 
