@@ -869,3 +869,7 @@ html[dir="rtl"] body {
     text-align: right;
 }
 
+.container {
+  max-width: 850px;
+}
+
