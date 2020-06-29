@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+#  -*- coding: utf-8 -*-
 
 import time
 
@@ -138,14 +138,23 @@ TRANSLATIONS_PATTERN = '{path}.{lang}.{ext}'
 #          else they won’t be highlighted when active.
 
 NAVIGATION_LINKS = {
-    DEFAULT_LANG: (
-##        ("/pages/", "Pages"),
-        ("/sections/", "Sections"),
-        ("/tags/", "Tags"),
-        ("/posts/", "Posts"),
+  DEFAULT_LANG: (
+    # ("/pages/", "Pages"),
+    # ("/sections/", "Sections"),
+    # ("/tags/", "Tags"),
+    # ("/posts/", "Posts"),
+    (
+      (
+        ('/posts/', 'All'),
+        ('/categories/', 'Categories'),
+        ('/tags/', 'Tags'),
         ("/archive.html", "Archive"),
-        ("/rss.xml", "RSS feed"),
-    ),
+      ),
+      'Posts'
+    ), 
+    ("/about/", "About"),
+    ("/rss.xml", "RSS feed"),
+  ),
 }
 
 # Alternative navigation links. Works the same way NAVIGATION_LINKS does,
@@ -440,7 +449,7 @@ TAG_PATH = "tags"
 # output / TRANSLATION[lang] / CATEGORY_PATH / CATEGORY_PREFIX category.html (list of posts for a category)
 # output / TRANSLATION[lang] / CATEGORY_PATH / CATEGORY_PREFIX category RSS_EXTENSION (RSS feed for a category)
 # (translatable)
-CATEGORY_PATH = "sections"
+CATEGORY_PATH = "categories"
 CATEGORY_PREFIX = ""
 
 # By default, the list of categories is stored in
@@ -921,6 +930,10 @@ IMAGE_FOLDERS = {'images': 'images'}
 #     ("icon", "/icon_128x128.png", "128x128"),
 # )
 
+FAVICONS = (
+  ("shortcut icon", "/favicon.ico", "16x16"),
+)
+
 # Show teasers (instead of full posts) in indexes? Defaults to False.
 # INDEX_TEASERS = False
 
@@ -1222,6 +1235,15 @@ COPY_SOURCES = False
 # </form>
 # <!-- End of custom search -->
 # """ % SITE_URL
+
+SEARCH_FORM = """
+<!-- Google custom search -->
+<form method="get" action="https://www.google.com/search" class="navbar-form navbar-right" role="search">
+<input type="text" name="q" class="form-control" placeholder="Search" />
+<input type="hidden" name="sitesearch" value="%s" />
+</form>
+<!-- End of custom search -->
+""" % SITE_URL
 
 # Use content distribution networks for jQuery, twitter-bootstrap css and js,
 # and html5shiv (for older versions of Internet Explorer)
