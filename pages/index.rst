@@ -22,7 +22,7 @@
 
 .. image:: /images/colibri-plain.svg
    :target: /images/colibri-plain.svg
-   :width: 250 px
+   :width: 12 em
    :align: right
 
 Topics
