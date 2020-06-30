@@ -10,10 +10,6 @@
   <lastmod>2020-06-29T22:10:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>https://precision-sm.github.io/categories/measurements.xml</loc>
-  <lastmod>2020-06-29T20:43:00Z</lastmod>
- </sitemap>
- <sitemap>
   <loc>https://precision-sm.github.io/categories/notes.xml</loc>
   <lastmod>2020-06-29T20:43:00Z</lastmod>
  </sitemap>
@@ -26,16 +22,8 @@
   <lastmod>2020-06-29T22:10:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>https://precision-sm.github.io/sections/measurements.xml</loc>
-  <lastmod>2020-06-29T13:40:00Z</lastmod>
- </sitemap>
- <sitemap>
-  <loc>https://precision-sm.github.io/sections/notes.xml</loc>
-  <lastmod>2020-06-29T13:40:00Z</lastmod>
- </sitemap>
- <sitemap>
   <loc>https://precision-sm.github.io/sitemap.xml</loc>
-  <lastmod>2020-06-29T22:31:00Z</lastmod>
+  <lastmod>2020-06-29T22:43:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://precision-sm.github.io/tags/aleph.xml</loc>
