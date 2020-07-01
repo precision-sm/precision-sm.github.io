@@ -1,7 +1,7 @@
 [Theme]
 engine = mako
 parent = bootstrap4
-author = The Nikola Contributors
+author = Alberto Lusiani
 author_url = https://getnikola.com/
 license = MIT
 based_on = Bootstrap 4 <http://getbootstrap.com/>
@@ -9,4 +9,3 @@ tags = bootstrap
 
 [Family]
 family = bootstrap4
-
