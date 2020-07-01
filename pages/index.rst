@@ -28,7 +28,7 @@
 Topics
 ======
 
-* `gm2-HVP </gm2-HVP/>`_, $\\frac{d\\sigma[e^+e^- \\to \\text{hadrons} (\\gamma)]}{ds}$ measurements for the calculation of the hadronic vacuum polarization contribution to the muon $g{-}2$;
+* `gm2-HVP </gm2-HVP/>`_, $\\sigma[e^+e^- \\to \\text{hadrons} (\\gamma)]$ measurements for the calculation of the hadronic vacuum polarization contribution to the muon $g{-}2$;
 
   * `studies and tests </categories/gm2-hvp-elab/>`_
 
