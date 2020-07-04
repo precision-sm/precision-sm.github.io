@@ -55,11 +55,15 @@
  </url>
  <url>
   <loc>https://precision-sm.github.io/jsdev/</loc>
-  <lastmod>2020-07-04T21:11:00Z</lastmod>
+  <lastmod>2020-07-04T21:43:00Z</lastmod>
  </url>
  <url>
   <loc>https://precision-sm.github.io/jsdev/img/</loc>
   <lastmod>2020-07-04T21:11:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://precision-sm.github.io/jsdev/index.htm</loc>
+  <lastmod>2020-07-04T14:29:00Z</lastmod>
  </url>
  <url>
   <loc>https://precision-sm.github.io/jsdev/openui5/</loc>
@@ -123,6 +127,6 @@
  </url>
  <url>
   <loc>https://precision-sm.github.io/vpl/jsplot_2.html</loc>
-  <lastmod>2020-07-04T14:26:00Z</lastmod>
+  <lastmod>2020-07-04T21:39:00Z</lastmod>
  </url>
 </urlset>
