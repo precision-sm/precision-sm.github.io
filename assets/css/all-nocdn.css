@@ -885,3 +885,80 @@ th > p, td > p, li > p {
   padding: 0;
 }
 
+/* code and output in Jupiter nontebooks */
+
+.rendered_html {
+  font-size: 87.5%;
+}
+
+div.prompt {
+  background-color: rgba(0, 0, 0, 0.05) !important;
+  border: 1px solid #a0a0a0;
+  border-radius: 4px;
+  font-size: 75%;
+}
+
+div.input_prompt {
+  border-top: 1px solid #a0a0a0 !important;
+}
+
+div.input_area {
+  font-size: 87.5%;
+}
+
+div.text_cell_render {
+  border: 1px solid #a0a0a0 !important;
+  border-radius: 4px;
+  padding: 0.4em !important;
+  background-color: rgba(0, 0, 0, 0.05) !important;
+}
+
+div.cell.border-box-sizing.text_cell.rendered {
+  padding: 0 !important;
+}
+
+/* jupyter notebook code cells */
+
+pre.code,
+.code .codetable,
+.highlight pre {
+  background-color: rgba(0, 0, 0, 0.05) !important;
+  border: 1px solid #a0a0a0 !important;
+  border-radius: 4px;
+}
+
+pre.literal-block,
+pre.doctest-block,
+pre.math,
+pre.code,
+div.code {
+  font-size: 87.5%;
+  margin-left: 0rem;
+  margin-right: 0rem;
+}
+
+.rendered_html pre,
+.rendered_html code {
+  background-color: rgba(0, 0, 0, 0.05) !important;
+}
+
+div.output_area pre {
+  font-size: 87.5% !important;
+}
+
+/*
+  refinements for jupyter nb tables in output cells
+*/
+
+.rendered_html table tbody tr:nth-of-type(odd) {
+  background-color: #00000010;
+}
+
+.rendered_html table tbody tr:nth-of-type(even) {
+  background-color: #ffffff40;
+}
+
+.rendered_html thead {
+  border-bottom:1px solid #a0a0a0 !important;
+}
+
