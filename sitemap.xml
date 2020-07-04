@@ -7,7 +7,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://precision-sm.github.io/</loc>
-  <lastmod>2020-06-29T22:32:00Z</lastmod>
+  <lastmod>2020-07-04T14:21:00Z</lastmod>
  </url>
  <url>
   <loc>https://precision-sm.github.io/2020/</loc>
@@ -27,7 +27,7 @@
  </url>
  <url>
   <loc>https://precision-sm.github.io/archive.html</loc>
-  <lastmod>2020-06-29T20:48:00Z</lastmod>
+  <lastmod>2020-07-04T15:54:00Z</lastmod>
  </url>
  <url>
   <loc>https://precision-sm.github.io/categories/</loc>
@@ -54,16 +54,60 @@
   <lastmod>2020-06-29T22:19:00Z</lastmod>
  </url>
  <url>
+  <loc>https://precision-sm.github.io/jsdev/</loc>
+  <lastmod>2020-07-04T14:46:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://precision-sm.github.io/jsdev/img/</loc>
+  <lastmod>2020-07-04T14:46:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://precision-sm.github.io/jsdev/index.htm</loc>
+  <lastmod>2018-07-06T10:41:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://precision-sm.github.io/jsdev/openui5/</loc>
+  <lastmod>2020-07-04T14:46:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://precision-sm.github.io/jsdev/openui5/controller/</loc>
+  <lastmod>2020-07-04T14:46:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://precision-sm.github.io/jsdev/openui5/view/</loc>
+  <lastmod>2020-07-04T14:46:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://precision-sm.github.io/jsdev/scripts/</loc>
+  <lastmod>2020-07-04T14:46:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://precision-sm.github.io/jsdev/style/</loc>
+  <lastmod>2020-07-04T14:46:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://precision-sm.github.io/jsdev/style/images/</loc>
+  <lastmod>2020-07-04T14:46:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://precision-sm.github.io/listings/</loc>
   <lastmod>2020-06-29T13:40:00Z</lastmod>
  </url>
  <url>
   <loc>https://precision-sm.github.io/posts/</loc>
-  <lastmod>2020-06-29T13:40:00Z</lastmod>
+  <lastmod>2020-07-04T16:01:00Z</lastmod>
  </url>
  <url>
   <loc>https://precision-sm.github.io/posts/BaBar-ep-em-to-pip-pim/</loc>
   <lastmod>2020-06-29T13:40:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://precision-sm.github.io/posts/ignatov-e%2Be--to-hadrons-plots/</loc>
+  <lastmod>2020-07-04T16:01:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://precision-sm.github.io/posts/ignatov-muon-g-2-hvp/</loc>
+  <lastmod>2020-07-04T15:54:00Z</lastmod>
  </url>
  <url>
   <loc>https://precision-sm.github.io/posts/notes-on-aleph/</loc>
@@ -84,5 +128,9 @@
  <url>
   <loc>https://precision-sm.github.io/tags/babar/</loc>
   <lastmod>2020-06-29T13:40:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://precision-sm.github.io/vpl/jsplot_2.html</loc>
+  <lastmod>2020-07-04T14:26:00Z</lastmod>
  </url>
 </urlset>
