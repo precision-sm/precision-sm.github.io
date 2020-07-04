@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" tal:attributes="xml:lang language; lang language; dir reading_direction">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+<meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8"/>
+<meta http-equiv="content-style-type" content="text/css"/>
+<title>Read cross section</title>
+<style type="text/css">
+body, html {margin: 0; padding: 0; height: 100%; width:100%; overflow: hidden;}
+table {height:100%;width:100%;table-layout:static;border-collapse:collapse}
+table td:last-child{width:10px;}
+iframe {height:calc(100vh);width:100%}
+#content {position:absolute; left: 0; right: 0; bottom: 0; top: 0px;height:100% }
+#view {height:100%}
+.toc { padding: 0em 0.5em; margin: 0.1em 0.1em 0.1em 0.1em;}
+</style>
+<!-- javascripts -->
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script type="text/javascript">
+function getUrlVars() {
+    var vars = {};
+    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi,    
+    function(m,key,value) {
+      vars[key] = value;
+    });
+    return vars;
+}
+</script>
+</head>
+<body>
+<body>
+<div id="content">
+<table>
+<tr>
+<td>
+<iframe id="viewer_frame" width="100%" height="100%" frameborder="0" src="/jsdev/index.html"></iframe>
+</td>
+<td align="left">
+<div id="explist" class='toc'></div>
+</td>
+</tr>
+</table>
+<!-- <p>ttt</p>
+<p2>ttt</p2> -->
+</div>
+<script>
+var cid = getUrlVars()["cid"];
+var drawing_ready = false;
+var nlegs=0;
+var refreshIntervalId ;
+
+function updateGUI() {
+  $.getJSON('cst.json', function(data) {
+    var cs=data[cid];
+    document.title=$('<textarea />').html(cs.ctitle).text();
+    
+    var viewerdoc = document.getElementById( 'viewer_frame' );
+    path=cs.path;
+    if( path != "")
+      viewerdoc.src = "/jsdev/index.html?nobrowser&"+path+"+&item=csigall";
+	  });
+}
+
+function dobutton(){ 
+    if (drawing_ready) return;
+    var viewer =$('#viewer_frame');
+    var nn=0;
+//     var pps=$( "p" );
+//     var pps2=$( "p2" );
+//     pps2.html("nlegends : 0");
+    viewer.ready(function(){
+		var legends=viewer.contents().find("g[objtype='TLegend'] > text ");
+
+		
+// 		pps2.html("nlegends2 :"+legends.length);
+
+
+		var html = "<h3>Experiments:</h3>";
+		legends.each( function(nn,obj){
+				var leg=$(obj).text();
+				var re=/[0-9+#)( ]*$/g;
+				leg=leg.replace(re,"");
+				html=html+"<input id='in"+nn+"' nn='"+nn+"' type='checkbox' checked='checked'>" + leg + "</br>";
+				nn++;
+			      });
+		$('#explist').html($('<textarea />').html(html).text());
+
+		nlegs=legends.length;
+		if(nlegs>0) drawing_ready=true;
+		else return;
+
+		var inputs=$( "input" );
+	      
+		//     var labels[];
+		
+		inputs.change(function() {
+				var $input = $( this );
+				var n1=1+parseInt($input.attr( "nn"));
+				var n2=2*nlegs-parseInt($input.attr( "nn"));
+				if(!$input.prop( "checked" )){
+				  viewer.contents().find( "g[objname='Graph']:eq("+n1+")").hide();
+				  viewer.contents().find( "g[objname='Graph']:eq("+n2+")").hide();
+// 				  pps.html(     "nn: "+ n1 + " " + n2 + " size "+nlegs+
+// 						"not.attr( \"checked\" ): <b>" + $input.attr( "checked" ) + "</b><br>" +
+// 						"not.prop( \"checked\" ): <b>" + $input.prop( "checked" ) + "</b><br>" +
+// 						"not.is( \":checked\" ): <b>" + $input.is( ":checked" ) + "</b>" );
+				}else{
+				  viewer.contents().find( "g[objname='Graph']:eq("+n1+")").show();
+				  viewer.contents().find( "g[objname='Graph']:eq("+n2+")").show();
+// 				  pps.html(     "nn: "+ n1 + " " + n2  + " size "+nlegs + 
+// 						".attr( \"checked\" ): <b>" + $input.attr( "checked" ) + "</b><br>" +
+// 						".prop( \"checked\" ): <b>" + $input.prop( "checked" ) + "</b><br>" +
+// 						".is( \":checked\" ): <b>" + $input.is( ":checked" ) + "</b>" );
+				}
+			      }).change();
+		clearInterval(refreshIntervalId);
+	      });
+}
+	      
+
+updateGUI();
+dobutton();
+refreshIntervalId = setInterval(dobutton, 1000);
+</script>
+
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-464408-2");
+pageTracker._trackPageview();
+} catch(err) {}</script> 
+<noscript><h4>Your browser does not support JavaScript!</h4></noscript>
+</body>
+</html>
