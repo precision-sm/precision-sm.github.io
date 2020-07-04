@@ -35,7 +35,7 @@ div.text_cell_render {
   background-color: rgba(0, 0, 0, 0.05) !important;
 }
 
-div.cell.border-box-sizing.text_cell.rendered {
+div.cell.border-box-sizing.rendered {
   padding: 0 !important;
 }
 
