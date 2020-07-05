@@ -623,26 +623,26 @@ navbar-dark bg-dark
 <span class="c">##--- dictionary to convert mid-point energy to DF index for systematics unc. DF</span>
 <span class="n">df_syst_E_exact_to_index</span> <span class="o">=</span> <span class="kt">Dict</span><span class="p">(</span><span class="n">df_syst</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="o">:</span><span class="n">E</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="o">:</span><span class="n">nrow</span><span class="p">(</span><span class="n">df_syst</span><span class="p">))</span>
 
-<span class="c">##--- get syst unc covariance as function of energy for the systematic table mid-energy values</span>
+<span class="c">##--- get syst covariance as function of energy for the systematic table mid-energy values</span>
 <span class="k">function</span> <span class="n">syst_unc_exact</span><span class="p">(</span><span class="n">E</span><span class="p">)</span>
   <span class="n">row</span> <span class="o">=</span> <span class="n">df_syst_E_exact_to_index</span><span class="p">[</span><span class="n">E</span><span class="p">]</span>
   <span class="n">df_syst</span><span class="p">[</span><span class="n">row</span><span class="p">,</span> <span class="o">:</span><span class="n">unc</span><span class="p">]</span>
 <span class="k">end</span>
 
-<span class="c">##--- get covariance as function of two energies: non-zero only for diagonal elements</span>
-<span class="k">function</span> <span class="n">syst_cov</span><span class="p">(</span><span class="n">E_x</span><span class="p">,</span> <span class="n">E_y</span><span class="p">)</span>
+<span class="c">##--- get syst covariance as function of two energies: non-zero only for diagonal elements</span>
+<span class="k">function</span> <span class="n">syst_cov</span><span class="p">(</span><span class="n">E_x</span><span class="p">,</span> <span class="n">E_y</span><span class="p">)</span><span class="o">::</span><span class="kt">AbstractFloat</span>
   <span class="n">row</span> <span class="o">=</span> <span class="n">df_syst_E_exact_to_index</span><span class="p">[</span><span class="n">E_x</span><span class="p">]</span>
   <span class="n">col</span> <span class="o">=</span> <span class="n">df_syst_E_exact_to_index</span><span class="p">[</span><span class="n">E_y</span><span class="p">]</span>
   <span class="k">if</span> <span class="p">(</span><span class="n">row</span> <span class="o">==</span> <span class="n">col</span><span class="p">)</span>
     <span class="n">df_syst</span><span class="p">[</span><span class="n">row</span><span class="p">,</span> <span class="o">:</span><span class="n">unc</span><span class="p">]</span><span class="o">^</span><span class="mi">2</span>
   <span class="k">else</span>
-    <span class="kt">Real</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="kt">AbstractFloat</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
   <span class="k">end</span>
 <span class="k">end</span>
 
 <span class="c">##--- function to convert any energy into the relevant index into df_syst</span>
-<span class="k">function</span> <span class="n">df_syst_e_to_index</span><span class="p">(</span><span class="n">E</span><span class="o">::</span><span class="kt">Real</span><span class="p">)</span>
-  <span class="n">row_match</span><span class="o">::</span><span class="kt">Union</span><span class="p">{</span><span class="kt">Int64</span><span class="p">,</span> <span class="n">Missing</span><span class="p">}</span> <span class="o">=</span> <span class="n">missing</span>
+<span class="k">function</span> <span class="n">df_syst_e_to_index</span><span class="p">(</span><span class="n">E</span><span class="o">::</span><span class="kt">AbstractFloat</span><span class="p">)</span><span class="o">::</span><span class="kt">Union</span><span class="p">{</span><span class="kt">Integer</span><span class="p">,</span> <span class="n">Missing</span><span class="p">}</span>
+  <span class="n">row_match</span><span class="o">::</span><span class="kt">Union</span><span class="p">{</span><span class="kt">Integer</span><span class="p">,</span> <span class="n">Missing</span><span class="p">}</span> <span class="o">=</span> <span class="n">missing</span>
   <span class="k">for</span> <span class="n">row</span> <span class="kp">in</span> <span class="mi">1</span> <span class="o">:</span> <span class="n">nrow</span><span class="p">(</span><span class="n">df_syst</span><span class="p">)</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">E</span> <span class="o">&gt;=</span> <span class="n">df_syst</span><span class="p">[</span><span class="n">row</span><span class="p">,</span> <span class="o">:</span><span class="n">E_l</span><span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="n">E</span> <span class="o">&lt;=</span> <span class="n">df_syst</span><span class="p">[</span><span class="n">row</span><span class="p">,</span> <span class="o">:</span><span class="n">E_h</span><span class="p">])</span>
       <span class="n">row_match</span> <span class="o">=</span> <span class="n">row</span>
