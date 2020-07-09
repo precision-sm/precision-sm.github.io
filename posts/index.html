@@ -177,7 +177,7 @@ navbar-dark bg-dark
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [1]:</div>
+<div class="prompt input_prompt">In [85]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="k">using</span> <span class="n">DataFrames</span>
@@ -203,7 +203,7 @@ navbar-dark bg-dark
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [2]:</div>
+<div class="prompt input_prompt">In [86]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="c">##</span>
@@ -236,7 +236,7 @@ navbar-dark bg-dark
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[2]:</div>
+    <div class="prompt output_prompt">Out[86]:</div>
 
 
 
@@ -253,7 +253,7 @@ navbar-dark bg-dark
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [3]:</div>
+<div class="prompt input_prompt">In [87]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="c">##</span>
@@ -268,7 +268,7 @@ navbar-dark bg-dark
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [4]:</div>
+<div class="prompt input_prompt">In [88]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="c">##</span>
@@ -296,7 +296,7 @@ navbar-dark bg-dark
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [5]:</div>
+<div class="prompt input_prompt">In [89]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="c">##</span>
@@ -319,7 +319,7 @@ navbar-dark bg-dark
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[5]:</div>
+    <div class="prompt output_prompt">Out[89]:</div>
 
 
 
@@ -336,7 +336,7 @@ navbar-dark bg-dark
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [6]:</div>
+<div class="prompt input_prompt">In [90]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="c">##</span>
@@ -351,7 +351,7 @@ navbar-dark bg-dark
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [7]:</div>
+<div class="prompt input_prompt">In [91]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="c">##</span>
@@ -453,7 +453,7 @@ navbar-dark bg-dark
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [8]:</div>
+<div class="prompt input_prompt">In [92]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="c">##</span>
@@ -499,7 +499,7 @@ navbar-dark bg-dark
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [9]:</div>
+<div class="prompt input_prompt">In [93]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="c">##</span>
@@ -613,7 +613,52 @@ navbar-dark bg-dark
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [10]:</div>
+<div class="prompt input_prompt">In [94]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-julia"><pre><span></span><span class="c">##</span>
+<span class="c">## return first index for which x is in the range of lower[row]..upper[row]</span>
+<span class="c">##</span>
+<span class="k">function</span> <span class="n">findbin</span><span class="p">(</span><span class="n">x</span><span class="o">::</span><span class="kt">AbstractFloat</span><span class="p">,</span> <span class="n">lower</span><span class="o">::</span><span class="kt">AbstractArray</span><span class="p">,</span> <span class="n">upper</span><span class="o">::</span><span class="kt">AbstractArray</span><span class="p">)</span>
+  <span class="n">nrow</span> <span class="o">=</span> <span class="n">length</span><span class="p">(</span><span class="n">lower</span><span class="p">)</span>
+  <span class="n">nrow</span> <span class="o">==</span> <span class="n">length</span><span class="p">(</span><span class="n">upper</span><span class="p">)</span> <span class="o">||</span> <span class="n">throw</span><span class="p">(</span><span class="s">"lower / upper size mismatch"</span><span class="p">)</span>
+  <span class="k">for</span> <span class="n">row</span> <span class="kp">in</span> <span class="mi">1</span><span class="o">:</span><span class="n">nrow</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">&gt;=</span> <span class="n">lower</span><span class="p">[</span><span class="n">row</span><span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="n">upper</span><span class="p">[</span><span class="n">row</span><span class="p">])</span>
+      <span class="k">return</span> <span class="n">row</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+  <span class="k">return</span> <span class="nb">nothing</span>
+<span class="k">end</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[94]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>findbin (generic function with 2 methods)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [95]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="c">##</span>
@@ -623,37 +668,23 @@ navbar-dark bg-dark
 <span class="c">##--- dictionary to convert mid-point energy to DF index for systematics unc. DF</span>
 <span class="n">df_syst_E_exact_to_index</span> <span class="o">=</span> <span class="kt">Dict</span><span class="p">(</span><span class="n">df_syst</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="o">:</span><span class="n">E</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="o">:</span><span class="n">nrow</span><span class="p">(</span><span class="n">df_syst</span><span class="p">))</span>
 
-<span class="c">##--- get syst covariance as function of energy for the systematic table mid-energy values</span>
-<span class="k">function</span> <span class="n">syst_unc_exact</span><span class="p">(</span><span class="n">E</span><span class="p">)</span>
-  <span class="n">row</span> <span class="o">=</span> <span class="n">df_syst_E_exact_to_index</span><span class="p">[</span><span class="n">E</span><span class="p">]</span>
-  <span class="n">df_syst</span><span class="p">[</span><span class="n">row</span><span class="p">,</span> <span class="o">:</span><span class="n">unc</span><span class="p">]</span>
-<span class="k">end</span>
-
 <span class="c">##--- get syst covariance as function of two energies: non-zero only for diagonal elements</span>
-<span class="k">function</span> <span class="n">syst_cov</span><span class="p">(</span><span class="n">E_x</span><span class="p">,</span> <span class="n">E_y</span><span class="p">)</span><span class="o">::</span><span class="kt">AbstractFloat</span>
-  <span class="n">row</span> <span class="o">=</span> <span class="n">df_syst_E_exact_to_index</span><span class="p">[</span><span class="n">E_x</span><span class="p">]</span>
-  <span class="n">col</span> <span class="o">=</span> <span class="n">df_syst_E_exact_to_index</span><span class="p">[</span><span class="n">E_y</span><span class="p">]</span>
+<span class="k">function</span> <span class="n">syst_cov</span><span class="p">(</span><span class="n">E_x</span><span class="p">,</span> <span class="n">E_y</span><span class="p">)</span>
+  <span class="n">row</span> <span class="o">=</span> <span class="n">findbin</span><span class="p">(</span><span class="n">E_x</span><span class="p">,</span> <span class="n">df_syst</span><span class="o">.</span><span class="n">E_l</span><span class="p">,</span> <span class="n">df_syst</span><span class="o">.</span><span class="n">E_h</span><span class="p">)</span>
+  <span class="n">col</span> <span class="o">=</span> <span class="n">findbin</span><span class="p">(</span><span class="n">E_y</span><span class="p">,</span> <span class="n">df_syst</span><span class="o">.</span><span class="n">E_l</span><span class="p">,</span> <span class="n">df_syst</span><span class="o">.</span><span class="n">E_h</span><span class="p">)</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">row</span> <span class="o">==</span> <span class="nb">nothing</span> <span class="o">||</span> <span class="n">col</span> <span class="o">==</span> <span class="nb">nothing</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">missing</span>
+  <span class="k">end</span>
   <span class="k">if</span> <span class="p">(</span><span class="n">row</span> <span class="o">==</span> <span class="n">col</span><span class="p">)</span>
-    <span class="n">df_syst</span><span class="p">[</span><span class="n">row</span><span class="p">,</span> <span class="o">:</span><span class="n">unc</span><span class="p">]</span><span class="o">^</span><span class="mi">2</span>
+    <span class="k">return</span> <span class="n">df_syst</span><span class="p">[</span><span class="n">row</span><span class="p">,</span> <span class="o">:</span><span class="n">unc</span><span class="p">]</span><span class="o">^</span><span class="mi">2</span>
   <span class="k">else</span>
-    <span class="kt">AbstractFloat</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="k">return</span> <span class="mi">0</span>
   <span class="k">end</span>
-<span class="k">end</span>
-
-<span class="c">##--- function to convert any energy into the relevant index into df_syst</span>
-<span class="k">function</span> <span class="n">df_syst_e_to_index</span><span class="p">(</span><span class="n">E</span><span class="o">::</span><span class="kt">AbstractFloat</span><span class="p">)</span><span class="o">::</span><span class="kt">Union</span><span class="p">{</span><span class="kt">Integer</span><span class="p">,</span> <span class="n">Missing</span><span class="p">}</span>
-  <span class="n">row_match</span><span class="o">::</span><span class="kt">Union</span><span class="p">{</span><span class="kt">Integer</span><span class="p">,</span> <span class="n">Missing</span><span class="p">}</span> <span class="o">=</span> <span class="n">missing</span>
-  <span class="k">for</span> <span class="n">row</span> <span class="kp">in</span> <span class="mi">1</span> <span class="o">:</span> <span class="n">nrow</span><span class="p">(</span><span class="n">df_syst</span><span class="p">)</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">E</span> <span class="o">&gt;=</span> <span class="n">df_syst</span><span class="p">[</span><span class="n">row</span><span class="p">,</span> <span class="o">:</span><span class="n">E_l</span><span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="n">E</span> <span class="o">&lt;=</span> <span class="n">df_syst</span><span class="p">[</span><span class="n">row</span><span class="p">,</span> <span class="o">:</span><span class="n">E_h</span><span class="p">])</span>
-      <span class="n">row_match</span> <span class="o">=</span> <span class="n">row</span>
-    <span class="k">end</span>
-  <span class="k">end</span>
-  <span class="n">row_match</span>
 <span class="k">end</span>
 
 <span class="c">##--- get syst unc for any energy, finding the correct systematic unc bin</span>
 <span class="k">function</span> <span class="n">syst_unc</span><span class="p">(</span><span class="n">E</span><span class="p">)</span>
-  <span class="n">row_match</span> <span class="o">=</span> <span class="n">df_syst_e_to_index</span><span class="p">(</span><span class="n">E</span><span class="p">)</span>
+  <span class="n">row_match</span> <span class="o">=</span> <span class="n">findbin</span><span class="p">(</span><span class="n">E</span><span class="p">,</span> <span class="n">df_syst</span><span class="o">.</span><span class="n">E_l</span><span class="p">,</span> <span class="n">df_syst</span><span class="o">.</span><span class="n">E_h</span><span class="p">)</span>
   <span class="n">ifelse</span><span class="p">(</span><span class="n">ismissing</span><span class="p">(</span><span class="n">row_match</span><span class="p">),</span> <span class="n">missing</span><span class="p">,</span> <span class="n">df_syst</span><span class="p">[</span><span class="n">row_match</span><span class="p">,</span> <span class="o">:</span><span class="n">unc</span><span class="p">])</span>
 <span class="k">end</span>
 
@@ -758,7 +789,7 @@ navbar-dark bg-dark
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [11]:</div>
+<div class="prompt input_prompt">In [96]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="c">##</span>
@@ -840,7 +871,7 @@ navbar-dark bg-dark
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [12]:</div>
+<div class="prompt input_prompt">In [97]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="c">##</span>
@@ -900,7 +931,7 @@ navbar-dark bg-dark
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [13]:</div>
+<div class="prompt input_prompt">In [98]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="c">##</span>
@@ -1028,7 +1059,7 @@ navbar-dark bg-dark
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [14]:</div>
+<div class="prompt input_prompt">In [99]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="c">##</span>
@@ -1058,7 +1089,7 @@ navbar-dark bg-dark
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[14]:</div>
+    <div class="prompt output_prompt">Out[99]:</div>
 
 
 
@@ -1075,7 +1106,7 @@ navbar-dark bg-dark
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [15]:</div>
+<div class="prompt input_prompt">In [100]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="c">##</span>
@@ -1105,7 +1136,7 @@ navbar-dark bg-dark
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[15]:</div>
+    <div class="prompt output_prompt">Out[100]:</div>
 
 
 
@@ -1122,7 +1153,7 @@ navbar-dark bg-dark
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [16]:</div>
+<div class="prompt input_prompt">In [101]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="c">##</span>
@@ -1153,7 +1184,7 @@ navbar-dark bg-dark
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[16]:</div>
+    <div class="prompt output_prompt">Out[101]:</div>
 
 
 
@@ -1170,7 +1201,7 @@ navbar-dark bg-dark
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [17]:</div>
+<div class="prompt input_prompt">In [102]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="c">##</span>
@@ -1197,35 +1228,40 @@ navbar-dark bg-dark
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [18]:</div>
+<div class="prompt input_prompt">In [103]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="c">##</span>
 <span class="c">## functions for producing contour plots of stat covariance</span>
 <span class="c">##</span>
 
-<span class="c">##--- dictionary to convert mid-point energy to DF index for data and stat. unc. DF</span>
-<span class="n">df_E_to_index</span> <span class="o">=</span> <span class="kt">Dict</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="o">:</span><span class="n">E</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="o">:</span><span class="n">nrow</span><span class="p">(</span><span class="n">df</span><span class="p">))</span>
-
 <span class="c">##--- get covariance as function of two energies</span>
 <span class="k">function</span> <span class="n">stat_cov</span><span class="p">(</span><span class="n">E_x</span><span class="p">,</span> <span class="n">E_y</span><span class="p">)</span>
-  <span class="n">row</span> <span class="o">=</span> <span class="n">df_E_to_index</span><span class="p">[</span><span class="n">E_x</span><span class="p">]</span>
-  <span class="n">col</span> <span class="o">=</span> <span class="n">df_E_to_index</span><span class="p">[</span><span class="n">E_y</span><span class="p">]</span>
+  <span class="n">row</span> <span class="o">=</span> <span class="n">findbin</span><span class="p">(</span><span class="n">E_x</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">E_l</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">E_h</span><span class="p">)</span>
+  <span class="n">col</span> <span class="o">=</span> <span class="n">findbin</span><span class="p">(</span><span class="n">E_y</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">E_l</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">E_h</span><span class="p">)</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">row</span> <span class="o">==</span> <span class="nb">nothing</span> <span class="o">||</span> <span class="n">col</span> <span class="o">==</span> <span class="nb">nothing</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">missing</span>
+  <span class="k">end</span>
   <span class="c">##</span>
   <span class="c">## interpret cov values vector as matrix with n rows and n columns</span>
   <span class="c">## return appropriate cov value for required row and column</span>
   <span class="c">##</span>
   <span class="n">reshape</span><span class="p">(</span><span class="n">df_stat</span><span class="o">.</span><span class="n">cov</span><span class="p">,</span> <span class="p">(</span><span class="n">nrow</span><span class="p">(</span><span class="n">df</span><span class="p">),</span> <span class="n">nrow</span><span class="p">(</span><span class="n">df</span><span class="p">)))[</span><span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">]</span>
 <span class="k">end</span>
+
 <span class="n">stat_cov_clims</span> <span class="o">=</span> <span class="nd">@df</span> <span class="n">df</span> <span class="n">identity</span><span class="p">(</span> <span class="n">extrema_ext</span><span class="p">((</span><span class="n">stat_cov</span><span class="p">(</span><span class="n">Ex</span><span class="p">,</span> <span class="n">Ey</span><span class="p">)</span> <span class="k">for</span> <span class="n">Ex</span> <span class="kp">in</span> <span class="o">:</span><span class="n">E</span><span class="p">,</span> <span class="n">Ey</span> <span class="kp">in</span> <span class="o">:</span><span class="n">E</span><span class="p">),</span> <span class="mf">0.2</span><span class="p">)</span> <span class="p">)</span>
 
 <span class="c">##--- get correlation as function of two energies</span>
 <span class="k">function</span> <span class="n">stat_corr</span><span class="p">(</span><span class="n">E_x</span><span class="p">,</span> <span class="n">E_y</span><span class="p">)</span>
-  <span class="n">row</span> <span class="o">=</span> <span class="n">df_E_to_index</span><span class="p">[</span><span class="n">E_x</span><span class="p">]</span>
-  <span class="n">col</span> <span class="o">=</span> <span class="n">df_E_to_index</span><span class="p">[</span><span class="n">E_y</span><span class="p">]</span>
+  <span class="n">row</span> <span class="o">=</span> <span class="n">findbin</span><span class="p">(</span><span class="n">E_x</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">E_l</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">E_h</span><span class="p">)</span>
+  <span class="n">col</span> <span class="o">=</span> <span class="n">findbin</span><span class="p">(</span><span class="n">E_y</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">E_l</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">E_h</span><span class="p">)</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">row</span> <span class="o">==</span> <span class="nb">nothing</span> <span class="o">||</span> <span class="n">col</span> <span class="o">==</span> <span class="nb">nothing</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">missing</span>
+  <span class="k">end</span>
   <span class="n">matr_stat</span> <span class="o">=</span> <span class="n">reshape</span><span class="p">(</span><span class="n">df_stat</span><span class="o">.</span><span class="n">cov</span><span class="p">,</span> <span class="p">(</span><span class="n">nrow</span><span class="p">(</span><span class="n">df</span><span class="p">),</span> <span class="n">nrow</span><span class="p">(</span><span class="n">df</span><span class="p">)))</span>
   <span class="n">matr_stat</span><span class="p">[</span><span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">]</span> <span class="o">/</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">matr_stat</span><span class="p">[</span><span class="n">row</span><span class="p">,</span> <span class="n">row</span><span class="p">]</span><span class="o">*</span><span class="n">matr_stat</span><span class="p">[</span><span class="n">col</span><span class="p">,</span> <span class="n">col</span><span class="p">])</span>
 <span class="k">end</span>
+
 <span class="n">stat_corr_clims</span> <span class="o">=</span> <span class="nd">@df</span> <span class="n">df</span> <span class="n">identity</span><span class="p">(</span> <span class="n">extrema_ext</span><span class="p">((</span><span class="n">stat_corr</span><span class="p">(</span><span class="n">Ex</span><span class="p">,</span> <span class="n">Ey</span><span class="p">)</span> <span class="k">for</span> <span class="n">Ex</span> <span class="kp">in</span> <span class="o">:</span><span class="n">E</span><span class="p">,</span> <span class="n">Ey</span> <span class="kp">in</span> <span class="o">:</span><span class="n">E</span><span class="p">),</span> <span class="mf">0.2</span><span class="p">)</span> <span class="p">)</span>
 
 <span class="nb">nothing</span>
@@ -1238,7 +1274,7 @@ navbar-dark bg-dark
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [19]:</div>
+<div class="prompt input_prompt">In [104]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="c">##</span>
@@ -1265,7 +1301,7 @@ navbar-dark bg-dark
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[19]:</div>
+    <div class="prompt output_prompt">Out[104]:</div>
 
 
 
@@ -1282,7 +1318,7 @@ navbar-dark bg-dark
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [20]:</div>
+<div class="prompt input_prompt">In [105]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="c">##</span>
@@ -1309,7 +1345,7 @@ navbar-dark bg-dark
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[20]:</div>
+    <div class="prompt output_prompt">Out[105]:</div>
 
 
 
@@ -1326,7 +1362,7 @@ navbar-dark bg-dark
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [21]:</div>
+<div class="prompt input_prompt">In [106]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="c">##</span>
