@@ -1,7 +1,3 @@
-h6, .h6 {
-  font-weight: 500;
-}
-
 /*!
  * Bootstrap v4.5.0 (https://getbootstrap.com/)
  * Copyright 2011-2020 The Bootstrap Authors
@@ -10298,5 +10294,9 @@ a.text-dark:hover, a.text-dark:focus {
 
 .bg-dark {
   background-color: #4e130f !important;
+}
+
+h6, .h6 {
+  font-weight: 500;
 }
 /*# sourceMappingURL=precision-sm.css.map */
