@@ -7,7 +7,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://precision-sm.github.io/</loc>
-  <lastmod>2020-07-12T06:07:00Z</lastmod>
+  <lastmod>2020-09-06T10:32:00Z</lastmod>
  </url>
  <url>
   <loc>https://precision-sm.github.io/2020/</loc>
@@ -27,7 +27,7 @@
  </url>
  <url>
   <loc>https://precision-sm.github.io/archive.html</loc>
-  <lastmod>2020-07-19T08:01:00Z</lastmod>
+  <lastmod>2020-09-06T12:36:00Z</lastmod>
  </url>
  <url>
   <loc>https://precision-sm.github.io/categories/</loc>
@@ -55,11 +55,15 @@
  </url>
  <url>
   <loc>https://precision-sm.github.io/posts/</loc>
-  <lastmod>2020-07-04T21:11:00Z</lastmod>
+  <lastmod>2020-09-06T12:36:00Z</lastmod>
  </url>
  <url>
   <loc>https://precision-sm.github.io/posts/BaBar-ep-em-to-pip-pim/</loc>
   <lastmod>2020-07-04T21:11:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://precision-sm.github.io/posts/example-responsive-plot/</loc>
+  <lastmod>2020-09-06T12:36:00Z</lastmod>
  </url>
  <url>
   <loc>https://precision-sm.github.io/posts/ignatov-e%2Be--to-hadrons-plots/</loc>
@@ -68,6 +72,10 @@
  <url>
   <loc>https://precision-sm.github.io/posts/notes-on-aleph/</loc>
   <lastmod>2020-07-04T21:11:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://precision-sm.github.io/resp-plots/plot-pip-pim.html</loc>
+  <lastmod>2020-09-06T12:31:00Z</lastmod>
  </url>
  <url>
   <loc>https://precision-sm.github.io/sin_theta_W/</loc>
