@@ -1,10 +1,10 @@
 .. title: Main Page
 .. slug: index
 .. date: 2020-06-28 18:41:26 UTC+02:00
-.. tags: 
-.. category: 
-.. link: 
-.. description: 
+.. tags:
+.. category:
+.. link:
+.. description:
 .. has_math: true
 .. type: text
 
@@ -25,15 +25,13 @@
    :width: 12 em
    :align: right
 
-Topics
-======
+Draft PrecisionSM web site
+==========================
 
-* `gm2-HVP </gm2-HVP/>`_, $\\sigma[e^+e^- \\to \\text{hadrons} (\\gamma)]$ measurements for the calculation of the hadronic vacuum polarization contribution to the muon $g{-}2$;
+* `Example code to create a responsive plot using results stored in HEPData.net </posts/create-resp-plot-example/>`_
 
-  * `studies and tests </categories/gm2-hvp-elab/>`_
+* `Example of responsive plot integrated in this website </posts/example-responsive-plot/>`_
 
-* `$V_{ud}$ </Vud/>`_
+* `Example notebook </posts/BaBar-ep-em-to-pip-pim/>`_
 
-* `$\\sin\\theta_W$  </sin_theta_W/>`_
-
-* `BSM Physics  </BSM/>`_
+* `Fedor Ignatov responsive plots </posts/ignatov-e%2Be--to-hadrons-plots/>`_
