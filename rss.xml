@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>PrecisionSM</title><link>https://precision-sm.github.io/</link><description>Documentation for Strong-2020 activity PrecisionSM</description><atom:link href="https://precision-sm.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2020 &lt;a href="mailto:alusiani at gmail.com"&gt;PrecisionSM Group&lt;/a&gt; </copyright><lastBuildDate>Sat, 21 Nov 2020 00:56:18 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Create responsive plot from HEPData.net data</title><link>https://precision-sm.github.io/posts/create-resp-plot-example/</link><dc:creator>PrecisionSM Group</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>PrecisionSM</title><link>https://precision-sm.github.io/</link><description>Documentation for Strong-2020 activity PrecisionSM</description><atom:link href="https://precision-sm.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2020 &lt;a href="mailto:alusiani at gmail.com"&gt;PrecisionSM Group&lt;/a&gt; </copyright><lastBuildDate>Sat, 21 Nov 2020 21:43:41 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Prepare Root Plot with data from HEPData</title><link>https://precision-sm.github.io/posts/mk-hepdata-plot/</link><dc:creator>PrecisionSM Group</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [ ]:&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In [1]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
 &lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;##&lt;/span&gt;
@@ -10,8 +10,8 @@
 &lt;span class="c1"&gt;## e+ e- -&amp;gt; pi+ pi- BES-III 2016 https://www.hepdata.net/record/ins1385603&lt;/span&gt;
 &lt;span class="c1"&gt;## e+ e- -&amp;gt; pi+ pi- CMD-2 2007 https://www.hepdata.net/record/ins728302&lt;/span&gt;
 &lt;span class="c1"&gt;##&lt;/span&gt;
-&lt;span class="c1"&gt;## gist -u c979808908344933d8162cfe5883628b precision-sm-kloe10-sep20.ipynb&lt;/span&gt;
-&lt;span class="c1"&gt;## &lt;/span&gt;
+&lt;span class="c1"&gt;## gist -u c979808908344933d8162cfe5883628b mk-hepdata-plot.ipynb&lt;/span&gt;
+&lt;span class="c1"&gt;##&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
     &lt;/div&gt;
@@ -19,10 +19,806 @@
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;&lt;a href="https://precision-sm.github.io/posts/create-resp-plot-example/"&gt;Read more…&lt;/a&gt; (13 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><guid>https://precision-sm.github.io/posts/create-resp-plot-example/</guid><pubDate>Sat, 21 Nov 2020 00:05:23 GMT</pubDate></item><item><link>https://precision-sm.github.io/posts/example-responsive-plot/</link><dc:creator>PrecisionSM Group</dc:creator><description>&lt;div class="section" id="example-responsive-plot"&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [2]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;math&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;re&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;pprint&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;pprint&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;urllib.request&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;array&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;array&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;json&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;yaml&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;itertools&lt;/span&gt;
+
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;ROOT&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;ROOT&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;TCanvas&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;TFile&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;TProfile&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;TNtuple&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;TH1F&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;TH2F&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;TLegend&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;ROOT&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;TGraph&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;TGraphErrors&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;TGraphAsymmErrors&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;ROOT&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;gROOT&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;gBenchmark&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;gRandom&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;gSystem&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;gStyle&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;gPad&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+
+    &lt;div class="prompt"&gt;&lt;/div&gt;
+
+
+&lt;div class="output_subarea output_stream output_stdout output_text"&gt;
+&lt;pre&gt;Welcome to JupyROOT 6.22/00
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [3]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;##&lt;/span&gt;
+&lt;span class="c1"&gt;## iterator generator using outer product of two lists&lt;/span&gt;
+&lt;span class="c1"&gt;## - first list is inner and second one is outer&lt;/span&gt;
+&lt;span class="c1"&gt;## - also able to return nth elements of iterator&lt;/span&gt;
+&lt;span class="c1"&gt;## - iterator never ends but folds&lt;/span&gt;
+&lt;span class="c1"&gt;##&lt;/span&gt;
+&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;iterprod2&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+  &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="fm"&gt;__init__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;arr1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;arr2&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;arr1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;arr2&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;arr1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;arr2&lt;/span&gt;
+  &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="fm"&gt;__iter__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;i1&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;
+    &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;i2&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;
+  &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="fm"&gt;__next__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="n"&gt;rc1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;rc2&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;arr1&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;i1&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;arr2&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;i2&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+    &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;i1&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;i1&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="nb"&gt;len&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;arr1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;i1&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+      &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;i2&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;i2&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="nb"&gt;len&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;arr2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;rc1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;rc2&lt;/span&gt;
+  &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;elem&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="n"&gt;ielem1&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="nb"&gt;len&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;arr1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;ielem2&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt; &lt;span class="o"&gt;//&lt;/span&gt; &lt;span class="nb"&gt;len&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;arr1&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="nb"&gt;len&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;arr2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;arr1&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;ielem1&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;arr2&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;ielem2&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+  &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;elem1&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;elem&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;)[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+  &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;elem2&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;elem&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;)[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [4]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;##&lt;/span&gt;
+&lt;span class="c1"&gt;## iterator generator using two lists with simultaneous advancement&lt;/span&gt;
+&lt;span class="c1"&gt;## - also able to return nth elements of iterator&lt;/span&gt;
+&lt;span class="c1"&gt;## - iterator never ends but folds&lt;/span&gt;
+&lt;span class="c1"&gt;##&lt;/span&gt;
+&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;iterzip2&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+  &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="fm"&gt;__init__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;arr1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;arr2&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;arr1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;arr2&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;arr1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;arr2&lt;/span&gt;
+  &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="fm"&gt;__iter__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;i1&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;
+    &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;i2&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;
+  &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="fm"&gt;__next__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="n"&gt;rc1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;rc2&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;arr1&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;i1&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;arr2&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;i2&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+    &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;i1&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;i1&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="nb"&gt;len&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;arr1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;i2&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;i2&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="nb"&gt;len&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;arr2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;rc1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;rc2&lt;/span&gt;
+  &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;elem&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="n"&gt;ielem1&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="nb"&gt;len&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;arr1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;ielem2&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="nb"&gt;len&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;arr2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;arr1&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;ielem1&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;arr2&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;ielem2&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+  &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;elem1&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;elem&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;)[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+  &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;elem2&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;elem&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;)[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [5]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;##---Root colors in Rtypes.h&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;ROOT&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;kWhite&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;kBlack&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;kGray&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;kRed&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;kGreen&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;kBlue&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;kYellow&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;kMagenta&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;ROOT&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;kCyan&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;kOrange&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;kSpring&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;kTeal&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;kAzure&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;kViolet&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;kPink&lt;/span&gt;
+
+&lt;span class="c1"&gt;##--- Root line styles&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;ROOT&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;kSolid&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;kDashed&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;kDotted&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;kDashDotted&lt;/span&gt;
+
+&lt;span class="c1"&gt;##--- Root marker styles&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;ROOT&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;kFullCircle&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;kFullSquare&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;kFullTriangleUp&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;kFullTriangleDown&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;kFullStar&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;kFullDiamond&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;ROOT&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;kFullCross&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;kFullThreeTriangles&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;kFullFourTrianglesX&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;kFullDoubleDiamond&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;ROOT&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;kFullFourTrianglesPlus&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;kFullCrossX&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;kFourSquaresX&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;kFourSquaresPlus&lt;/span&gt;
+
+&lt;span class="c1"&gt;##&lt;/span&gt;
+&lt;span class="c1"&gt;## Root colors that are closest to R v4+ colors&lt;/span&gt;
+&lt;span class="c1"&gt;##&lt;/span&gt;
+&lt;span class="n"&gt;R_v4_colors&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;   &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;632&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;416&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;860&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;432&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;616&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;800&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;416&lt;/span&gt; &lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="n"&gt;my_linestyles&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;kSolid&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;kDashed&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;kDotted&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;kDashDotted&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="n"&gt;my_markerstyles&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;
+  &lt;span class="n"&gt;kFullCircle&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;kFullSquare&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;kFullTriangleUp&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;kFullTriangleDown&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;kFullStar&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;kFullDiamond&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+  &lt;span class="n"&gt;kFullCross&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;kFullThreeTriangles&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;kFullFourTrianglesX&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;kFullDoubleDiamond&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+  &lt;span class="n"&gt;kFullFourTrianglesPlus&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;kFullCrossX&lt;/span&gt;
+&lt;span class="p"&gt;]&lt;/span&gt;
+
+&lt;span class="c1"&gt;##--- iterator to plot different measurements of same quantity on same plot&lt;/span&gt;
+&lt;span class="n"&gt;col_lstyle_gen&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;iterprod2&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;R_v4_colors&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;my_linestyles&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;col_lstyle_iter&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;iter&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;col_lstyle_gen&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="c1"&gt;##--- iterator to plot different measurements of same quantity on same plot&lt;/span&gt;
+&lt;span class="n"&gt;mstyle_col_gen&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;iterzip2&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;my_markerstyles&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;R_v4_colors&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;mstyle_col_iter&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;iter&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;mstyle_col_gen&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [6]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;##&lt;/span&gt;
+&lt;span class="c1"&gt;## functions and defs&lt;/span&gt;
+&lt;span class="c1"&gt;##&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [7]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;json_load_url&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+  &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;json&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;load&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;urllib&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;request&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;urlopen&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;yaml_load_url&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+  &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;yaml&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;safe_load&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;urllib&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;request&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;urlopen&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [8]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;##&lt;/span&gt;
+&lt;span class="c1"&gt;## get symmetric unc&lt;/span&gt;
+&lt;span class="c1"&gt;## if multiple unc are present, get quadratic sum&lt;/span&gt;
+&lt;span class="c1"&gt;## handle case when unc is specified as percent of value&lt;/span&gt;
+&lt;span class="c1"&gt;##&lt;/span&gt;
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;get_symm_unc&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;uncvec&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;yval&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+  &lt;span class="n"&gt;vvar&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;
+  &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;cunc&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;uncvec&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="n"&gt;vunc&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;cunc&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;"symerror"&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;type&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;vunc&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;int&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;float&lt;/span&gt;&lt;span class="p"&gt;)):&lt;/span&gt;
+      &lt;span class="n"&gt;vvar&lt;/span&gt; &lt;span class="o"&gt;+=&lt;/span&gt; &lt;span class="n"&gt;cunc&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;"symerror"&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;
+    &lt;span class="k"&gt;else&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+      &lt;span class="c1"&gt;##--- handle syst unc defined as percent of yval&lt;/span&gt;
+      &lt;span class="c1"&gt;## rc = re.match(r"^([^%]*)%$", vunc)&lt;/span&gt;
+      &lt;span class="n"&gt;rc&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;get_symm_unc&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;re_percunc&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;match&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;vunc&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+      &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;rc&lt;/span&gt; &lt;span class="o"&gt;!=&lt;/span&gt; &lt;span class="kc"&gt;None&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="n"&gt;vunc&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;float&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;rc&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;groups&lt;/span&gt;&lt;span class="p"&gt;()[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+        &lt;span class="n"&gt;vvar&lt;/span&gt; &lt;span class="o"&gt;+=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;vunc&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="mi"&gt;100&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;yval&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;
+  &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;sqrt&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;vvar&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="c1"&gt;##--- precompile regexp&lt;/span&gt;
+&lt;span class="n"&gt;get_symm_unc&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;re_percunc&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;re&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;compile&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="sa"&gt;r&lt;/span&gt;&lt;span class="s2"&gt;"^([^%]*)%$"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [9]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;##&lt;/span&gt;
+&lt;span class="c1"&gt;## code&lt;/span&gt;
+&lt;span class="c1"&gt;##&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [10]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;canvas&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;TCanvas&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"canvas"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"canvas"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;800&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;600&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;gPad&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;SetTopMargin&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mf"&gt;0.10&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;gPad&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;SetBottomMargin&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mf"&gt;0.10&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;gPad&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;SetLeftMargin&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mf"&gt;0.10&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;gPad&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;SetRightMargin&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mf"&gt;0.10&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [11]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;##&lt;/span&gt;
+&lt;span class="c1"&gt;## get BES-III measurement&lt;/span&gt;
+&lt;span class="c1"&gt;##&lt;/span&gt;
+&lt;span class="n"&gt;ins1385603_entry&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;json_load_url&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"https://www.hepdata.net/record/ins1385603?format=json"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"Last updated: "&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;ins1385603_entry&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;"record"&lt;/span&gt;&lt;span class="p"&gt;][&lt;/span&gt;&lt;span class="s2"&gt;"last_updated"&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;span class="n"&gt;pprint&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ins1385603_entry&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+
+    &lt;div class="prompt"&gt;&lt;/div&gt;
+
+
+&lt;div class="output_subarea output_stream output_stdout output_text"&gt;
+&lt;pre&gt;Last updated:  Mon, 05 Oct 2020 13:49:56 GMT
+{'access_count': {'sum': 883},
+ 'additional_resources': True,
+ 'breadcrumb_text': 'Ablikim, M. et al.',
+ 'coordinator': 3,
+ 'data_tables': [{'data': {'csv': 'https://www.hepdata.net/download/table/ins1385603/Table1/csv',
+                           'json': 'https://www.hepdata.net/download/table/ins1385603/Table1/json',
+                           'root': 'https://www.hepdata.net/download/table/ins1385603/Table1/root',
+                           'yaml': 'https://www.hepdata.net/download/table/ins1385603/Table1/yaml',
+                           'yoda': 'https://www.hepdata.net/download/table/ins1385603/Table1/yoda'},
+                  'description': 'Results for the bare cross section '
+                                 '$\\sigma^\\text{bare}_{\\pi^+\\pi^-}$ and '
+                                 'the pion form factor together with their '
+                                 'statistical uncertainties. The systematical '
+                                 'uncertainties...',
+                  'doi': '10.17182/hepdata.73898.v2/t1',
+                  'id': 698515,
+                  'location': 'Data from Table 1 of Erratum',
+                  'messages': False,
+                  'name': 'Table 1',
+                  'processed_name': 'Table1'}],
+ 'mode': 'record',
+ 'recid': 73898,
+ 'record': {'abstract': 'We extract the $e^+e^-\\rightarrow \\pi^+\\pi^-$ '
+                        'cross section in the energy range between 600 and 900 '
+                        'MeV, exploiting the method of initial state '
+                        'radiation. A data set with an integrated luminosity '
+                        'of 2.93 fb$^{-1}$ taken at a center-of-mass energy of '
+                        '3.773 GeV with the BESIII detector at the BEPCII '
+                        'collider is used. The cross section is measured with '
+                        'a systematic uncertainty of 0.9%. We extract the pion '
+                        'form factor $|F_\\pi|^2$ as well as the contribution '
+                        'of the measured cross section to the leading order '
+                        'hadronic vacuum polarization contribution to '
+                        '$(g-2)_\\mu$. We find this value to be '
+                        '$a_\\mu^{\\pi\\pi,\\rm LO}(600-900\\;\\rm MeV) = '
+                        '(368.2 \\pm 2.5_{\\rm stat} \\pm 3.3_{\\rm '
+                        'sys})\\cdot 10^{-10}$.',
+            'access_urls': {'links': {'csv': 'https://www.hepdata.net/download/submission/ins1385603/2/csv',
+                                      'json': 'https://www.hepdata.net/download/submission/ins1385603/2/json',
+                                      'root': 'https://www.hepdata.net/download/submission/ins1385603/2/root',
+                                      'yaml': 'https://www.hepdata.net/download/submission/ins1385603/2/yaml',
+                                      'yoda': 'https://www.hepdata.net/download/submission/ins1385603/2/yoda'}},
+            'analyses': [{'analysis': 'http://rivet.hepforge.org/analyses/BESIII_2016_I1385603',
+                          'type': 'rivet'}],
+            'arxiv_id': 'arXiv:1507.08188',
+            'collaborations': ['BESIII'],
+            'control_number': '73898',
+            'creation_date': '2015-07-29',
+            'data_abstract': '&amp;lt;a '
+                             'href="https://inspirehep.net/literature/1819729"&amp;gt;Erratum '
+                             '(arXiv:2009.05011)&amp;lt;/a&amp;gt;: In &amp;lt;a '
+                             'href="https://inspirehep.net/literature/1385603"&amp;gt;arXiv:1507.08188&amp;lt;/a&amp;gt; '
+                             'the BESIII collaboration published a cross '
+                             'section measurement of the process $e^+e^-\\to '
+                             '\\pi^+ \\pi^-$ in the energy range between 600 '
+                             'and 900 MeV. In this erratum we report a '
+                             'corrected evaluation of the statistical errors '
+                             'in terms of a fully propagated covariance '
+                             'matrix. The correction also yields a reduced '
+                             'statistical uncertainty for the hadronic vacuum '
+                             'polarization contribution to the anomalous '
+                             'magnetic moment of the muon, which now reads as '
+                             '$a_\\mu^{\\pi\\pi\\mathrm{, LO}}(600 - '
+                             '900\\,\\mathrm{MeV}) = (368.2 \\pm 1.5_{\\rm '
+                             'stat} \\pm 3.3_{\\rm syst})\\times 10^{-10}$. '
+                             'The central values of the cross section '
+                             'measurement and of $a_\\mu^{\\pi\\pi\\mathrm{, '
+                             'LO}}$, as well as the systematic uncertainties '
+                             'remain unchanged.',
+            'doc_type': 'publication',
+            'doi': '10.1016/j.physletb.2015.11.043',
+            'first_author': {'affiliation': 'Beijing, Inst. High Energy Phys.',
+                             'full_name': 'Ablikim, M.'},
+            'hepdata_doi': '10.17182/hepdata.73898.v2',
+            'id': 73898,
+            'inspire_id': 1385603,
+            'journal_info': 'Phys.Lett.B 753 (2016) 629-638',
+            'keywords': [{'source': 'author',
+                          'value': 'Hadronic cross section'},
+                         {'source': 'author', 'value': 'Muon anomaly'},
+                         {'source': 'author',
+                          'value': 'Initial state radiation'},
+                         {'source': 'author', 'value': 'Pion form factor'},
+                         {'source': 'author', 'value': 'BESIII'},
+                         {'schema': 'INSPIRE',
+                          'value': 'electron positron: annihilation'},
+                         {'schema': 'INSPIRE',
+                          'value': 'cross section: measured'},
+                         {'schema': 'INSPIRE', 'value': 'pi: pair production'},
+                         {'schema': 'INSPIRE', 'value': 'pi: form factor'},
+                         {'schema': 'INSPIRE',
+                          'value': 'vacuum polarization: hadronic'},
+                         {'schema': 'INSPIRE', 'value': 'initial state'},
+                         {'schema': 'INSPIRE', 'value': 'magnetic moment'},
+                         {'schema': 'INSPIRE', 'value': 'Beijing Stor'},
+                         {'schema': 'INSPIRE', 'value': 'BES'},
+                         {'schema': 'INSPIRE',
+                          'value': 'electron positron --&amp;gt; pi+ pi-'},
+                         {'schema': 'INSPIRE', 'value': '3.773 GeV-cms'}],
+            'last_updated': 'Mon, 05 Oct 2020 13:49:56 GMT',
+            'parent_child_join': {'name': 'parent_publication'},
+            'publication_date': '2016-10-06T00:00:00',
+            'recid': 73898,
+            'subject_area': ['hep-ex'],
+            'summary_authors': [{'affiliation': 'Beijing, Inst. High Energy '
+                                                'Phys.',
+                                 'full_name': 'Ablikim, M.'},
+                                {'affiliation': 'Novosibirsk, IYF',
+                                 'full_name': 'Achasov, M.N.'},
+                                {'affiliation': 'Beijing, Inst. High Energy '
+                                                'Phys.',
+                                 'full_name': 'Ai, X.C.'},
+                                {'affiliation': 'Carnegie Mellon U.',
+                                 'full_name': 'Albayrak, O.'},
+                                {'affiliation': 'Ruhr U., Bochum',
+                                 'full_name': 'Albrecht, M.'},
+                                {'affiliation': 'Rochester U.',
+                                 'full_name': 'Ambrose, D.J.'},
+                                {'affiliation': 'Turin U.',
+                                 'full_name': 'Amoroso, A.'},
+                                {'affiliation': 'Beijing, Inst. High Energy '
+                                                'Phys.',
+                                 'full_name': 'An, F.F.'},
+                                {'affiliation': 'Hefei, CUST',
+                                 'full_name': 'An, Q.'},
+                                {'affiliation': 'Beijing, Inst. High Energy '
+                                                'Phys.',
+                                 'full_name': 'Bai, J.Z.'}],
+            'title': 'Measurement of the $e^+ e^− \\to \\pi^+ \\pi^−$ cross '
+                     'section between 600 and 900 MeV using initial state '
+                     'radiation',
+            'type': ['article'],
+            'uuid': '412140ab-0985-44ee-a129-a4c8697b254b',
+            'version': 2,
+            'year': '2016'},
+ 'reviewer_count': 0,
+ 'reviewers_notified': False,
+ 'revision_message': {'message': 'This revision contains a corrected '
+                                 'evaluation of the statistical errors, as '
+                                 'reported in an Erratum '
+                                 '(https://inspirehep.net/literature/1819729) '
+                                 'by the BESIII Collaboration.',
+                      'version': 2},
+ 'site_url': 'https://www.hepdata.net',
+ 'status': 'finished',
+ 'table_to_show': 698515,
+ 'version': 2,
+ 'version_count': 2,
+ 'watched': False}
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [12]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;##&lt;/span&gt;
+&lt;span class="c1"&gt;## get CMD-2 measurement&lt;/span&gt;
+&lt;span class="c1"&gt;##&lt;/span&gt;
+&lt;span class="n"&gt;ins728302_entry&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;json_load_url&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"https://www.hepdata.net/record/ins728302?format=json"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"Last updated: "&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;ins728302_entry&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;"record"&lt;/span&gt;&lt;span class="p"&gt;][&lt;/span&gt;&lt;span class="s2"&gt;"last_updated"&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;span class="n"&gt;pprint&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ins728302_entry&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+
+    &lt;div class="prompt"&gt;&lt;/div&gt;
+
+
+&lt;div class="output_subarea output_stream output_stdout output_text"&gt;
+&lt;pre&gt;Last updated:  Tue, 10 Oct 2006 00:00:00 GMT
+{'access_count': {'sum': 943},
+ 'additional_resources': True,
+ 'breadcrumb_text': 'Akhmetshin, R.R. et al.',
+ 'coordinator': 1,
+ 'data_tables': [{'data': {'csv': 'https://www.hepdata.net/download/table/ins728302/Table1/csv',
+                           'json': 'https://www.hepdata.net/download/table/ins728302/Table1/json',
+                           'root': 'https://www.hepdata.net/download/table/ins728302/Table1/root',
+                           'yaml': 'https://www.hepdata.net/download/table/ins728302/Table1/yaml',
+                           'yoda': 'https://www.hepdata.net/download/table/ins728302/Table1/yoda'},
+                  'description': 'Measured values of the pion form factor. The '
+                                 'errors are statistical only.',
+                  'doi': '10.17182/hepdata.41782.v1/t1',
+                  'id': 35960,
+                  'location': 'Data from T 2,F 9',
+                  'messages': False,
+                  'name': 'Table 1',
+                  'processed_name': 'Table1'},
+                 {'data': {'csv': 'https://www.hepdata.net/download/table/ins728302/Table2/csv',
+                           'json': 'https://www.hepdata.net/download/table/ins728302/Table2/json',
+                           'root': 'https://www.hepdata.net/download/table/ins728302/Table2/root',
+                           'yaml': 'https://www.hepdata.net/download/table/ins728302/Table2/yaml',
+                           'yoda': 'https://www.hepdata.net/download/table/ins728302/Table2/yoda'},
+                  'description': 'Measured value of the bare PI+ PI- cross '
+                                 'section including corrections for radiative '
+                                 'effects but excluding corrections for vacuum '
+                                 'polarization...',
+                  'doi': '10.17182/hepdata.41782.v1/t2',
+                  'id': 35961,
+                  'location': 'Data from T 2',
+                  'messages': False,
+                  'name': 'Table 2',
+                  'processed_name': 'Table2'}],
+ 'mode': 'record',
+ 'recid': 41782,
+ 'record': {'abstract': 'We present a measurement of the pion form factor '
+                        'based on e+e- annihilation data from the CMD-2 '
+                        'detector in the energy range 0.6&amp;amp;lt;sqrt(s)&amp;amp;lt;1.0 '
+                        'GeV with a systematic uncertainty of 0.8%. A data '
+                        'sample is five times larger than that used in our '
+                        'previous measurement.',
+            'access_urls': {'links': {'csv': 'https://www.hepdata.net/download/submission/ins728302/1/csv',
+                                      'json': 'https://www.hepdata.net/download/submission/ins728302/1/json',
+                                      'root': 'https://www.hepdata.net/download/submission/ins728302/1/root',
+                                      'yaml': 'https://www.hepdata.net/download/submission/ins728302/1/yaml',
+                                      'yoda': 'https://www.hepdata.net/download/submission/ins728302/1/yoda'}},
+            'analyses': [{'analysis': 'http://rivet.hepforge.org/analyses/CMD2_2007_I728302',
+                          'type': 'rivet'}],
+            'arxiv_id': 'arXiv:hep-ex/0610021',
+            'collaborations': ['CMD-2'],
+            'control_number': '41782',
+            'creation_date': '2006-10-01',
+            'data_abstract': 'Novosibirsk-Vepp-2. Measurement of the cross '
+                             'section and pion form factor from the process E+ '
+                             'E- --&amp;amp;amp; gt; PI+ PI- in the centre of mass '
+                             'energy range 600 to 970 MeV. The data come from '
+                             'the 1998 running.',
+            'data_keywords': {'cmenergies': [{'gte': 0.6, 'lte': 0.97}],
+                              'observables': ['FORMFACTOR', 'SIG'],
+                              'phrases': ['Integrated Cross Section',
+                                          'Cross Section',
+                                          'E+ E- Scattering',
+                                          'Exclusive'],
+                              'reactions': ['E+ E- --&amp;gt; PI+ PI-']},
+            'doc_type': 'publication',
+            'doi': '10.1016/j.physletb.2007.01.073',
+            'first_author': {'affiliation': '',
+                             'full_name': 'Akhmetshin, R.R.'},
+            'hepdata_doi': '10.17182/hepdata.41782',
+            'id': 41782,
+            'inspire_id': 728302,
+            'journal_info': 'Phys.Lett.B 648 (2007) 28-38',
+            'keywords': [{'schema': 'PDG', 'source': 'PDG', 'value': 'M009W0'},
+                         {'schema': 'PDG',
+                          'source': 'PDG',
+                          'value': 'M009:Desig=4'},
+                         {'schema': 'PDG', 'source': 'PDG', 'value': 'M009M0'},
+                         {'schema': 'PDG',
+                          'source': 'PDG',
+                          'value': 'M001:Desig=2'},
+                         {'schema': 'INSPIRE',
+                          'value': 'electron positron: colliding beams'},
+                         {'schema': 'INSPIRE',
+                          'value': 'electron positron: annihilation'},
+                         {'schema': 'INSPIRE', 'value': 'pi: pair production'},
+                         {'schema': 'INSPIRE', 'value': 'pi: form factor'},
+                         {'schema': 'INSPIRE',
+                          'value': 'channel cross section'},
+                         {'schema': 'INSPIRE', 'value': 'energy dependence'},
+                         {'schema': 'INSPIRE', 'value': 'parametrization'},
+                         {'schema': 'INSPIRE', 'value': 'rho(770): mass'},
+                         {'schema': 'INSPIRE', 'value': 'rho(770): width'},
+                         {'schema': 'INSPIRE',
+                          'value': 'omega(783): branching ratio'},
+                         {'schema': 'INSPIRE', 'value': 'CMD'},
+                         {'schema': 'INSPIRE', 'value': 'experimental results'},
+                         {'schema': 'INSPIRE', 'value': 'Novosibirsk Stor2'},
+                         {'schema': 'INSPIRE',
+                          'value': 'electron positron --&amp;gt; pi+ pi-'},
+                         {'schema': 'INSPIRE', 'value': '0.60-0.98 GeV-cms'}],
+            'last_updated': 'Tue, 10 Oct 2006 00:00:00 GMT',
+            'parent_child_join': {'name': 'parent_publication'},
+            'publication_date': '2007-08-25T00:00:00',
+            'recid': 41782,
+            'subject_area': ['hep-ex'],
+            'summary_authors': [{'affiliation': '',
+                                 'full_name': 'Akhmetshin, R.R.'},
+                                {'affiliation': '',
+                                 'full_name': 'Aulchenko, V.M.'},
+                                {'affiliation': '',
+                                 'full_name': 'Banzarov, V.Sh.'},
+                                {'affiliation': '',
+                                 'full_name': 'Barkov, L.M.'},
+                                {'affiliation': '',
+                                 'full_name': 'Bashtovoy, N.S.'},
+                                {'affiliation': '',
+                                 'full_name': 'Bondar, A.E.'},
+                                {'affiliation': '',
+                                 'full_name': 'Bondarev, D.V.'},
+                                {'affiliation': '',
+                                 'full_name': 'Bragin, A.V.'},
+                                {'affiliation': '',
+                                 'full_name': 'Dhawan, S.K.'},
+                                {'affiliation': '',
+                                 'full_name': 'Eidelman, S.I.'}],
+            'title': 'High-statistics measurement of the pion form factor in '
+                     'the rho-meson energy range with the CMD-2 detector',
+            'type': ['article'],
+            'uuid': '60936b90-0f83-4d4e-9f5b-77c00dea711d',
+            'version': 1,
+            'year': '2007'},
+ 'reviewer_count': 0,
+ 'reviewers_notified': False,
+ 'site_url': 'https://www.hepdata.net',
+ 'status': 'finished',
+ 'table_to_show': 35960,
+ 'version': 1,
+ 'version_count': 1,
+ 'watched': False}
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [13]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;gStyle&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;SetOptStat&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;basehist&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;TH1F&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"basehist"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"|F_{#pi}|^&lt;/span&gt;&lt;span class="si"&gt;{2}&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;0.5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;basehist&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;SetMinimum&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;basehist&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;SetMaximum&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;55&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;basehist&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;GetXaxis&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;SetTitle&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"#sqrt&lt;/span&gt;&lt;span class="si"&gt;{s}&lt;/span&gt;&lt;span class="s2"&gt; [GeV]"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;basehist&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;GetYaxis&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;SetTitle&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"|F_{#pi}|^&lt;/span&gt;&lt;span class="si"&gt;{2}&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="n"&gt;basehist&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Draw&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;""&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="c1"&gt;## canvas.Draw()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [14]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;##&lt;/span&gt;
+&lt;span class="c1"&gt;## get YAML of first item of the submission&lt;/span&gt;
+&lt;span class="c1"&gt;##&lt;/span&gt;
+&lt;span class="n"&gt;ins1385603_Table1&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;yaml_load_url&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ins1385603_entry&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;"data_tables"&lt;/span&gt;&lt;span class="p"&gt;][&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;][&lt;/span&gt;&lt;span class="s2"&gt;"data"&lt;/span&gt;&lt;span class="p"&gt;][&lt;/span&gt;&lt;span class="s2"&gt;"yaml"&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+
+&lt;span class="c1"&gt;##&lt;/span&gt;
+&lt;span class="c1"&gt;## independent variable&lt;/span&gt;
+&lt;span class="c1"&gt;##&lt;/span&gt;
+&lt;span class="n"&gt;xval&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;array&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'f'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;ielem&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;delem&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;enumerate&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ins1385603_Table1&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;"independent_variables"&lt;/span&gt;&lt;span class="p"&gt;][&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;][&lt;/span&gt;&lt;span class="s2"&gt;"values"&lt;/span&gt;&lt;span class="p"&gt;]):&lt;/span&gt;
+  &lt;span class="n"&gt;xval&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;append&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;delem&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;"value"&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="mi"&gt;1000&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="c1"&gt;##&lt;/span&gt;
+&lt;span class="c1"&gt;## 2nd dependent variable, pion form factor&lt;/span&gt;
+&lt;span class="c1"&gt;##&lt;/span&gt;
+&lt;span class="n"&gt;yval&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;array&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'f'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;yunc&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;array&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'f'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;ielem&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;delem&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;enumerate&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ins1385603_Table1&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;"dependent_variables"&lt;/span&gt;&lt;span class="p"&gt;][&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;][&lt;/span&gt;&lt;span class="s2"&gt;"values"&lt;/span&gt;&lt;span class="p"&gt;]):&lt;/span&gt;
+  &lt;span class="n"&gt;yvalcurr&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;delem&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;"value"&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+  &lt;span class="n"&gt;yval&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;append&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;yvalcurr&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+  &lt;span class="n"&gt;yunc&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;append&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;get_symm_unc&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;delem&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;"errors"&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="n"&gt;yvalcurr&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+
+&lt;span class="c1"&gt;##&lt;/span&gt;
+&lt;span class="c1"&gt;## TGraphErrors&lt;/span&gt;
+&lt;span class="c1"&gt;##&lt;/span&gt;
+&lt;span class="n"&gt;ins1385603_gr&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;TGraphErrors&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;len&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;xval&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="n"&gt;xval&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;yval&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;yunc&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;title&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;"-"&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;join&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ins1385603_entry&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;"record"&lt;/span&gt;&lt;span class="p"&gt;][&lt;/span&gt;&lt;span class="s2"&gt;"collaborations"&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;span class="n"&gt;title&lt;/span&gt; &lt;span class="o"&gt;+=&lt;/span&gt; &lt;span class="s2"&gt;" "&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;ins1385603_entry&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;"record"&lt;/span&gt;&lt;span class="p"&gt;][&lt;/span&gt;&lt;span class="s2"&gt;"year"&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="n"&gt;ins1385603_gr&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;SetTitle&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;mstyle&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;col&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;next&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;mstyle_col_iter&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;ins1385603_gr&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;SetMarkerStyle&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="n"&gt;mstyle&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;ins1385603_gr&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;SetLineColor&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="n"&gt;col&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;ins1385603_gr&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;SetMarkerColor&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="n"&gt;col&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="n"&gt;ins1385603_gr&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Draw&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"epsame"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="c1"&gt;## canvas.Draw()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [15]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;##&lt;/span&gt;
+&lt;span class="c1"&gt;## get YAML of first item of the submission&lt;/span&gt;
+&lt;span class="c1"&gt;##&lt;/span&gt;
+&lt;span class="n"&gt;ins728302_Table1&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;yaml_load_url&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ins728302_entry&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;"data_tables"&lt;/span&gt;&lt;span class="p"&gt;][&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;][&lt;/span&gt;&lt;span class="s2"&gt;"data"&lt;/span&gt;&lt;span class="p"&gt;][&lt;/span&gt;&lt;span class="s2"&gt;"yaml"&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+
+&lt;span class="c1"&gt;##&lt;/span&gt;
+&lt;span class="c1"&gt;## independent variable&lt;/span&gt;
+&lt;span class="c1"&gt;##&lt;/span&gt;
+&lt;span class="n"&gt;xval&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;array&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'f'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;ielem&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;delem&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;enumerate&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ins728302_Table1&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;"independent_variables"&lt;/span&gt;&lt;span class="p"&gt;][&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;][&lt;/span&gt;&lt;span class="s2"&gt;"values"&lt;/span&gt;&lt;span class="p"&gt;]):&lt;/span&gt;
+  &lt;span class="n"&gt;xval&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;append&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;delem&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;"value"&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="mi"&gt;1000&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="c1"&gt;##&lt;/span&gt;
+&lt;span class="c1"&gt;## 1st dependent variable, pion form factor&lt;/span&gt;
+&lt;span class="c1"&gt;##&lt;/span&gt;
+&lt;span class="n"&gt;yval&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;array&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'f'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;yunc&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;array&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'f'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;ielem&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;delem&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;enumerate&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ins728302_Table1&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;"dependent_variables"&lt;/span&gt;&lt;span class="p"&gt;][&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;][&lt;/span&gt;&lt;span class="s2"&gt;"values"&lt;/span&gt;&lt;span class="p"&gt;]):&lt;/span&gt;
+  &lt;span class="n"&gt;yvalcurr&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;delem&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;"value"&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+  &lt;span class="n"&gt;yval&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;append&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;yvalcurr&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+  &lt;span class="n"&gt;yunc&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;append&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;get_symm_unc&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;delem&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;"errors"&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="n"&gt;yvalcurr&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+
+&lt;span class="c1"&gt;##&lt;/span&gt;
+&lt;span class="c1"&gt;## TGraphErrors&lt;/span&gt;
+&lt;span class="c1"&gt;##&lt;/span&gt;
+&lt;span class="n"&gt;ins728302_gr&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;TGraphErrors&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;len&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;xval&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="n"&gt;xval&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;yval&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;yunc&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;title&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;"-"&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;join&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ins728302_entry&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;"record"&lt;/span&gt;&lt;span class="p"&gt;][&lt;/span&gt;&lt;span class="s2"&gt;"collaborations"&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;span class="n"&gt;title&lt;/span&gt; &lt;span class="o"&gt;+=&lt;/span&gt; &lt;span class="s2"&gt;" "&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;ins728302_entry&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;"record"&lt;/span&gt;&lt;span class="p"&gt;][&lt;/span&gt;&lt;span class="s2"&gt;"year"&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="n"&gt;ins728302_gr&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;SetTitle&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;mstyle&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;col&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;next&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;mstyle_col_iter&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;ins728302_gr&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;SetMarkerStyle&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="n"&gt;mstyle&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;ins728302_gr&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;SetLineColor&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="n"&gt;col&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;ins728302_gr&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;SetMarkerColor&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="n"&gt;col&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="n"&gt;ins728302_gr&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Draw&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"epsame"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="c1"&gt;## canvas.Draw()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [16]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;leg&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;TLegend&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mf"&gt;0.65&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;0.80&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;0.90&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;0.90&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;leg&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;SetTextSize&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mf"&gt;0.035&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;leg&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;AddEntry&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ins1385603_gr&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;ins1385603_gr&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;GetTitle&lt;/span&gt;&lt;span class="p"&gt;(),&lt;/span&gt; &lt;span class="s2"&gt;"LP"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;leg&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;AddEntry&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ins728302_gr&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;ins728302_gr&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;GetTitle&lt;/span&gt;&lt;span class="p"&gt;(),&lt;/span&gt; &lt;span class="s2"&gt;"LP"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;leg&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Draw&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="n"&gt;canvas&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Draw&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+
+    &lt;div class="prompt"&gt;&lt;/div&gt;
+
+
+
+
+&lt;div class="output_png output_subarea "&gt;
+&lt;img src="data:image/png;base64,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"&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [19]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;rfile&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;TFile&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"precsm-resp-plot-example.root"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"recreate"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;canvas&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Write&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"F_pip_pim"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;rfile&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Close&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [ ]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt; 
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;&lt;/div&gt;</description><guid>https://precision-sm.github.io/posts/mk-hepdata-plot/</guid><pubDate>Sat, 21 Nov 2020 00:05:23 GMT</pubDate></item><item><link>https://precision-sm.github.io/posts/example-responsive-plot/</link><dc:creator>PrecisionSM Group</dc:creator><description>&lt;div class="section" id="example-responsive-plot"&gt;
 &lt;h2&gt;Example responsive plot&lt;/h2&gt;
 &lt;p&gt;&lt;a href="https://precision-sm.github.io/posts/example-responsive-plot/"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><guid>https://precision-sm.github.io/posts/example-responsive-plot/</guid><pubDate>Sun, 06 Sep 2020 12:36:05 GMT</pubDate></item><item><title>Ignatov e+e- -&gt; hadrons plots</title><link>https://precision-sm.github.io/posts/ignatov-e%2Be--to-hadrons-plots/</link><dc:creator>PrecisionSM Group</dc:creator><description>&lt;div class="section" id="ignatov-e-e-hadrons-cross-sections-plots"&gt;
 &lt;h2&gt;Ignatov e+e- -&amp;gt; hadrons cross sections plots&lt;/h2&gt;
