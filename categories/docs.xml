@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>PrecisionSM (Posts about docs)</title><link>https://precision-sm.github.io/</link><description></description><atom:link href="https://precision-sm.github.io/categories/docs.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2020 &lt;a href="mailto:alusiani at gmail.com"&gt;PrecisionSM Group&lt;/a&gt; </copyright><lastBuildDate>Sat, 21 Nov 2020 00:56:18 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Create responsive plot from HEPData.net data</title><link>https://precision-sm.github.io/posts/create-resp-plot-example/</link><dc:creator>PrecisionSM Group</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [ ]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;##&lt;/span&gt;
+&lt;span class="c1"&gt;## get two cross-section measurements from HEPData and plot them&lt;/span&gt;
+&lt;span class="c1"&gt;##&lt;/span&gt;
+&lt;span class="c1"&gt;## e+ e- -&amp;gt; pi+ pi- BES-III 2016 https://www.hepdata.net/record/ins1385603&lt;/span&gt;
+&lt;span class="c1"&gt;## e+ e- -&amp;gt; pi+ pi- CMD-2 2007 https://www.hepdata.net/record/ins728302&lt;/span&gt;
+&lt;span class="c1"&gt;##&lt;/span&gt;
+&lt;span class="c1"&gt;## gist -u c979808908344933d8162cfe5883628b precision-sm-kloe10-sep20.ipynb&lt;/span&gt;
+&lt;span class="c1"&gt;## &lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;&lt;a href="https://precision-sm.github.io/posts/create-resp-plot-example/"&gt;Read more…&lt;/a&gt; (13 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><guid>https://precision-sm.github.io/posts/create-resp-plot-example/</guid><pubDate>Sat, 21 Nov 2020 00:05:23 GMT</pubDate></item></channel></rss>
