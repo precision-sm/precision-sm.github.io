@@ -28,7 +28,7 @@
 Draft PrecisionSM web site
 ==========================
 
-* `Example code to create a responsive plot using results stored in HEPData.net </posts/create-resp-plot-example/>`_
+* `Example code to create a responsive plot using results stored in HEPData.net </posts/mk-hepdata-plot/>`_
 
 * `Example of responsive plot integrated in this website </posts/example-responsive-plot/>`_
 
