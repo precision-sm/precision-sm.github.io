@@ -19,5 +19,5 @@ Hovering the cursor above the points reveals the respective x and y values.
 
   <iframe
     style="width:90%; height:67.5vh; margin:0px auto; display:block;"
-    src="/jsdev/index.htm?nobrowser&file=../resp-plots/plots/precision-sm-pip-pim.root&item=pip-pim&opt=ep">
+    src="/jsdev/index.htm?nobrowser&file=../resp-plots/precsm-resp-plot-example.root&item=F_pip_pim&opt=ep">
   </iframe>
