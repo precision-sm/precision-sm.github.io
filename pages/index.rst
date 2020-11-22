@@ -7,6 +7,7 @@
 .. description:
 .. has_math: true
 .. type: text
+.. hidetitle: true
 
 .. .............................................................................
 .. default-role:: code
@@ -34,4 +35,4 @@ Draft PrecisionSM web site
 
 * `Example notebook </posts/BaBar-ep-em-to-pip-pim/>`_
 
-* `Fedor Ignatov responsive plots </posts/ignatov-e%2Be--to-hadrons-plots/>`_
+* `Fedor Ignatov responsive plots </posts/fedor-ignatov-e%2Be--to-hadrons-plots/>`_
