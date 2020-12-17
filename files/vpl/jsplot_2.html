@@ -20,7 +20,7 @@ iframe {height:calc(100vh);width:100%}
 <script type="text/javascript">
 function getUrlVars() {
     var vars = {};
-    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi,    
+    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi,
     function(m,key,value) {
       vars[key] = value;
     });
@@ -34,7 +34,7 @@ function getUrlVars() {
 <table>
 <tr>
 <td>
-<iframe id="viewer_frame" width="100%" height="100%" frameborder="0" src="/jsdev/index.htm"></iframe>
+<iframe id="viewer_frame" width="100%" height="100%" frameborder="0" src="/jsroot/index.htm"></iframe>
 </td>
 <td align="left">
 <div id="explist" class='toc'></div>
@@ -54,15 +54,15 @@ function updateGUI() {
   $.getJSON('cst.json', function(data) {
     var cs=data[cid];
     document.title=$('<textarea />').html(cs.ctitle).text();
-    
+
     var viewerdoc = document.getElementById( 'viewer_frame' );
     path=cs.path;
     if( path != "")
-      viewerdoc.src = "/jsdev/index.htm?nobrowser&"+path+"+&item=csigall";
+      viewerdoc.src = "/jsroot/index.htm?nobrowser&"+path+"+&item=csigall";
 	  });
 }
 
-function dobutton(){ 
+function dobutton(){
     if (drawing_ready) return;
     var viewer =$('#viewer_frame');
     var nn=0;
@@ -72,7 +72,7 @@ function dobutton(){
     viewer.ready(function(){
 		var legends=viewer.contents().find("g[objtype='TLegend'] > text ");
 
-		
+
 // 		pps2.html("nlegends2 :"+legends.length);
 
 
@@ -91,9 +91,9 @@ function dobutton(){
 		else return;
 
 		var inputs=$( "input" );
-	      
+
 		//     var labels[];
-		
+
 		inputs.change(function() {
 				var $input = $( this );
 				var n1=1+parseInt($input.attr( "nn"));
@@ -108,7 +108,7 @@ function dobutton(){
 				}else{
 				  viewer.contents().find( "g[objname='Graph']:eq("+n1+")").show();
 				  viewer.contents().find( "g[objname='Graph']:eq("+n2+")").show();
-// 				  pps.html(     "nn: "+ n1 + " " + n2  + " size "+nlegs + 
+// 				  pps.html(     "nn: "+ n1 + " " + n2  + " size "+nlegs +
 // 						".attr( \"checked\" ): <b>" + $input.attr( "checked" ) + "</b><br>" +
 // 						".prop( \"checked\" ): <b>" + $input.prop( "checked" ) + "</b><br>" +
 // 						".is( \":checked\" ): <b>" + $input.is( ":checked" ) + "</b>" );
@@ -117,7 +117,7 @@ function dobutton(){
 		clearInterval(refreshIntervalId);
 	      });
 }
-	      
+
 
 updateGUI();
 dobutton();
