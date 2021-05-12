@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>PrecisionSM</title><link>https://precision-sm.github.io/</link><description>Documentation for Strong-2020 activity PrecisionSM</description><atom:link href="https://precision-sm.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2021 &lt;a href="mailto:alusiani at gmail.com"&gt;PrecisionSM Group&lt;/a&gt; </copyright><lastBuildDate>Wed, 12 May 2021 22:32:47 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>mk-hepdata-plot</title><link>https://precision-sm.github.io/posts/mk-hepdata-plot/</link><dc:creator>PrecisionSM Group</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>PrecisionSM</title><link>https://precision-sm.github.io/</link><description>Documentation for Strong-2020 activity PrecisionSM</description><atom:link href="https://precision-sm.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2021 &lt;a href="mailto:alusiani at gmail.com"&gt;PrecisionSM Group&lt;/a&gt; </copyright><lastBuildDate>Wed, 12 May 2021 22:50:25 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>mk-hepdata-plot</title><link>https://precision-sm.github.io/posts/mk-hepdata-plot/</link><dc:creator>PrecisionSM Group</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h3 id="get-two-cross-section-measurements-from-HEPData-and-plot-them"&gt;get two cross-section measurements from HEPData and plot them&lt;a class="anchor-link" href="https://precision-sm.github.io/posts/mk-hepdata-plot/#get-two-cross-section-measurements-from-HEPData-and-plot-them"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
@@ -34,9 +34,12 @@
 "Precise measurement of the e+ e- ---&amp;gt; pi+ pi- (gamma) cross section with the Initial State Radiation method at BABAR"&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;J. P. Lees et al. [BaBar Collaboration], &lt;a href="https://doi.org/10.1103/PhysRevD.86.032013"&gt;Phys. Rev. D 86 (2012) 032013&lt;/a&gt;, &lt;a href="http://inspirehep.net/record/1114155"&gt;inspirehep&lt;/a&gt;,&lt;br&gt;
-"Precise Measurement of the e+e−→π+π−(γ)e+e−→π+π−(γ) Cross Section with the Initial-State Radiation Method at BABAR"&lt;/p&gt;
+"Precise Measurement of the e+e− → π+π−(γ)e+e−→π+π−(γ) Cross Section with the Initial-State Radiation Method at BABAR"&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="http://ftp.aip.org/epaps/phys_rev_lett/E-PRLTAO-103-045950/"&gt;data&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://ftp.aip.org/epaps/phys_rev_lett/E-PRLTAO-103-045950/"&gt;supplemental material folder&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://ftp.aip.org/epaps/phys_rev_lett/E-PRLTAO-103-045950/BABAR_ISR2pi_EPAPS.txt"&gt;BABAR_ISR2pi_EPAPS.txt&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -47,4 +50,4 @@
 &lt;li&gt;the statistical correlation between any two bins of cross-section&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;In the following the data are used to show a few plots.&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://precision-sm.github.io/posts/BaBar-ep-em-to-pip-pim/"&gt;Read more…&lt;/a&gt; (11 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>BaBar</category><guid>https://precision-sm.github.io/posts/BaBar-ep-em-to-pip-pim/</guid><pubDate>Wed, 10 Jun 2020 19:52:05 GMT</pubDate></item></channel></rss>
+&lt;p&gt;&lt;a href="https://precision-sm.github.io/posts/BaBar-ep-em-to-pip-pim/"&gt;Read more…&lt;/a&gt; (9 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>BaBar</category><guid>https://precision-sm.github.io/posts/BaBar-ep-em-to-pip-pim/</guid><pubDate>Wed, 10 Jun 2020 19:52:05 GMT</pubDate></item></channel></rss>
