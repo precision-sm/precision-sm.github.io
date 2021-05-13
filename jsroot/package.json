@@ -1,12 +1,12 @@
 {
   "name": "jsroot",
-  "version": "5.9.0",
+  "version": "6.1.0",
   "engines": {
-    "node": ">=0.8"
+    "node": ">=0.12"
   },
   "description": "JavaScript ROOT",
   "homepage": "https://root.cern/js/",
-  "main": "./scripts/JSRootCore.js",
+  "main": "./scripts/JSRoot.core.js",
   "contributors": [
     {
       "name": "Bertrand Bellenot",
@@ -21,13 +21,15 @@
   "dependencies": {
     "atob": "^2.1.2",
     "btoa": "^1.2.1",
-    "d3": "^5.7.0",
-    "jsdom": "^12.2.0",
-    "mathjax-node": "^2.1.0",
-    "request": "^2.34",
-    "three": "^0.102.0",
-    "xhr2": "^0.1.4",
-    "zlib": "^1.0.5"
+    "canvas": "^2.6.1",
+    "d3": "^6.1.1",
+    "gl": "^4.6.1",
+    "jsdom": "^16.4.0",
+    "mathjax": "^3.1.2",
+    "three": "^0.125.0",
+    "xhr2": "^0.2.0",
+    "zlib": "^1.0.5",
+    "zstd-codec": "^0.1.2"
   },
   "repository": {
     "type": "git",
