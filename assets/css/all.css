@@ -926,6 +926,10 @@ div.cell.border-box-sizing.rendered {
 
 /* jupyter notebook code cells */
 
+pre, pre code {
+  white-space: pre-wrap;
+}
+
 pre.code,
 .code .codetable,
 .highlight pre {
