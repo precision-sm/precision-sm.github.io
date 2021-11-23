@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>PrecisionSM (Posts about docs)</title><link>https://precision-sm.github.io/</link><description></description><atom:link href="https://precision-sm.github.io/categories/docs.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2021 &lt;a href="mailto:alusiani at gmail.com"&gt;PrecisionSM Group&lt;/a&gt; </copyright><lastBuildDate>Tue, 23 Nov 2021 20:48:03 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>BaBar 2012  𝜎(𝑒+𝑒− → 𝜋+𝜋−(𝛾))  HEPData submission</title><link>https://precision-sm.github.io/posts/HEPData-BaBar-2012-pip-pim-subm-nb/</link><dc:creator>PrecisionSM Group</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>PrecisionSM (Posts about docs)</title><link>https://precision-sm.github.io/</link><description></description><atom:link href="https://precision-sm.github.io/categories/docs.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2021 &lt;a href="mailto:alusiani at gmail.com"&gt;PrecisionSM Group&lt;/a&gt; </copyright><lastBuildDate>Tue, 23 Nov 2021 21:48:43 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>BaBar 2012  𝜎(𝑒+𝑒− → 𝜋+𝜋−(𝛾))  HEPData submission</title><link>https://precision-sm.github.io/posts/HEPData-BaBar-2012-pip-pim-subm-nb/</link><dc:creator>PrecisionSM Group</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="BaBar-2012-$%5Csigma(e%5E+e%5E--%5Cto-%5Cpi%5E+-%5Cpi%5E--(%5Cgamma))$-HEPData-submission"&gt;BaBar 2012 $\sigma(e^+e^- \to \pi^+ \pi^- (\gamma))$ HEPData submission&lt;a class="anchor-link" href="https://precision-sm.github.io/posts/HEPData-BaBar-2012-pip-pim-subm-nb/#BaBar-2012-%24%5Csigma(e%5E+e%5E--%5Cto-%5Cpi%5E+-%5Cpi%5E--(%5Cgamma))%24-HEPData-submission"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;h4 id="Requirements"&gt;Requirements&lt;a class="anchor-link" href="https://precision-sm.github.io/posts/HEPData-BaBar-2012-pip-pim-subm-nb/#Requirements"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;ul&gt;
@@ -12,7 +12,7 @@
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [185]:&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In [198]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
 &lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;math&lt;/span&gt;
@@ -36,7 +36,7 @@
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [186]:&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In [199]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
 &lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;hepdata_lib&lt;/span&gt;
@@ -60,7 +60,7 @@
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [188]:&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In [200]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
 &lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;##&lt;/span&gt;
@@ -84,13 +84,13 @@
 
 &lt;div class="output_area"&gt;
 
-    &lt;div class="prompt output_prompt"&gt;Out[188]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[200]:&lt;/div&gt;
 
 
 
 
 &lt;div class="output_text output_subarea output_execute_result"&gt;
-&lt;pre&gt;'/tmp/tmpri6pnvp6'&lt;/pre&gt;
+&lt;pre&gt;'/tmp/tmpu1dzn_k1'&lt;/pre&gt;
 &lt;/div&gt;
 
 &lt;/div&gt;
@@ -101,10 +101,13 @@
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [189]:&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In [201]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;sigma_df&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;read_csv&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;##&lt;/span&gt;
+&lt;span class="c1"&gt;## read cross-section values and uncertainties by energy bins&lt;/span&gt;
+&lt;span class="c1"&gt;##&lt;/span&gt;
+&lt;span class="n"&gt;sigma_df&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;read_csv&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
   &lt;span class="n"&gt;tmpfile&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
   &lt;span class="n"&gt;header&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;None&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
   &lt;span class="n"&gt;names&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;"E_l"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"colon"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"E_h"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"sigma_val"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"sigma_unc"&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
@@ -124,7 +127,7 @@
 
 &lt;div class="output_area"&gt;
 
-    &lt;div class="prompt output_prompt"&gt;Out[189]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[201]:&lt;/div&gt;
 
 
 
@@ -243,7 +246,7 @@
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [190]:&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In [202]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
 &lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;##&lt;/span&gt;
@@ -316,7 +319,7 @@
 
 &lt;div class="output_area"&gt;
 
-    &lt;div class="prompt output_prompt"&gt;Out[190]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[202]:&lt;/div&gt;
 
 
 
@@ -494,7 +497,7 @@
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [191]:&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In [203]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
 &lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;##&lt;/span&gt;
@@ -528,7 +531,7 @@
 
 &lt;div class="output_area"&gt;
 
-    &lt;div class="prompt output_prompt"&gt;Out[191]:&lt;/div&gt;
+    &lt;div class="prompt output_prompt"&gt;Out[203]:&lt;/div&gt;
 
 
 
@@ -659,7 +662,7 @@
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [193]:&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In [204]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
 &lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;##&lt;/span&gt;
@@ -687,7 +690,7 @@
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [194]:&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In [205]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
 &lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;##&lt;/span&gt;
@@ -727,7 +730,7 @@
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [195]:&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In [206]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
 &lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;##&lt;/span&gt;
@@ -768,7 +771,7 @@
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [196]:&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In [207]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
 &lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;##&lt;/span&gt;
@@ -810,21 +813,22 @@
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [197]:&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In [208]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
 &lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;##&lt;/span&gt;
-&lt;span class="c1"&gt;## assemble and submission&lt;/span&gt;
+&lt;span class="c1"&gt;## assembly and submission&lt;/span&gt;
 &lt;span class="c1"&gt;##&lt;/span&gt;
 
 &lt;span class="n"&gt;hd_subm&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Submission&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;span class="c1"&gt;# General information:&lt;/span&gt;
-&lt;span class="n"&gt;hd_subm&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;read_abstract&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"babar-pip-pim-2012-insp1114155/abstract.txt"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;hd_subm&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;add_link&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"Webpage with data files"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"http://ftp.aip.org/epaps/phys_rev_lett/E-PRLTAO-103-045950/"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;hd_subm&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;add_link&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"arXiv"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"https://arxiv.org/abs/1205.2228"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;hd_subm&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;add_record_id&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1114155&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"inspire"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 
-&lt;span class="c1"&gt;##--- Add tables&lt;/span&gt;
+&lt;span class="c1"&gt;#--- general info&lt;/span&gt;
+&lt;span class="n"&gt;hd_subm&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;read_abstract&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"babar-pip-pim-2012-insp1114155/abstract.txt"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;hd_subm&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;add_record_id&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1114155&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"inspire"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;hd_subm&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;add_link&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"arXiv"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"https://arxiv.org/abs/1205.2228"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;hd_subm&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;add_link&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"Webpage with data files"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"http://ftp.aip.org/epaps/phys_rev_lett/E-PRLTAO-103-045950/"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="c1"&gt;##--- add tables&lt;/span&gt;
 &lt;span class="n"&gt;hd_subm&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;add_table&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;table_val&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="n"&gt;hd_subm&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;add_table&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;table_syst_unc&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="n"&gt;hd_subm&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;add_table&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;table_stat_cov&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
