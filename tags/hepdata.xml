@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>PrecisionSM</title><link>https://precision-sm.github.io/</link><description>Documentation for Strong-2020 activity PrecisionSM</description><atom:link href="https://precision-sm.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2021 &lt;a href="mailto:alusiani at gmail.com"&gt;PrecisionSM Group&lt;/a&gt; </copyright><lastBuildDate>Tue, 23 Nov 2021 20:48:04 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>BaBar 2012  𝜎(𝑒+𝑒− → 𝜋+𝜋−(𝛾))  HEPData submission</title><link>https://precision-sm.github.io/posts/HEPData-BaBar-2012-pip-pim-subm-nb/</link><dc:creator>PrecisionSM Group</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>PrecisionSM (Posts about HEPData)</title><link>https://precision-sm.github.io/</link><description></description><atom:link href="https://precision-sm.github.io/tags/hepdata.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2021 &lt;a href="mailto:alusiani at gmail.com"&gt;PrecisionSM Group&lt;/a&gt; </copyright><lastBuildDate>Tue, 23 Nov 2021 20:48:04 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>BaBar 2012  𝜎(𝑒+𝑒− → 𝜋+𝜋−(𝛾))  HEPData submission</title><link>https://precision-sm.github.io/posts/HEPData-BaBar-2012-pip-pim-subm-nb/</link><dc:creator>PrecisionSM Group</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="BaBar-2012-$%5Csigma(e%5E+e%5E--%5Cto-%5Cpi%5E+-%5Cpi%5E--(%5Cgamma))$-HEPData-submission"&gt;BaBar 2012 $\sigma(e^+e^- \to \pi^+ \pi^- (\gamma))$ HEPData submission&lt;a class="anchor-link" href="https://precision-sm.github.io/posts/HEPData-BaBar-2012-pip-pim-subm-nb/#BaBar-2012-%24%5Csigma(e%5E+e%5E--%5Cto-%5Cpi%5E+-%5Cpi%5E--(%5Cgamma))%24-HEPData-submission"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;h4 id="Requirements"&gt;Requirements&lt;a class="anchor-link" href="https://precision-sm.github.io/posts/HEPData-BaBar-2012-pip-pim-subm-nb/#Requirements"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;ul&gt;
@@ -851,55 +851,4 @@
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;/div&gt;&lt;/div&gt;</description><category>BaBar</category><category>HEPData</category><guid>https://precision-sm.github.io/posts/HEPData-BaBar-2012-pip-pim-subm-nb/</guid><pubDate>Mon, 22 Nov 2021 12:00:00 GMT</pubDate></item><item><title>Prepare Root Plot with data from HEPData</title><link>https://precision-sm.github.io/posts/mk-hepdata-plot/</link><dc:creator>PrecisionSM Group</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="get-two-cross-section-measurements-from-HEPData-and-plot-them"&gt;get two cross-section measurements from HEPData and plot them&lt;a class="anchor-link" href="https://precision-sm.github.io/posts/mk-hepdata-plot/#get-two-cross-section-measurements-from-HEPData-and-plot-them"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;e+ e- -&amp;gt; pi+ pi- BES-III 2016 &lt;a href="https://www.hepdata.net/record/ins1385603"&gt;https://www.hepdata.net/record/ins1385603&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;e+ e- -&amp;gt; pi+ pi- CMD-2 2007 &lt;a href="https://www.hepdata.net/record/ins728302"&gt;https://www.hepdata.net/record/ins728302&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;a href="https://precision-sm.github.io/posts/mk-hepdata-plot/"&gt;Read more…&lt;/a&gt; (10 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><guid>https://precision-sm.github.io/posts/mk-hepdata-plot/</guid><pubDate>Sat, 21 Nov 2020 00:05:23 GMT</pubDate></item><item><link>https://precision-sm.github.io/posts/example-responsive-plot/</link><dc:creator>PrecisionSM Group</dc:creator><description>&lt;div class="section" id="example-responsive-plot"&gt;
-&lt;h2&gt;Example responsive plot&lt;/h2&gt;
-&lt;p&gt;&lt;a href="https://precision-sm.github.io/posts/example-responsive-plot/"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><guid>https://precision-sm.github.io/posts/example-responsive-plot/</guid><pubDate>Sun, 06 Sep 2020 12:36:05 GMT</pubDate></item><item><link>https://precision-sm.github.io/posts/fedor-ignatov-e%2Be--to-hadrons-plots/</link><dc:creator>PrecisionSM Group</dc:creator><description>&lt;div class="section" id="fedor-ignatov-e-e-hadrons-cross-sections-plots"&gt;
-&lt;h2&gt;Fedor Ignatov e+e- -&amp;gt; hadrons cross sections plots&lt;/h2&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://precision-sm.github.io/vpl/vpolplot.html"&gt;all plots&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a class="reference external" href="https://precision-sm.github.io/vpl/jsplot_2.html?cid=pi+pi-"&gt;$\pi^+\pi^-$&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;</description><guid>https://precision-sm.github.io/posts/fedor-ignatov-e%2Be--to-hadrons-plots/</guid><pubDate>Sat, 04 Jul 2020 15:54:32 GMT</pubDate></item><item><title>ALEPH notes</title><link>https://precision-sm.github.io/posts/notes-on-aleph/</link><dc:creator>PrecisionSM Group</dc:creator><description>&lt;div&gt;&lt;!-- ............................................................................. --&gt;
-&lt;!-- ............................................................................. --&gt;
-&lt;p&gt;Notes on ALEPH measurements.&lt;/p&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;&lt;p&gt;text-primary  &lt;span class="text-primary"&gt;Jupyter is a very handy web application&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;text-success  &lt;span class="text-success"&gt;Jupyter is a very handy web application&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;text-info  &lt;span class="text-info"&gt;Jupyter is a very handy web application&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;text-warning  &lt;span class="text-warning"&gt;Jupyter is a very handy web application&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;text-danger  &lt;span class="text-danger"&gt;Jupyter is a very handy web application&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/div&gt;</description><category>ALEPH</category><guid>https://precision-sm.github.io/posts/notes-on-aleph/</guid><pubDate>Sun, 28 Jun 2020 21:48:33 GMT</pubDate></item><item><title>BaBar cross-section e+ e- to pi+ pi- (gamma)</title><link>https://precision-sm.github.io/posts/BaBar-ep-em-to-pip-pim/</link><dc:creator>PrecisionSM Group</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="BaBar-$\sigma(e^+e^--\rightarrow-\pi^+\pi^--(\gamma))$"&gt;BaBar $\sigma(e^+e^- \rightarrow \pi^+\pi^- (\gamma))$&lt;a class="anchor-link" href="https://precision-sm.github.io/posts/BaBar-ep-em-to-pip-pim/#BaBar-%24%5Csigma(e%5E+e%5E--%5Crightarrow-%5Cpi%5E+%5Cpi%5E--(%5Cgamma))%24"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The latest BaBar measurements are published in two papers, a PRL and a later PRD containing more detailed information. Both papers report the cross-section information in the supplemental material, in ASCII files that are identical.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;B. Aubert et al. [BaBar Collaboration], &lt;a href="https://doi.org/10.1103/PhysRevLett.103.231801"&gt;Phys. Rev. Lett. 103 (2009) 231801&lt;/a&gt;, &lt;a href="http://inspirehep.net/record/829441"&gt;inspirehep&lt;/a&gt;,&lt;br&gt;
-"Precise measurement of the e+ e- ---&amp;gt; pi+ pi- (gamma) cross section with the Initial State Radiation method at BABAR"&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;J. P. Lees et al. [BaBar Collaboration], &lt;a href="https://doi.org/10.1103/PhysRevD.86.032013"&gt;Phys. Rev. D 86 (2012) 032013&lt;/a&gt;, &lt;a href="http://inspirehep.net/record/1114155"&gt;inspirehep&lt;/a&gt;,&lt;br&gt;
-"Precise Measurement of the e+e− → π+π−(γ)e+e−→π+π−(γ) Cross Section with the Initial-State Radiation Method at BABAR"&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="http://ftp.aip.org/epaps/phys_rev_lett/E-PRLTAO-103-045950/"&gt;supplemental material folder&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href="http://ftp.aip.org/epaps/phys_rev_lett/E-PRLTAO-103-045950/BABAR_ISR2pi_EPAPS.txt"&gt;BABAR_ISR2pi_EPAPS.txt&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;The data report the "&lt;strong&gt;bare cross section including FSR&lt;/strong&gt;" in nb, and in detail:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;the cross-section and its total undertainty in variable-width bins of energy&lt;/li&gt;
-&lt;li&gt;the per-mil relative systematic uncertainty (per energy bin, 100% correlated on all bins)&lt;/li&gt;
-&lt;li&gt;the statistical correlation between any two bins of cross-section&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;In the following the data are used to show a few plots.&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://precision-sm.github.io/posts/BaBar-ep-em-to-pip-pim/"&gt;Read more…&lt;/a&gt; (7 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>BaBar</category><guid>https://precision-sm.github.io/posts/BaBar-ep-em-to-pip-pim/</guid><pubDate>Wed, 10 Jun 2020 19:52:05 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;&lt;/div&gt;</description><category>BaBar</category><category>HEPData</category><guid>https://precision-sm.github.io/posts/HEPData-BaBar-2012-pip-pim-subm-nb/</guid><pubDate>Mon, 22 Nov 2021 12:00:00 GMT</pubDate></item></channel></rss>

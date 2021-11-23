@@ -7,11 +7,15 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://precision-sm.github.io/</loc>
-  <lastmod>2021-05-12T22:32:00Z</lastmod>
+  <lastmod>2021-11-23T20:41:00Z</lastmod>
  </url>
  <url>
   <loc>https://precision-sm.github.io/2020/</loc>
   <lastmod>2021-05-12T22:32:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://precision-sm.github.io/2021/</loc>
+  <lastmod>2021-11-23T20:41:00Z</lastmod>
  </url>
  <url>
   <loc>https://precision-sm.github.io/BSM/</loc>
@@ -27,7 +31,7 @@
  </url>
  <url>
   <loc>https://precision-sm.github.io/archive.html</loc>
-  <lastmod>2021-05-12T22:32:00Z</lastmod>
+  <lastmod>2021-11-23T20:41:00Z</lastmod>
  </url>
  <url>
   <loc>https://precision-sm.github.io/categories/</loc>
@@ -67,11 +71,15 @@
  </url>
  <url>
   <loc>https://precision-sm.github.io/posts/</loc>
-  <lastmod>2021-05-12T22:32:00Z</lastmod>
+  <lastmod>2021-11-23T20:41:00Z</lastmod>
  </url>
  <url>
   <loc>https://precision-sm.github.io/posts/BaBar-ep-em-to-pip-pim/</loc>
   <lastmod>2021-05-12T22:32:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://precision-sm.github.io/posts/HEPData-BaBar-2012-pip-pim-subm-nb/</loc>
+  <lastmod>2021-11-23T20:41:00Z</lastmod>
  </url>
  <url>
   <loc>https://precision-sm.github.io/posts/example-responsive-plot/</loc>
@@ -95,7 +103,7 @@
  </url>
  <url>
   <loc>https://precision-sm.github.io/tags/</loc>
-  <lastmod>2021-05-12T22:32:00Z</lastmod>
+  <lastmod>2021-11-23T20:41:00Z</lastmod>
  </url>
  <url>
   <loc>https://precision-sm.github.io/tags/aleph/</loc>
@@ -104,6 +112,10 @@
  <url>
   <loc>https://precision-sm.github.io/tags/babar/</loc>
   <lastmod>2021-05-12T22:32:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://precision-sm.github.io/tags/hepdata/</loc>
+  <lastmod>2021-11-23T20:41:00Z</lastmod>
  </url>
  <url>
   <loc>https://precision-sm.github.io/vpl/jsplot_2.html</loc>
