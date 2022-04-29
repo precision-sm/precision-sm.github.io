@@ -77,37 +77,719 @@ bg-dark
 
     
 <div class="postindex">
-    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="HEPData-BaBar-2012-pip-pim-subm-nb/" class="u-url">BaBar 2012  𝜎(𝑒+𝑒− → 𝜋+𝜋−(𝛾))  HEPData submission</a></h1>
+    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="HEPData-check-115140/" class="u-url">Check HEPData 115140 submission</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 PrecisionSM Group
             </span></p>
             <p class="dateline">
-            <a href="HEPData-BaBar-2012-pip-pim-subm-nb/" rel="bookmark">
-            <time class="published dt-published" datetime="2021-11-22T12:00:00Z" itemprop="datePublished" title="2021-11-22 12:00">2021-11-22 12:00</time></a>
+            <a href="HEPData-check-115140/" rel="bookmark">
+            <time class="published dt-published" datetime="2022-04-29T12:00:00Z" itemprop="datePublished" title="2022-04-29 12:00">2022-04-29 12:00</time></a>
             </p>
         </div>
     </header><div class="p-summary entry-summary">
-    <div>
-<div class="cell border-box-sizing text_cell rendered">
+    <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="BaBar-2012-$%5Csigma(e%5E+e%5E--%5Cto-%5Cpi%5E+-%5Cpi%5E--(%5Cgamma))$-HEPData-submission">BaBar 2012 $\sigma(e^+e^- \to \pi^+ \pi^- (\gamma))$ HEPData submission<a class="anchor-link" href="HEPData-BaBar-2012-pip-pim-subm-nb/#BaBar-2012-%24%5Csigma(e%5E+e%5E--%5Cto-%5Cpi%5E+-%5Cpi%5E--(%5Cgamma))%24-HEPData-submission">¶</a>
+<h2 id="check-HEPDATA-Phys.Rev.D-86-(2012)-032013,-2012">check HEPDATA Phys.Rev.D 86 (2012) 032013, 2012<a class="anchor-link" href="HEPData-check-115140/#check-HEPDATA-Phys.Rev.D-86-(2012)-032013,-2012">¶</a>
 </h2>
-<h4 id="Requirements">Requirements<a class="anchor-link" href="HEPData-BaBar-2012-pip-pim-subm-nb/#Requirements">¶</a>
-</h4>
 <ul>
-<li>CERN Root with python3 libraries and jupyroot</li>
-<li>hepdata_lib python3 library</li>
+<li>go to web page <a href="https://www.hepdata.net/record/115140">HEPData submission</a>
+</li>
+<li>select "Download All" in top-center-left of page<ul>
+<li>select "YAML with resource files"</li>
+</ul>
+</li>
+<li>mkdir ./hd_115140_entry</li>
+<li>unzip the downloaded zip file into folder ./hd_115140_entry</li>
 </ul>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [198]:</div>
+<div class="prompt input_prompt">In [1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+<span class="kn">import</span> <span class="nn">urllib.request</span>
+<span class="kn">from</span> <span class="nn">requests.utils</span> <span class="kn">import</span> <span class="n">requote_uri</span>
+<span class="kn">from</span> <span class="nn">array</span> <span class="kn">import</span> <span class="n">array</span>
+<span class="c1">## import json</span>
+<span class="kn">import</span> <span class="nn">yaml</span>
+<span class="c1">## import itertools</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">##</span>
+<span class="c1">## functions and defs</span>
+<span class="c1">##</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">json_load_url</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
+  <span class="k">return</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">url</span><span class="p">))</span>
+
+<span class="k">def</span> <span class="nf">yaml_load_url</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
+  <span class="k">return</span> <span class="n">yaml</span><span class="o">.</span><span class="n">safe_load</span><span class="p">(</span><span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">url</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">myfolder</span> <span class="o">=</span> <span class="s2">"./hd_115140_entry"</span>
+<span class="n">pprint</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">myfolder</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>['systematic_uncertainty_of_bare_cross-section.yaml',
+ 'statistical_covariance_of_bare_cross-section.yaml',
+ 'submission.yaml',
+ 'bare_cross-section.yaml']
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">##</span>
+<span class="c1">## read bare cross-section value and total uncertainty</span>
+<span class="c1">##</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">myfolder</span><span class="p">,</span> <span class="s2">"bare_cross-section.yaml"</span><span class="p">),</span> <span class="s1">'r'</span><span class="p">)</span> <span class="k">as</span> <span class="n">stream</span><span class="p">:</span>
+  <span class="n">hd_115140_table1</span> <span class="o">=</span> <span class="n">yaml</span><span class="o">.</span><span class="n">safe_load</span><span class="p">(</span><span class="n">stream</span><span class="p">)</span>
+
+<span class="c1">##--- get energy bins</span>
+<span class="n">x_lo_val</span> <span class="o">=</span> <span class="n">array</span><span class="p">(</span><span class="s1">'f'</span><span class="p">)</span>
+<span class="n">x_hi_val</span> <span class="o">=</span> <span class="n">array</span><span class="p">(</span><span class="s1">'f'</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">delem</span> <span class="ow">in</span> <span class="n">hd_115140_table1</span><span class="p">[</span><span class="s2">"independent_variables"</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">"values"</span><span class="p">]:</span>
+  <span class="n">x_lo_val</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">delem</span><span class="p">[</span><span class="s2">"low"</span><span class="p">])</span>
+  <span class="n">x_hi_val</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">delem</span><span class="p">[</span><span class="s2">"high"</span><span class="p">])</span>
+
+<span class="c1">##--- get measured cross-section and total uncertainty</span>
+<span class="n">y_val</span> <span class="o">=</span> <span class="n">array</span><span class="p">(</span><span class="s1">'f'</span><span class="p">)</span>
+<span class="n">y_unc</span> <span class="o">=</span> <span class="n">array</span><span class="p">(</span><span class="s1">'f'</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">delem</span> <span class="ow">in</span> <span class="n">hd_115140_table1</span><span class="p">[</span><span class="s2">"dependent_variables"</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">"values"</span><span class="p">]:</span>
+  <span class="n">y_val</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">delem</span><span class="p">[</span><span class="s2">"value"</span><span class="p">])</span>
+  <span class="n">y_unc</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">delem</span><span class="p">[</span><span class="s2">"errors"</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">"symerror"</span><span class="p">])</span>
+
+<span class="c1">##--- build data frame with table content</span>
+<span class="n">hd_115140_table1_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+  <span class="p">{</span><span class="s2">"E lo"</span><span class="p">:</span> <span class="n">x_lo_val</span><span class="p">,</span> <span class="s2">"E hi"</span><span class="p">:</span> <span class="n">x_hi_val</span><span class="p">,</span> <span class="s2">"sigma val"</span><span class="p">:</span> <span class="n">y_val</span><span class="p">,</span> <span class="s2">"sigma unc"</span><span class="p">:</span> <span class="n">y_unc</span><span class="p">}</span>
+<span class="p">)</span>
+
+<span class="n">hd_115140_table1_df</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[5]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead><tr style="text-align: right;">
+<th></th>
+      <th>E lo</th>
+      <th>E hi</th>
+      <th>sigma val</th>
+      <th>sigma unc</th>
+    </tr></thead>
+<tbody>
+<tr>
+<th>0</th>
+      <td>0.30</td>
+      <td>0.31</td>
+      <td>25.490000</td>
+      <td>2.699400</td>
+    </tr>
+<tr>
+<th>1</th>
+      <td>0.31</td>
+      <td>0.32</td>
+      <td>35.480000</td>
+      <td>2.914600</td>
+    </tr>
+<tr>
+<th>2</th>
+      <td>0.32</td>
+      <td>0.33</td>
+      <td>45.486000</td>
+      <td>3.046700</td>
+    </tr>
+<tr>
+<th>3</th>
+      <td>0.33</td>
+      <td>0.34</td>
+      <td>51.782001</td>
+      <td>3.133600</td>
+    </tr>
+<tr>
+<th>4</th>
+      <td>0.34</td>
+      <td>0.35</td>
+      <td>64.416000</td>
+      <td>3.499500</td>
+    </tr>
+<tr>
+<th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+<tr>
+<th>332</th>
+      <td>2.50</td>
+      <td>2.60</td>
+      <td>0.047650</td>
+      <td>0.018634</td>
+    </tr>
+<tr>
+<th>333</th>
+      <td>2.60</td>
+      <td>2.70</td>
+      <td>0.024211</td>
+      <td>0.013667</td>
+    </tr>
+<tr>
+<th>334</th>
+      <td>2.70</td>
+      <td>2.80</td>
+      <td>0.013945</td>
+      <td>0.014118</td>
+    </tr>
+<tr>
+<th>335</th>
+      <td>2.80</td>
+      <td>2.90</td>
+      <td>0.009181</td>
+      <td>0.013260</td>
+    </tr>
+<tr>
+<th>336</th>
+      <td>2.90</td>
+      <td>3.00</td>
+      <td>0.010228</td>
+      <td>0.012373</td>
+    </tr>
+</tbody>
+</table>
+<p>337 rows × 4 columns</p>
+</div></div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">##</span>
+<span class="c1">## read systematics table</span>
+<span class="c1">##</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">myfolder</span><span class="p">,</span> <span class="s2">"systematic_uncertainty_of_bare_cross-section.yaml"</span><span class="p">),</span> <span class="s1">'r'</span><span class="p">)</span> <span class="k">as</span> <span class="n">stream</span><span class="p">:</span>
+  <span class="n">hd_115140_table2</span> <span class="o">=</span> <span class="n">yaml</span><span class="o">.</span><span class="n">safe_load</span><span class="p">(</span><span class="n">stream</span><span class="p">)</span>
+
+<span class="c1">##--- get energy bins</span>
+<span class="n">x_lo_val</span> <span class="o">=</span> <span class="n">array</span><span class="p">(</span><span class="s1">'f'</span><span class="p">)</span>
+<span class="n">x_hi_val</span> <span class="o">=</span> <span class="n">array</span><span class="p">(</span><span class="s1">'f'</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">delem</span> <span class="ow">in</span> <span class="n">hd_115140_table2</span><span class="p">[</span><span class="s2">"independent_variables"</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">"values"</span><span class="p">]:</span>
+  <span class="n">x_lo_val</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">delem</span><span class="p">[</span><span class="s2">"low"</span><span class="p">])</span>
+  <span class="n">x_hi_val</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">delem</span><span class="p">[</span><span class="s2">"high"</span><span class="p">])</span>
+
+<span class="c1">##--- get systematic uncertainties in percent</span>
+<span class="n">col_names</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">syst_unc_perc</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">depvar</span> <span class="ow">in</span> <span class="n">hd_115140_table2</span><span class="p">[</span><span class="s2">"dependent_variables"</span><span class="p">]:</span>
+  <span class="n">col_names</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">depvar</span><span class="p">[</span><span class="s2">"header"</span><span class="p">][</span><span class="s2">"name"</span><span class="p">])</span>
+  <span class="n">syst_unc_perc</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">delem</span><span class="p">[</span><span class="s2">"value"</span><span class="p">]</span> <span class="k">for</span> <span class="n">delem</span> <span class="ow">in</span> <span class="n">depvar</span><span class="p">[</span><span class="s2">"values"</span><span class="p">]])</span>
+
+<span class="n">hd_115140_table2_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+  <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span>
+    <span class="p">[</span><span class="o">*</span><span class="p">[</span><span class="s2">"E lo"</span><span class="p">,</span> <span class="s2">"E hi"</span><span class="p">],</span> <span class="o">*</span><span class="n">col_names</span><span class="p">],</span> <span class="p">[</span><span class="o">*</span><span class="p">[</span><span class="n">x_lo_val</span><span class="p">,</span> <span class="n">x_hi_val</span><span class="p">],</span> <span class="o">*</span><span class="n">syst_unc_perc</span><span class="p">]</span>
+  <span class="p">))</span>
+<span class="p">)</span>
+<span class="n">hd_115140_table2_df</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[6]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead><tr style="text-align: right;">
+<th></th>
+      <th>E lo</th>
+      <th>E hi</th>
+      <th>total</th>
+      <th>trigger / filter</th>
+      <th>tracking</th>
+      <th>pi-ID</th>
+      <th>background</th>
+      <th>acceptance</th>
+      <th>kinematic fit chi2 cut</th>
+      <th>correlated mu mu ID loss</th>
+      <th>non cancellation of HO ISR in pi pi gamma/mu mu gamma ratio</th>
+      <th>unfolding</th>
+      <th>ISR luminosity from mu mu gamma process</th>
+    </tr></thead>
+<tbody>
+<tr>
+<th>0</th>
+      <td>0.3</td>
+      <td>0.4</td>
+      <td>1.38</td>
+      <td>0.53</td>
+      <td>0.38</td>
+      <td>1.01</td>
+      <td>0.35</td>
+      <td>0.16</td>
+      <td>0.09</td>
+      <td>0.30</td>
+      <td>0.27</td>
+      <td>0.10</td>
+      <td>0.34</td>
+    </tr>
+<tr>
+<th>1</th>
+      <td>0.4</td>
+      <td>0.5</td>
+      <td>0.81</td>
+      <td>0.27</td>
+      <td>0.21</td>
+      <td>0.25</td>
+      <td>0.43</td>
+      <td>0.16</td>
+      <td>0.09</td>
+      <td>0.20</td>
+      <td>0.14</td>
+      <td>0.27</td>
+      <td>0.34</td>
+    </tr>
+<tr>
+<th>2</th>
+      <td>0.5</td>
+      <td>0.6</td>
+      <td>1.02</td>
+      <td>0.19</td>
+      <td>0.21</td>
+      <td>0.62</td>
+      <td>0.52</td>
+      <td>0.10</td>
+      <td>0.03</td>
+      <td>0.30</td>
+      <td>0.16</td>
+      <td>0.27</td>
+      <td>0.34</td>
+    </tr>
+<tr>
+<th>3</th>
+      <td>0.6</td>
+      <td>0.9</td>
+      <td>0.50</td>
+      <td>0.10</td>
+      <td>0.11</td>
+      <td>0.24</td>
+      <td>0.10</td>
+      <td>0.10</td>
+      <td>0.03</td>
+      <td>0.13</td>
+      <td>0.11</td>
+      <td>0.10</td>
+      <td>0.34</td>
+    </tr>
+<tr>
+<th>4</th>
+      <td>0.9</td>
+      <td>1.2</td>
+      <td>0.65</td>
+      <td>0.05</td>
+      <td>0.17</td>
+      <td>0.42</td>
+      <td>0.30</td>
+      <td>0.16</td>
+      <td>0.09</td>
+      <td>0.20</td>
+      <td>0.13</td>
+      <td>0.13</td>
+      <td>0.34</td>
+    </tr>
+<tr>
+<th>5</th>
+      <td>1.2</td>
+      <td>1.4</td>
+      <td>1.39</td>
+      <td>0.04</td>
+      <td>0.31</td>
+      <td>1.01</td>
+      <td>0.70</td>
+      <td>0.16</td>
+      <td>0.09</td>
+      <td>0.30</td>
+      <td>0.27</td>
+      <td>0.10</td>
+      <td>0.34</td>
+    </tr>
+<tr>
+<th>6</th>
+      <td>1.4</td>
+      <td>2.0</td>
+      <td>1.98</td>
+      <td>0.03</td>
+      <td>0.31</td>
+      <td>1.01</td>
+      <td>1.20</td>
+      <td>0.16</td>
+      <td>0.09</td>
+      <td>1.00</td>
+      <td>0.51</td>
+      <td>0.10</td>
+      <td>0.34</td>
+    </tr>
+<tr>
+<th>7</th>
+      <td>2.0</td>
+      <td>3.0</td>
+      <td>5.24</td>
+      <td>0.03</td>
+      <td>0.31</td>
+      <td>1.01</td>
+      <td>5.00</td>
+      <td>0.16</td>
+      <td>0.09</td>
+      <td>1.00</td>
+      <td>0.51</td>
+      <td>0.10</td>
+      <td>0.34</td>
+    </tr>
+</tbody>
+</table>
+</div></div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">##</span>
+<span class="c1">## read statistical covariance</span>
+<span class="c1">##</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">myfolder</span><span class="p">,</span> <span class="s2">"statistical_covariance_of_bare_cross-section.yaml"</span><span class="p">),</span> <span class="s1">'r'</span><span class="p">)</span> <span class="k">as</span> <span class="n">stream</span><span class="p">:</span>
+  <span class="n">hd_115140_table3</span> <span class="o">=</span> <span class="n">yaml</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">stream</span><span class="p">,</span> <span class="n">Loader</span><span class="o">=</span><span class="n">yaml</span><span class="o">.</span><span class="n">CBaseLoader</span><span class="p">)</span>
+
+<span class="n">hd_115140_table3_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+  <span class="p">[</span>
+    <span class="p">[</span><span class="n">ivar1</span><span class="p">[</span><span class="s2">"low"</span><span class="p">],</span> <span class="n">ivar1</span><span class="p">[</span><span class="s2">"high"</span><span class="p">],</span> <span class="n">ivar2</span><span class="p">[</span><span class="s2">"low"</span><span class="p">],</span> <span class="n">ivar2</span><span class="p">[</span><span class="s2">"high"</span><span class="p">],</span> <span class="n">dvar</span><span class="p">[</span><span class="s2">"value"</span><span class="p">]]</span>
+    <span class="k">for</span> <span class="n">ivar1</span><span class="p">,</span> <span class="n">ivar2</span><span class="p">,</span> <span class="n">dvar</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span>
+     <span class="n">hd_115140_table3</span><span class="p">[</span><span class="s2">"independent_variables"</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">"values"</span><span class="p">],</span>
+     <span class="n">hd_115140_table3</span><span class="p">[</span><span class="s2">"independent_variables"</span><span class="p">][</span><span class="mi">1</span><span class="p">][</span><span class="s2">"values"</span><span class="p">],</span>
+     <span class="n">hd_115140_table3</span><span class="p">[</span><span class="s2">"dependent_variables"</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">"values"</span><span class="p">]</span>
+    <span class="p">)</span>
+  <span class="p">],</span>
+  <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"row E lo"</span><span class="p">,</span> <span class="s2">"row E hi"</span><span class="p">,</span> <span class="s2">"col E lo"</span><span class="p">,</span> <span class="s2">"col E hi"</span><span class="p">,</span> <span class="s2">"cov"</span><span class="p">]</span>  
+<span class="p">)</span>
+
+<span class="n">hd_115140_table3_df</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[7]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead><tr style="text-align: right;">
+<th></th>
+      <th>row E lo</th>
+      <th>row E hi</th>
+      <th>col E lo</th>
+      <th>col E hi</th>
+      <th>cov</th>
+    </tr></thead>
+<tbody>
+<tr>
+<th>0</th>
+      <td>0.3</td>
+      <td>0.31</td>
+      <td>0.3</td>
+      <td>0.31</td>
+      <td>7.1641</td>
+    </tr>
+<tr>
+<th>1</th>
+      <td>0.31</td>
+      <td>0.32</td>
+      <td>0.3</td>
+      <td>0.31</td>
+      <td>0.81121</td>
+    </tr>
+<tr>
+<th>2</th>
+      <td>0.32</td>
+      <td>0.33</td>
+      <td>0.3</td>
+      <td>0.31</td>
+      <td>0.029249</td>
+    </tr>
+<tr>
+<th>3</th>
+      <td>0.33</td>
+      <td>0.34</td>
+      <td>0.3</td>
+      <td>0.31</td>
+      <td>0.21607</td>
+    </tr>
+<tr>
+<th>4</th>
+      <td>0.34</td>
+      <td>0.35</td>
+      <td>0.3</td>
+      <td>0.31</td>
+      <td>0.052641</td>
+    </tr>
+<tr>
+<th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+<tr>
+<th>113564</th>
+      <td>2.5</td>
+      <td>2.6</td>
+      <td>2.9</td>
+      <td>3.0</td>
+      <td>1.7936e-13</td>
+    </tr>
+<tr>
+<th>113565</th>
+      <td>2.6</td>
+      <td>2.7</td>
+      <td>2.9</td>
+      <td>3.0</td>
+      <td>1.1103e-13</td>
+    </tr>
+<tr>
+<th>113566</th>
+      <td>2.7</td>
+      <td>2.8</td>
+      <td>2.9</td>
+      <td>3.0</td>
+      <td>1.1489e-13</td>
+    </tr>
+<tr>
+<th>113567</th>
+      <td>2.8</td>
+      <td>2.9</td>
+      <td>2.9</td>
+      <td>3.0</td>
+      <td>4.0e-06</td>
+    </tr>
+<tr>
+<th>113568</th>
+      <td>2.9</td>
+      <td>3.0</td>
+      <td>2.9</td>
+      <td>3.0</td>
+      <td>0.000153</td>
+    </tr>
+</tbody>
+</table>
+<p>113569 rows × 5 columns</p>
+</div></div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="HEPData-subm-BaBar-2012-pip-pim/" class="u-url">HEPData submission BaBar 2012 𝜎(𝑒+𝑒− → 𝜋+𝜋−(𝛾))</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                PrecisionSM Group
+            </span></p>
+            <p class="dateline">
+            <a href="HEPData-subm-BaBar-2012-pip-pim/" rel="bookmark">
+            <time class="published dt-published" datetime="2021-11-22T12:00:00Z" itemprop="datePublished" title="2021-11-22 12:00">2021-11-22 12:00</time></a>
+            </p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="BaBar-2012-$%5Csigma(e%5E+e%5E--%5Cto-%5Cpi%5E+-%5Cpi%5E--(%5Cgamma))$-HEPData-submission">BaBar 2012 $\sigma(e^+e^- \to \pi^+ \pi^- (\gamma))$ HEPData submission<a class="anchor-link" href="HEPData-subm-BaBar-2012-pip-pim/#BaBar-2012-%24%5Csigma(e%5E+e%5E--%5Cto-%5Cpi%5E+-%5Cpi%5E--(%5Cgamma))%24-HEPData-submission">¶</a>
+</h2>
+<ul>
+<li><a href="https://doi.org/10.1103/PhysRevD.86.032013">Phys.Rev.D 86 (2012) 032013, 2012</a></li>
+<li><a href="https://inspirehep.net/literature/1114155">InspireHEP 1114155</a></li>
+</ul>
+<h4 id="Requirements">Requirements<a class="anchor-link" href="HEPData-subm-BaBar-2012-pip-pim/#Requirements">¶</a>
+</h4>
+<ul>
+<li>
+<a href="https://github.com/HEPData/hepdata_lib">hepdata_lib</a> python3 library<ul>
+<li>
+<a href="https://root.cern.ch">ROOT</a> with Python3 libraries</li>
+<li><a href="https://www.imagemagick.org">ImageMagick</a></li>
+<li>Make sure that you have <code>ROOT</code> in your <code>$PYTHONPATH</code> and that the <code>convert</code> command is available by adding its location to your <code>$PATH</code> if needed.</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [20]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
@@ -115,6 +797,7 @@ bg-dark
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">io</span>
 <span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">tempfile</span>
 <span class="kn">import</span> <span class="nn">re</span>
 <span class="kn">import</span> <span class="nn">urllib.request</span>
 <span class="kn">from</span> <span class="nn">requests.utils</span> <span class="kn">import</span> <span class="n">requote_uri</span>
@@ -131,7 +814,7 @@ bg-dark
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [199]:</div>
+<div class="prompt input_prompt">In [2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">hepdata_lib</span>
@@ -140,33 +823,6 @@ bg-dark
 <span class="kn">from</span> <span class="nn">hepdata_lib</span> <span class="kn">import</span> <span class="n">Variable</span><span class="p">,</span> <span class="n">Uncertainty</span>
 <span class="kn">from</span> <span class="nn">hepdata_lib</span> <span class="kn">import</span> <span class="n">RootFileReader</span>
 <span class="kn">from</span> <span class="nn">hepdata_lib</span> <span class="kn">import</span> <span class="n">root_utils</span>
-
-<span class="kn">import</span> <span class="nn">ROOT</span>
-<span class="kn">from</span> <span class="nn">ROOT</span> <span class="kn">import</span> <span class="n">TCanvas</span><span class="p">,</span> <span class="n">TFile</span><span class="p">,</span> <span class="n">TProfile</span><span class="p">,</span> <span class="n">TNtuple</span><span class="p">,</span> <span class="n">TH1F</span><span class="p">,</span> <span class="n">TH2F</span><span class="p">,</span> <span class="n">TLegend</span>
-<span class="kn">from</span> <span class="nn">ROOT</span> <span class="kn">import</span> <span class="n">TH1D</span><span class="p">,</span> <span class="n">TH2D</span>
-<span class="kn">from</span> <span class="nn">ROOT</span> <span class="kn">import</span> <span class="n">TGraph</span><span class="p">,</span> <span class="n">TGraphErrors</span><span class="p">,</span> <span class="n">TGraphAsymmErrors</span>
-<span class="kn">from</span> <span class="nn">ROOT</span> <span class="kn">import</span> <span class="n">gROOT</span><span class="p">,</span> <span class="n">gBenchmark</span><span class="p">,</span> <span class="n">gRandom</span><span class="p">,</span> <span class="n">gSystem</span><span class="p">,</span> <span class="n">gStyle</span><span class="p">,</span> <span class="n">gPad</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [200]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">##</span>
-<span class="c1">## download BaBar Phys. Rev. D 86 (2012) 032013 suppl. mat.</span>
-<span class="c1">##</span>
-<span class="n">babar_data_url</span> <span class="o">=</span> <span class="s2">"""</span><span class="se">\</span>
-<span class="s2">http://ftp.aip.org/</span><span class="se">\</span>
-<span class="s2">epaps/phys_rev_lett/E-PRLTAO-103-045950/BABAR_ISR2pi_EPAPS.txt</span><span class="se">\</span>
-<span class="s2">"""</span>
-<span class="n">tmpfile</span><span class="p">,</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlretrieve</span><span class="p">(</span><span class="n">babar_data_url</span><span class="p">)</span>
-<span class="n">tmpfile</span>
 </pre></div>
 
     </div>
@@ -179,13 +835,59 @@ bg-dark
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[200]:</div>
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Welcome to JupyROOT 6.24/06
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [19]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">##</span>
+<span class="c1">## abstract</span>
+<span class="c1">##</span>
+<span class="n">paper_abstract</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">"""A precise measurement of the cross section of the process $e^+e^- \to</span>
+<span class="s2">\pi^+\pi^-(\gamma)$ from threshold to an energy of $3$ GeV is obtained with the</span>
+<span class="s2">initial-state radiation (ISR) method using $232$ fb$^{-1}$ of data collected</span>
+<span class="s2">with the BaBar detector at $e^+e^-$ center-of-mass energies near $10.6$ GeV.</span>
+<span class="s2">The ISR luminosity is determined from a study of the leptonic process</span>
+<span class="s2">$e^+e^-\to\mu^+\mu^-(\gamma)\gamma_{\rm ISR}$, which is found to agree with the</span>
+<span class="s2">next-to-leading-order QED prediction to within 1.1\%. The cross section for the</span>
+<span class="s2">process $e^+e^-\to\pi^+\pi^-(\gamma)$ is obtained with a systematic uncertainty</span>
+<span class="s2">of 0.5\</span><span class="si">% i</span><span class="s2">n the dominant $\rho$ resonance region. The leading-order hadronic</span>
+<span class="s2">contribution to the muon magnetic anomaly calculated using the measured</span>
+<span class="s2">$\pi\pi$ cross section from threshold to $1.8$ GeV is $(514.1 \pm 2.2({\rm</span>
+<span class="s2">stat}) \pm 3.1({\rm syst}))\times 10^{-10}$."""</span>
+<span class="n">paper_abstract</span> <span class="o">=</span> <span class="s1">' '</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">paper_abstract</span><span class="o">.</span><span class="n">splitlines</span><span class="p">())</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[19]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>'/tmp/tmpu1dzn_k1'</pre>
+<pre>'A precise measurement of the cross section of the process $e^+e^- \\to \\pi^+\\pi^-(\\gamma)$ from threshold to an energy of $3$ GeV is obtained with the initial-state radiation (ISR) method using $232$ fb$^{-1}$ of data collected with the BaBar detector at $e^+e^-$ center-of-mass energies near $10.6$ GeV. The ISR luminosity is determined from a study of the leptonic process $e^+e^-\\to\\mu^+\\mu^-(\\gamma)\\gamma_{\\rm ISR}$, which is found to agree with the next-to-leading-order QED prediction to within 1.1\\%. The cross section for the process $e^+e^-\\to\\pi^+\\pi^-(\\gamma)$ is obtained with a systematic uncertainty of 0.5\\% in the dominant $\\rho$ resonance region. The leading-order hadronic contribution to the muon magnetic anomaly calculated using the measured $\\pi\\pi$ cross section from threshold to $1.8$ GeV is $(514.1 \\pm 2.2({\\rm stat}) \\pm 3.1({\\rm syst}))\\times 10^{-10}$.'</pre>
 </div>
 
 </div>
@@ -196,7 +898,48 @@ bg-dark
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [201]:</div>
+<div class="prompt input_prompt">In [3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">##</span>
+<span class="c1">## download BaBar Phys. Rev. D 86 (2012) 032013 suppl. mat.</span>
+<span class="c1">##</span>
+<span class="c1"># babar_data_url = """\</span>
+<span class="c1"># http://ftp.aip.org/\</span>
+<span class="c1"># epaps/phys_rev_lett/E-PRLTAO-103-045950/BABAR_ISR2pi_EPAPS.txt\</span>
+<span class="c1"># """</span>
+<span class="c1"># tmpfile, headers = urllib.request.urlretrieve(babar_data_url)</span>
+<span class="c1"># tmpfile</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">##</span>
+<span class="c1">## if public repository not available</span>
+<span class="c1">## must download with authentication from PRD supplementary material archive</span>
+<span class="c1">## https://journals.aps.org/prd/supplemental/10.1103/PhysRevD.86.032013</span>
+<span class="c1">## and place the file in the location below</span>
+<span class="c1">##</span>
+<span class="n">babar_data_url</span> <span class="o">=</span> <span class="s2">"https://journals.aps.org/prd/supplemental/10.1103/PhysRevD.86.032013"</span>
+<span class="n">tmpfile</span> <span class="o">=</span> <span class="s2">"babar-2012/BABAR_ISR2pi_EPAPS.txt"</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">##</span>
@@ -222,7 +965,7 @@ bg-dark
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[201]:</div>
+    <div class="prompt output_prompt">Out[5]:</div>
 
 
 
@@ -339,7 +1082,7 @@ bg-dark
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [202]:</div>
+<div class="prompt input_prompt">In [6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">##</span>
@@ -412,7 +1155,7 @@ bg-dark
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[202]:</div>
+    <div class="prompt output_prompt">Out[6]:</div>
 
 
 
@@ -588,7 +1331,7 @@ bg-dark
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [203]:</div>
+<div class="prompt input_prompt">In [7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">##</span>
@@ -622,7 +1365,7 @@ bg-dark
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[203]:</div>
+    <div class="prompt output_prompt">Out[7]:</div>
 
 
 
@@ -751,7 +1494,7 @@ bg-dark
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [204]:</div>
+<div class="prompt input_prompt">In [8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">##</span>
@@ -779,7 +1522,7 @@ bg-dark
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [205]:</div>
+<div class="prompt input_prompt">In [9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">##</span>
@@ -795,18 +1538,22 @@ bg-dark
 <span class="n">table_val</span><span class="o">.</span><span class="n">keywords</span><span class="p">[</span><span class="s2">"reactions"</span><span class="p">]</span> <span class="o">=</span> <span class="n">keyw_reactions</span>
 <span class="n">table_val</span><span class="o">.</span><span class="n">keywords</span><span class="p">[</span><span class="s2">"phrases"</span><span class="p">]</span> <span class="o">=</span> <span class="n">keyw_phrases</span>
 
+<span class="c1">##--- independent variable: energy bins</span>
 <span class="n">val_x</span> <span class="o">=</span> <span class="n">Variable</span><span class="p">(</span><span class="s2">"SQRT(S)"</span><span class="p">,</span> <span class="n">is_independent</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">is_binned</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s2">"GeV"</span><span class="p">)</span>
 <span class="n">val_x</span><span class="o">.</span><span class="n">values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">column_stack</span><span class="p">((</span><span class="n">sigma_df</span><span class="p">[</span><span class="s2">"E_l"</span><span class="p">],</span> <span class="n">sigma_df</span><span class="p">[</span><span class="s2">"E_h"</span><span class="p">]))</span>
 
+<span class="c1">##--- dependent variable: bare cross-section vs. energy bin</span>
 <span class="n">val_y</span> <span class="o">=</span> <span class="n">Variable</span><span class="p">(</span><span class="s2">"$\sigma_{\pi^+\pi^-(\gamma)}$"</span><span class="p">,</span>  <span class="n">is_independent</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">is_binned</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s2">"nb"</span><span class="p">)</span>
 <span class="n">val_y</span><span class="o">.</span><span class="n">values</span> <span class="o">=</span> <span class="n">sigma_df</span><span class="p">[</span><span class="s2">"sigma_val"</span><span class="p">]</span>
 <span class="n">val_y</span><span class="o">.</span><span class="n">add_qualifier</span><span class="p">(</span><span class="s2">"SQRT(S)"</span><span class="p">,</span> <span class="n">qual_sqrt_s</span><span class="p">,</span> <span class="s2">"GeV"</span><span class="p">)</span>
 <span class="n">val_y</span><span class="o">.</span><span class="n">add_qualifier</span><span class="p">(</span><span class="s2">"RE"</span><span class="p">,</span> <span class="n">qual_re</span><span class="p">)</span>
 
+<span class="c1">##--- uncertainty of above variable</span>
 <span class="n">val_y_unc</span> <span class="o">=</span> <span class="n">Uncertainty</span><span class="p">(</span><span class="s2">"total"</span><span class="p">,</span> <span class="n">is_symmetric</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">val_y_unc</span><span class="o">.</span><span class="n">values</span> <span class="o">=</span> <span class="n">sigma_df</span><span class="p">[</span><span class="s2">"sigma_unc"</span><span class="p">]</span>
 <span class="n">val_y</span><span class="o">.</span><span class="n">add_uncertainty</span><span class="p">(</span><span class="n">val_y_unc</span><span class="p">)</span>
 
+<span class="c1">##--- assemble HEPDATA table</span>
 <span class="n">table_val</span><span class="o">.</span><span class="n">add_variable</span><span class="p">(</span><span class="n">val_x</span><span class="p">)</span>
 <span class="n">table_val</span><span class="o">.</span><span class="n">add_variable</span><span class="p">(</span><span class="n">val_y</span><span class="p">)</span>
 <span class="c1">## table_val.add_image("image.eps")</span>
@@ -819,7 +1566,7 @@ bg-dark
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [206]:</div>
+<div class="prompt input_prompt">In [10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">##</span>
@@ -828,8 +1575,9 @@ bg-dark
 
 <span class="n">table_syst_unc</span> <span class="o">=</span> <span class="n">Table</span><span class="p">(</span><span class="s2">"Systematic uncertainty of bare cross-section"</span><span class="p">)</span>
 <span class="n">table_syst_unc</span><span class="o">.</span><span class="n">description</span> <span class="o">=</span> <span class="s2">"""</span><span class="se">\</span>
-<span class="s2">Systematic uncertainty of bare cross-section of </span><span class="se">\</span>
-<span class="s2">$e^+e^-</span><span class="se">\\</span><span class="s2">rightarrow\pi^+\pi^-(\gamma)$</span><span class="se">\</span>
+<span class="s2">Systematic uncertainties of bare cross-section of </span><span class="se">\</span>
+<span class="s2">$e^+e^-</span><span class="se">\\</span><span class="s2">rightarrow\pi^+\pi^-(\gamma)$</span>
+<span class="s2">all systematics contributions are each 100</span><span class="si">% c</span><span class="s2">orrelated in all energy bins</span><span class="se">\</span>
 <span class="s2">"""</span>
 <span class="n">table_syst_unc</span><span class="o">.</span><span class="n">location</span> <span class="o">=</span> <span class="s2">"Data from "</span> <span class="o">+</span> <span class="n">babar_data_url</span>
 
@@ -842,14 +1590,109 @@ bg-dark
 <span class="n">syst_unc_x</span><span class="o">.</span><span class="n">values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">column_stack</span><span class="p">((</span><span class="n">sigma_syst_df</span><span class="p">[</span><span class="s2">"E_l"</span><span class="p">],</span> <span class="n">sigma_syst_df</span><span class="p">[</span><span class="s2">"E_h"</span><span class="p">]))</span>
 
 <span class="n">syst_unc_y</span> <span class="o">=</span> <span class="n">Variable</span><span class="p">(</span>
-  <span class="s2">"$\sigma_{\pi^+\pi^-(\gamma)}$ percent systematic uncertainty"</span><span class="p">,</span>
+  <span class="s2">"total"</span><span class="p">,</span>
   <span class="n">is_independent</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">is_binned</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s2">"%"</span>
 <span class="p">)</span>
 <span class="n">syst_unc_y</span><span class="o">.</span><span class="n">values</span> <span class="o">=</span> <span class="n">sigma_syst_df</span><span class="p">[</span><span class="s2">"unc_syst_perc_tot"</span><span class="p">]</span>
 <span class="n">syst_unc_y</span><span class="o">.</span><span class="n">add_qualifier</span><span class="p">(</span><span class="s2">"SQRT(S)"</span><span class="p">,</span> <span class="n">qual_sqrt_s</span><span class="p">,</span> <span class="s2">"GeV"</span><span class="p">)</span>
 <span class="n">syst_unc_y</span><span class="o">.</span><span class="n">add_qualifier</span><span class="p">(</span><span class="s2">"RE"</span><span class="p">,</span> <span class="n">qual_re</span><span class="p">)</span>
 
-<span class="k">for</span> <span class="n">var</span> <span class="ow">in</span> <span class="p">[</span><span class="n">syst_unc_x</span><span class="p">,</span> <span class="n">syst_unc_y</span><span class="p">]:</span>
+<span class="c1"># Sources  1   trigger / filter </span>
+<span class="c1">#          2   tracking</span>
+<span class="c1">#          3   pi-ID</span>
+<span class="c1">#          4   background</span>
+<span class="c1">#          5   acceptance</span>
+<span class="c1">#          6   kinematic fit chi2 cut</span>
+<span class="c1">#          7   correlated mu mu ID loss</span>
+<span class="c1">#          8   non cancellation of HO ISR in pi pi gamma/mu mu gamma ratio</span>
+<span class="c1">#          9   unfolding</span>
+<span class="c1">#         10   ISR luminosity from mu mu gamma process</span>
+
+<span class="n">syst_unc_y1</span> <span class="o">=</span> <span class="n">Variable</span><span class="p">(</span>
+  <span class="s2">"trigger / filter "</span><span class="p">,</span>
+  <span class="n">is_independent</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">is_binned</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s2">"%"</span>
+<span class="p">)</span>
+<span class="n">syst_unc_y1</span><span class="o">.</span><span class="n">values</span> <span class="o">=</span> <span class="n">sigma_syst_df</span><span class="p">[</span><span class="s2">"unc_syst_perc_1"</span><span class="p">]</span>
+<span class="n">syst_unc_y1</span><span class="o">.</span><span class="n">add_qualifier</span><span class="p">(</span><span class="s2">"SQRT(S)"</span><span class="p">,</span> <span class="n">qual_sqrt_s</span><span class="p">,</span> <span class="s2">"GeV"</span><span class="p">)</span>
+<span class="n">syst_unc_y1</span><span class="o">.</span><span class="n">add_qualifier</span><span class="p">(</span><span class="s2">"RE"</span><span class="p">,</span> <span class="n">qual_re</span><span class="p">)</span>
+
+<span class="n">syst_unc_y2</span> <span class="o">=</span> <span class="n">Variable</span><span class="p">(</span>
+  <span class="s2">"tracking"</span><span class="p">,</span>
+  <span class="n">is_independent</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">is_binned</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s2">"%"</span>
+<span class="p">)</span>
+<span class="n">syst_unc_y2</span><span class="o">.</span><span class="n">values</span> <span class="o">=</span> <span class="n">sigma_syst_df</span><span class="p">[</span><span class="s2">"unc_syst_perc_2"</span><span class="p">]</span>
+<span class="n">syst_unc_y2</span><span class="o">.</span><span class="n">add_qualifier</span><span class="p">(</span><span class="s2">"SQRT(S)"</span><span class="p">,</span> <span class="n">qual_sqrt_s</span><span class="p">,</span> <span class="s2">"GeV"</span><span class="p">)</span>
+<span class="n">syst_unc_y2</span><span class="o">.</span><span class="n">add_qualifier</span><span class="p">(</span><span class="s2">"RE"</span><span class="p">,</span> <span class="n">qual_re</span><span class="p">)</span>
+
+<span class="n">syst_unc_y3</span> <span class="o">=</span> <span class="n">Variable</span><span class="p">(</span>
+  <span class="s2">"pi-ID"</span><span class="p">,</span>
+  <span class="n">is_independent</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">is_binned</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s2">"%"</span>
+<span class="p">)</span>
+<span class="n">syst_unc_y3</span><span class="o">.</span><span class="n">values</span> <span class="o">=</span> <span class="n">sigma_syst_df</span><span class="p">[</span><span class="s2">"unc_syst_perc_3"</span><span class="p">]</span>
+<span class="n">syst_unc_y3</span><span class="o">.</span><span class="n">add_qualifier</span><span class="p">(</span><span class="s2">"SQRT(S)"</span><span class="p">,</span> <span class="n">qual_sqrt_s</span><span class="p">,</span> <span class="s2">"GeV"</span><span class="p">)</span>
+<span class="n">syst_unc_y3</span><span class="o">.</span><span class="n">add_qualifier</span><span class="p">(</span><span class="s2">"RE"</span><span class="p">,</span> <span class="n">qual_re</span><span class="p">)</span>
+
+<span class="n">syst_unc_y4</span> <span class="o">=</span> <span class="n">Variable</span><span class="p">(</span>
+  <span class="s2">"background"</span><span class="p">,</span>
+  <span class="n">is_independent</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">is_binned</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s2">"%"</span>
+<span class="p">)</span>
+<span class="n">syst_unc_y4</span><span class="o">.</span><span class="n">values</span> <span class="o">=</span> <span class="n">sigma_syst_df</span><span class="p">[</span><span class="s2">"unc_syst_perc_4"</span><span class="p">]</span>
+<span class="n">syst_unc_y4</span><span class="o">.</span><span class="n">add_qualifier</span><span class="p">(</span><span class="s2">"SQRT(S)"</span><span class="p">,</span> <span class="n">qual_sqrt_s</span><span class="p">,</span> <span class="s2">"GeV"</span><span class="p">)</span>
+<span class="n">syst_unc_y4</span><span class="o">.</span><span class="n">add_qualifier</span><span class="p">(</span><span class="s2">"RE"</span><span class="p">,</span> <span class="n">qual_re</span><span class="p">)</span>
+
+<span class="n">syst_unc_y5</span> <span class="o">=</span> <span class="n">Variable</span><span class="p">(</span>
+  <span class="s2">"acceptance"</span><span class="p">,</span>
+  <span class="n">is_independent</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">is_binned</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s2">"%"</span>
+<span class="p">)</span>
+<span class="n">syst_unc_y5</span><span class="o">.</span><span class="n">values</span> <span class="o">=</span> <span class="n">sigma_syst_df</span><span class="p">[</span><span class="s2">"unc_syst_perc_5"</span><span class="p">]</span>
+<span class="n">syst_unc_y5</span><span class="o">.</span><span class="n">add_qualifier</span><span class="p">(</span><span class="s2">"SQRT(S)"</span><span class="p">,</span> <span class="n">qual_sqrt_s</span><span class="p">,</span> <span class="s2">"GeV"</span><span class="p">)</span>
+<span class="n">syst_unc_y5</span><span class="o">.</span><span class="n">add_qualifier</span><span class="p">(</span><span class="s2">"RE"</span><span class="p">,</span> <span class="n">qual_re</span><span class="p">)</span>
+
+<span class="n">syst_unc_y6</span> <span class="o">=</span> <span class="n">Variable</span><span class="p">(</span>
+  <span class="s2">"kinematic fit chi2 cut"</span><span class="p">,</span>
+  <span class="n">is_independent</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">is_binned</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s2">"%"</span>
+<span class="p">)</span>
+<span class="n">syst_unc_y6</span><span class="o">.</span><span class="n">values</span> <span class="o">=</span> <span class="n">sigma_syst_df</span><span class="p">[</span><span class="s2">"unc_syst_perc_6"</span><span class="p">]</span>
+<span class="n">syst_unc_y6</span><span class="o">.</span><span class="n">add_qualifier</span><span class="p">(</span><span class="s2">"SQRT(S)"</span><span class="p">,</span> <span class="n">qual_sqrt_s</span><span class="p">,</span> <span class="s2">"GeV"</span><span class="p">)</span>
+<span class="n">syst_unc_y6</span><span class="o">.</span><span class="n">add_qualifier</span><span class="p">(</span><span class="s2">"RE"</span><span class="p">,</span> <span class="n">qual_re</span><span class="p">)</span>
+
+<span class="n">syst_unc_y7</span> <span class="o">=</span> <span class="n">Variable</span><span class="p">(</span>
+  <span class="s2">"correlated mu mu ID loss"</span><span class="p">,</span>
+  <span class="n">is_independent</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">is_binned</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s2">"%"</span>
+<span class="p">)</span>
+<span class="n">syst_unc_y7</span><span class="o">.</span><span class="n">values</span> <span class="o">=</span> <span class="n">sigma_syst_df</span><span class="p">[</span><span class="s2">"unc_syst_perc_7"</span><span class="p">]</span>
+<span class="n">syst_unc_y7</span><span class="o">.</span><span class="n">add_qualifier</span><span class="p">(</span><span class="s2">"SQRT(S)"</span><span class="p">,</span> <span class="n">qual_sqrt_s</span><span class="p">,</span> <span class="s2">"GeV"</span><span class="p">)</span>
+<span class="n">syst_unc_y7</span><span class="o">.</span><span class="n">add_qualifier</span><span class="p">(</span><span class="s2">"RE"</span><span class="p">,</span> <span class="n">qual_re</span><span class="p">)</span>
+
+<span class="n">syst_unc_y8</span> <span class="o">=</span> <span class="n">Variable</span><span class="p">(</span>
+  <span class="s2">"non cancellation of HO ISR in pi pi gamma/mu mu gamma ratio"</span><span class="p">,</span>
+  <span class="n">is_independent</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">is_binned</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s2">"%"</span>
+<span class="p">)</span>
+<span class="n">syst_unc_y8</span><span class="o">.</span><span class="n">values</span> <span class="o">=</span> <span class="n">sigma_syst_df</span><span class="p">[</span><span class="s2">"unc_syst_perc_8"</span><span class="p">]</span>
+<span class="n">syst_unc_y8</span><span class="o">.</span><span class="n">add_qualifier</span><span class="p">(</span><span class="s2">"SQRT(S)"</span><span class="p">,</span> <span class="n">qual_sqrt_s</span><span class="p">,</span> <span class="s2">"GeV"</span><span class="p">)</span>
+<span class="n">syst_unc_y8</span><span class="o">.</span><span class="n">add_qualifier</span><span class="p">(</span><span class="s2">"RE"</span><span class="p">,</span> <span class="n">qual_re</span><span class="p">)</span>
+
+<span class="n">syst_unc_y9</span> <span class="o">=</span> <span class="n">Variable</span><span class="p">(</span>
+  <span class="s2">"unfolding"</span><span class="p">,</span>
+  <span class="n">is_independent</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">is_binned</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s2">"%"</span>
+<span class="p">)</span>
+<span class="n">syst_unc_y9</span><span class="o">.</span><span class="n">values</span> <span class="o">=</span> <span class="n">sigma_syst_df</span><span class="p">[</span><span class="s2">"unc_syst_perc_9"</span><span class="p">]</span>
+<span class="n">syst_unc_y9</span><span class="o">.</span><span class="n">add_qualifier</span><span class="p">(</span><span class="s2">"SQRT(S)"</span><span class="p">,</span> <span class="n">qual_sqrt_s</span><span class="p">,</span> <span class="s2">"GeV"</span><span class="p">)</span>
+<span class="n">syst_unc_y9</span><span class="o">.</span><span class="n">add_qualifier</span><span class="p">(</span><span class="s2">"RE"</span><span class="p">,</span> <span class="n">qual_re</span><span class="p">)</span>
+
+<span class="n">syst_unc_y10</span> <span class="o">=</span> <span class="n">Variable</span><span class="p">(</span>
+  <span class="s2">"ISR luminosity from mu mu gamma process"</span><span class="p">,</span>
+  <span class="n">is_independent</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">is_binned</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s2">"%"</span>
+<span class="p">)</span>
+<span class="n">syst_unc_y10</span><span class="o">.</span><span class="n">values</span> <span class="o">=</span> <span class="n">sigma_syst_df</span><span class="p">[</span><span class="s2">"unc_syst_perc_10"</span><span class="p">]</span>
+<span class="n">syst_unc_y10</span><span class="o">.</span><span class="n">add_qualifier</span><span class="p">(</span><span class="s2">"SQRT(S)"</span><span class="p">,</span> <span class="n">qual_sqrt_s</span><span class="p">,</span> <span class="s2">"GeV"</span><span class="p">)</span>
+<span class="n">syst_unc_y10</span><span class="o">.</span><span class="n">add_qualifier</span><span class="p">(</span><span class="s2">"RE"</span><span class="p">,</span> <span class="n">qual_re</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">var</span> <span class="ow">in</span> <span class="p">[</span>
+    <span class="n">syst_unc_x</span><span class="p">,</span> <span class="n">syst_unc_y</span><span class="p">,</span>
+    <span class="n">syst_unc_y1</span><span class="p">,</span> <span class="n">syst_unc_y2</span><span class="p">,</span> <span class="n">syst_unc_y3</span><span class="p">,</span> <span class="n">syst_unc_y4</span><span class="p">,</span> <span class="n">syst_unc_y5</span><span class="p">,</span>
+    <span class="n">syst_unc_y6</span><span class="p">,</span> <span class="n">syst_unc_y7</span><span class="p">,</span> <span class="n">syst_unc_y8</span><span class="p">,</span> <span class="n">syst_unc_y9</span><span class="p">,</span> <span class="n">syst_unc_y10</span>
+  <span class="p">]:</span>
   <span class="n">table_syst_unc</span><span class="o">.</span><span class="n">add_variable</span><span class="p">(</span><span class="n">var</span><span class="p">)</span>
 </pre></div>
 
@@ -860,7 +1703,7 @@ bg-dark
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [207]:</div>
+<div class="prompt input_prompt">In [11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">##</span>
@@ -873,16 +1716,19 @@ bg-dark
 <span class="s2">$e^+e^-</span><span class="se">\\</span><span class="s2">rightarrow\pi^+\pi^-(\gamma)$</span><span class="se">\</span>
 <span class="s2">"""</span>
 <span class="n">table_stat_cov</span><span class="o">.</span><span class="n">location</span> <span class="o">=</span> <span class="s2">"Data from "</span> <span class="o">+</span> <span class="n">babar_data_url</span>
+
 <span class="n">table_stat_cov</span><span class="o">.</span><span class="n">keywords</span><span class="p">[</span><span class="s2">"observables"</span><span class="p">]</span> <span class="o">=</span> <span class="n">keyw_observables</span>
 <span class="n">table_stat_cov</span><span class="o">.</span><span class="n">keywords</span><span class="p">[</span><span class="s2">"cmenergies"</span><span class="p">]</span> <span class="o">=</span> <span class="n">keyw_cmenergies</span>
 <span class="n">table_stat_cov</span><span class="o">.</span><span class="n">keywords</span><span class="p">[</span><span class="s2">"reactions"</span><span class="p">]</span> <span class="o">=</span> <span class="n">keyw_reactions</span>
 <span class="n">table_stat_cov</span><span class="o">.</span><span class="n">keywords</span><span class="p">[</span><span class="s2">"phrases"</span><span class="p">]</span> <span class="o">=</span> <span class="n">keyw_phrases</span>
 
+<span class="c1">##--- independent variables: row and column energy bins</span>
 <span class="n">stat_cov_x</span> <span class="o">=</span> <span class="n">Variable</span><span class="p">(</span><span class="s2">"SQRT(S) [GeV]"</span><span class="p">,</span> <span class="n">is_independent</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">is_binned</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">stat_cov_x</span><span class="o">.</span><span class="n">values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">column_stack</span><span class="p">((</span><span class="n">sigma_stat_cov_df</span><span class="p">[</span><span class="s2">"E_l_r"</span><span class="p">],</span> <span class="n">sigma_stat_cov_df</span><span class="p">[</span><span class="s2">"E_h_r"</span><span class="p">]))</span>
 <span class="n">stat_cov_y</span> <span class="o">=</span> <span class="n">Variable</span><span class="p">(</span><span class="s2">"SQRT(S) [GeV]"</span><span class="p">,</span> <span class="n">is_independent</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">is_binned</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">stat_cov_y</span><span class="o">.</span><span class="n">values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">column_stack</span><span class="p">((</span><span class="n">sigma_stat_cov_df</span><span class="p">[</span><span class="s2">"E_l_c"</span><span class="p">],</span> <span class="n">sigma_stat_cov_df</span><span class="p">[</span><span class="s2">"E_h_c"</span><span class="p">]))</span>
 
+<span class="c1">##--- correlation of cross section in one energy bin w.r.t. another energy bin</span>
 <span class="n">stat_cov_z</span> <span class="o">=</span> <span class="n">Variable</span><span class="p">(</span>
   <span class="s2">"$\sigma_{\pi^+\pi^-(\gamma)}$ statistical covariance"</span><span class="p">,</span>
   <span class="n">is_independent</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">is_binned</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s2">"nb^2"</span>
@@ -902,7 +1748,7 @@ bg-dark
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [208]:</div>
+<div class="prompt input_prompt">In [29]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">##</span>
@@ -911,11 +1757,18 @@ bg-dark
 
 <span class="n">hd_subm</span> <span class="o">=</span> <span class="n">Submission</span><span class="p">()</span>
 
-<span class="c1">#--- general info</span>
-<span class="n">hd_subm</span><span class="o">.</span><span class="n">read_abstract</span><span class="p">(</span><span class="s2">"babar-pip-pim-2012-insp1114155/abstract.txt"</span><span class="p">)</span>
+<span class="c1">##--- general info</span>
 <span class="n">hd_subm</span><span class="o">.</span><span class="n">add_record_id</span><span class="p">(</span><span class="mi">1114155</span><span class="p">,</span> <span class="s2">"inspire"</span><span class="p">)</span>
 <span class="n">hd_subm</span><span class="o">.</span><span class="n">add_link</span><span class="p">(</span><span class="s2">"arXiv"</span><span class="p">,</span> <span class="s2">"https://arxiv.org/abs/1205.2228"</span><span class="p">)</span>
-<span class="n">hd_subm</span><span class="o">.</span><span class="n">add_link</span><span class="p">(</span><span class="s2">"Webpage with data files"</span><span class="p">,</span> <span class="s2">"http://ftp.aip.org/epaps/phys_rev_lett/E-PRLTAO-103-045950/"</span><span class="p">)</span>
+<span class="n">hd_subm</span><span class="o">.</span><span class="n">add_link</span><span class="p">(</span><span class="s2">"Webpage with data files"</span><span class="p">,</span> <span class="n">babar_data_url</span><span class="p">)</span>
+
+<span class="c1">##--- use temp file for abstract</span>
+<span class="n">tmp</span> <span class="o">=</span> <span class="n">tempfile</span><span class="o">.</span><span class="n">NamedTemporaryFile</span><span class="p">(</span><span class="n">mode</span><span class="o">=</span><span class="s1">'w+t'</span><span class="p">,</span> <span class="n">delete</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="k">try</span><span class="p">:</span>
+  <span class="n">tmp</span><span class="o">.</span><span class="n">writelines</span><span class="p">(</span><span class="n">paper_abstract</span><span class="p">)</span>
+<span class="k">finally</span><span class="p">:</span>
+  <span class="n">tmp</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="n">hd_subm</span><span class="o">.</span><span class="n">read_abstract</span><span class="p">(</span><span class="n">tmp</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
 
 <span class="c1">##--- add tables</span>
 <span class="n">hd_subm</span><span class="o">.</span><span class="n">add_table</span><span class="p">(</span><span class="n">table_val</span><span class="p">)</span>
@@ -925,6 +1778,7 @@ bg-dark
 <span class="c1">##---</span>
 <span class="n">outdir</span> <span class="o">=</span> <span class="s2">"babar-pip-pim-2012-insp1114155-hdsubm"</span>
 <span class="n">hd_subm</span><span class="o">.</span><span class="n">create_files</span><span class="p">(</span><span class="n">outdir</span><span class="p">)</span>
+<span class="n">os</span><span class="o">.</span><span class="n">unlink</span><span class="p">(</span><span class="n">tmp</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -944,7 +1798,6 @@ bg-dark
 </div>
 </div>
 
-</div>
 </div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="mk-hepdata-plot/" class="u-url">Prepare Root Plot with data from HEPData</a></h1>
@@ -1024,8 +1877,7 @@ bg-dark
             </p>
         </div>
     </header><div class="p-summary entry-summary">
-    <div>
-<!-- ............................................................................. -->
+    <!-- ............................................................................. -->
 <!-- ............................................................................. -->
 <p>Notes on ALEPH measurements.</p>
 <ul class="simple">
@@ -1036,7 +1888,6 @@ bg-dark
 <li><p>text-danger  <span class="text-danger">Jupyter is a very handy web application</span></p></li>
 </ul>
 </div>
-    </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="BaBar-ep-em-to-pip-pim/" class="u-url">BaBar cross-section e+ e- to pi+ pi- (gamma)</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
@@ -1090,6 +1941,8 @@ bg-dark
 
 
 
+    
+
 
 
         
@@ -1106,7 +1959,7 @@ MathJax.Hub.Config({
     }
 });
 </script><!--End of body content--><footer id="footer">
-            Contents © 2021         <a href="mailto:alusiani%20at%20gmail.com">PrecisionSM Group</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+            Contents © 2022         <a href="mailto:alusiani%20at%20gmail.com">PrecisionSM Group</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
             
             
         </footer>
