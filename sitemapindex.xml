@@ -7,7 +7,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
   <loc>https://precision-sm.github.io/categories/docs.xml</loc>
-  <lastmod>2022-04-29T20:44:00Z</lastmod>
+  <lastmod>2022-04-30T08:29:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://precision-sm.github.io/categories/gm2-hvp-elab.xml</loc>
@@ -19,11 +19,11 @@
  </sitemap>
  <sitemap>
   <loc>https://precision-sm.github.io/rss.xml</loc>
-  <lastmod>2022-04-29T20:44:00Z</lastmod>
+  <lastmod>2022-04-30T08:29:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://precision-sm.github.io/sitemap.xml</loc>
-  <lastmod>2022-04-29T20:44:00Z</lastmod>
+  <lastmod>2022-04-30T08:29:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://precision-sm.github.io/tags/aleph.xml</loc>
@@ -31,10 +31,10 @@
  </sitemap>
  <sitemap>
   <loc>https://precision-sm.github.io/tags/babar.xml</loc>
-  <lastmod>2022-04-29T20:44:00Z</lastmod>
+  <lastmod>2022-04-30T08:29:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://precision-sm.github.io/tags/hepdata.xml</loc>
-  <lastmod>2022-04-29T20:44:00Z</lastmod>
+  <lastmod>2022-04-30T08:29:00Z</lastmod>
  </sitemap>
 </sitemapindex>
