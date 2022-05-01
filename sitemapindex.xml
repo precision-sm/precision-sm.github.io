@@ -7,46 +7,34 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
   <loc>https://precision-sm.github.io/categories/checks.xml</loc>
-  <lastmod>2022-05-01T23:31:00Z</lastmod>
+  <lastmod>2022-05-01T23:34:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://precision-sm.github.io/categories/docs.xml</loc>
-  <lastmod>2022-05-01T23:31:00Z</lastmod>
- </sitemap>
- <sitemap>
-  <loc>https://precision-sm.github.io/categories/gm2-hvp-elab.xml</loc>
-  <lastmod>2022-04-29T20:32:00Z</lastmod>
- </sitemap>
- <sitemap>
-  <loc>https://precision-sm.github.io/categories/notes.xml</loc>
-  <lastmod>2022-04-29T20:32:00Z</lastmod>
+  <lastmod>2022-05-01T23:34:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://precision-sm.github.io/categories/plots.xml</loc>
-  <lastmod>2022-05-01T23:31:00Z</lastmod>
+  <lastmod>2022-05-01T23:34:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://precision-sm.github.io/categories/submissions.xml</loc>
-  <lastmod>2022-05-01T23:31:00Z</lastmod>
+  <lastmod>2022-05-01T23:34:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://precision-sm.github.io/rss.xml</loc>
-  <lastmod>2022-05-01T23:31:00Z</lastmod>
+  <lastmod>2022-05-01T23:34:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://precision-sm.github.io/sitemap.xml</loc>
-  <lastmod>2022-05-01T23:31:00Z</lastmod>
- </sitemap>
- <sitemap>
-  <loc>https://precision-sm.github.io/tags/aleph.xml</loc>
-  <lastmod>2022-04-29T20:32:00Z</lastmod>
+  <lastmod>2022-05-01T23:34:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://precision-sm.github.io/tags/babar.xml</loc>
-  <lastmod>2022-05-01T23:31:00Z</lastmod>
+  <lastmod>2022-05-01T23:34:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://precision-sm.github.io/tags/hepdata.xml</loc>
-  <lastmod>2022-05-01T23:31:00Z</lastmod>
+  <lastmod>2022-05-01T23:34:00Z</lastmod>
  </sitemap>
 </sitemapindex>
