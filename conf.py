@@ -144,7 +144,7 @@ NAVIGATION_LINKS = {
         ('/categories/submissions', 'Data Submissions'),
         ('/categories/checks', 'Data Submissions Checks'),
         ('/categories/plots', 'Plots'),
-        ('/categories/elaborations', 'Elaborations'),
+        # ('/categories/elaborations', 'Elaborations'),
       ),
       'Contents'
     ),
