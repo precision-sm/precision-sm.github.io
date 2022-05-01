@@ -35,11 +35,15 @@
  </url>
  <url>
   <loc>https://precision-sm.github.io/archive.html</loc>
-  <lastmod>2022-04-29T20:37:00Z</lastmod>
+  <lastmod>2022-05-01T23:31:00Z</lastmod>
  </url>
  <url>
   <loc>https://precision-sm.github.io/categories/</loc>
-  <lastmod>2021-05-12T22:32:00Z</lastmod>
+  <lastmod>2022-05-01T23:31:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://precision-sm.github.io/categories/checks/</loc>
+  <lastmod>2022-05-01T23:31:00Z</lastmod>
  </url>
  <url>
   <loc>https://precision-sm.github.io/categories/docs/</loc>
@@ -52,6 +56,14 @@
  <url>
   <loc>https://precision-sm.github.io/categories/notes/</loc>
   <lastmod>2021-05-12T22:32:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://precision-sm.github.io/categories/plots/</loc>
+  <lastmod>2022-05-01T23:31:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://precision-sm.github.io/categories/submissions/</loc>
+  <lastmod>2022-05-01T23:31:00Z</lastmod>
  </url>
  <url>
   <loc>https://precision-sm.github.io/gm2-HVP-elab/</loc>
@@ -75,7 +87,7 @@
  </url>
  <url>
   <loc>https://precision-sm.github.io/posts/</loc>
-  <lastmod>2022-04-29T20:44:00Z</lastmod>
+  <lastmod>2022-05-01T23:31:00Z</lastmod>
  </url>
  <url>
   <loc>https://precision-sm.github.io/posts/BaBar-ep-em-to-pip-pim/</loc>
@@ -98,12 +110,36 @@
   <lastmod>2021-05-12T22:32:00Z</lastmod>
  </url>
  <url>
+  <loc>https://precision-sm.github.io/posts/fedor-ignatov-ep-em-to-hadrons-plots/</loc>
+  <lastmod>2022-05-01T23:31:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://precision-sm.github.io/posts/hepdata-check-babar-2012-pip-pim/</loc>
+  <lastmod>2022-05-01T23:31:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://precision-sm.github.io/posts/hepdata-example-root-plot/</loc>
+  <lastmod>2022-05-01T23:31:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://precision-sm.github.io/posts/hepdata-subm-babar-2012-pip-pim/</loc>
+  <lastmod>2022-05-01T23:31:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://precision-sm.github.io/posts/mk-hepdata-plot/</loc>
   <lastmod>2021-05-12T22:32:00Z</lastmod>
  </url>
  <url>
   <loc>https://precision-sm.github.io/posts/notes-on-aleph/</loc>
   <lastmod>2021-05-12T22:32:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://precision-sm.github.io/posts/plot-babar-2012-pip-pim/</loc>
+  <lastmod>2022-05-01T23:31:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://precision-sm.github.io/posts/responsive-plots-example/</loc>
+  <lastmod>2022-05-01T23:31:00Z</lastmod>
  </url>
  <url>
   <loc>https://precision-sm.github.io/sin_theta_W/</loc>
