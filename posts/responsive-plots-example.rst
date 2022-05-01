@@ -1,15 +1,15 @@
-.. title: example responsive plot
-.. slug: example-responsive-plot
+.. title: Responsive plots example
+.. slug: responsive-plots-example
 .. date: 2020-09-06 14:36:05 UTC+02:00
 .. tags:
-.. category:
+.. category: plots
 .. link:
 .. description:
 .. type: text
 .. hidetitle: true
 
-Example responsive plot
-=======================
+Responsive plots example
+========================
 
 .. TEASER_END
 

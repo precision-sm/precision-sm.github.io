@@ -139,20 +139,26 @@ TRANSLATIONS_PATTERN = '{path}.{lang}.{ext}'
 
 NAVIGATION_LINKS = {
   DEFAULT_LANG: (
-    # ("/pages/", "Pages"),
-    # ("/sections/", "Sections"),
-    # ("/tags/", "Tags"),
-    # ("/posts/", "Posts"),
+     (
+      (
+        ('/categories/submissions', 'Data Submissions'),
+        ('/categories/checks', 'Data Submissions Checks'),
+        ('/categories/plots', 'Plots'),
+        ('/categories/elaborations', 'Elaborations'),
+      ),
+      'Contents'
+    ),
+    ("/categories/docs/", "Docs"),
     (
       (
-        ('/posts/', 'All'),
-        ('/categories/', 'Categories'),
+        ("/about/", "About"),
+        ('/categories/', 'Sections'),
         ('/tags/', 'Tags'),
+        ("/posts/", "All Posts"),
         ("/archive.html", "Archive"),
       ),
-      'Posts'
-    ), 
-    ("/about/", "About"),
+      'About'
+    ),
     ("/rss.xml", "RSS feed"),
   ),
 }
