@@ -7,7 +7,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://precision-sm.github.io/</loc>
-  <lastmod>2022-05-01T23:34:00Z</lastmod>
+  <lastmod>2022-05-02T15:56:00Z</lastmod>
  </url>
  <url>
   <loc>https://precision-sm.github.io/about/</loc>
@@ -76,6 +76,10 @@
  <url>
   <loc>https://precision-sm.github.io/posts/responsive-plots-example/</loc>
   <lastmod>2022-05-01T23:34:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://precision-sm.github.io/precision-sm-hepdata-subm/</loc>
+  <lastmod>2022-05-02T15:56:00Z</lastmod>
  </url>
  <url>
   <loc>https://precision-sm.github.io/tags/</loc>
