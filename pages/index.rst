@@ -31,6 +31,8 @@ PrecisionSM web site (work in progress)
 
 * `HEPData submissions </categories/submissions/>`_
 
+  * `cured by PrecisionSM </precision-sm-hepdata-subm/>`_
+
 * `HEPData submissions checks </categories/checks/>`_
 
 * `Plots </categories/plots/>`_
