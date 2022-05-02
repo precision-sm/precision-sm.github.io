@@ -26,13 +26,11 @@
    :width: 12 em
    :align: right
 
-Draft PrecisionSM web site
-==========================
+PrecisionSM web site (work in progress)
+=======================================
 
-* `Example code to create a responsive plot using results stored in HEPData.net </posts/mk-hepdata-plot/>`_
+* `HEPData submissions </categories/submissions/>`_
 
-* `Example of responsive plot integrated in this website </posts/example-responsive-plot/>`_
+* `HEPData submissions checks </categories/checks/>`_
 
-* `Example notebook </posts/BaBar-ep-em-to-pip-pim/>`_
-
-* `Fedor Ignatov responsive plots </posts/fedor-ignatov-e%2Be--to-hadrons-plots/>`_
+* `Plots </categories/plots/>`_
