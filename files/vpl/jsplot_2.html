@@ -34,7 +34,7 @@ function getUrlVars() {
 <table>
 <tr>
 <td>
-<iframe id="viewer_frame" width="100%" height="100%" frameborder="0" src="/jsroot/index.htm"></iframe>
+<iframe id="viewer_frame" width="100%" height="100%" frameborder="0" src="../jsroot/index.htm"></iframe>
 </td>
 <td align="left">
 <div id="explist" class='toc'></div>
@@ -58,7 +58,7 @@ function updateGUI() {
     var viewerdoc = document.getElementById( 'viewer_frame' );
     path=cs.path;
     if( path != "")
-      viewerdoc.src = "/jsroot/index.htm?nobrowser&"+path+"+&item=csigall";
+      viewerdoc.src = "../jsroot/index.htm?nobrowser&"+path+"+&item=csigall";
 	  });
 }
 
