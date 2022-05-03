@@ -26,12 +26,16 @@
    :width: 12 em
    :align: right
 
+	   
+PrecisionSM web site (work in progress)
+=======================================
+
 List of Channels
 ==========================
 
 * :math:`\pi^-\pi^+` `Channels </posts/pipi-channels-index/>`_  
 
-PrecisionSM web site (work in progress)
+HEPData Submissions Summary
 =======================================
 
 * `HEPData submissions </categories/submissions/>`_
@@ -39,5 +43,8 @@ PrecisionSM web site (work in progress)
   * `cured by PrecisionSM </precision-sm-hepdata-subm/>`_
 
 * `HEPData submissions checks </categories/checks/>`_
+
+Tools (Examples)
+=======================================
 
 * `Plots </categories/plots/>`_
