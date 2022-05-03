@@ -21,10 +21,15 @@
     :format: html
 .. .............................................................................
 
-.. image:: /images/colibri-plain.svg
-   :target: /images/colibri-plain.svg
+.. image:: /images/logoStrong2020.png 
+   :target: /images/logoStrong2020.png 
    :width: 12 em
    :align: right
+
+List of Channels
+==========================
+
+* :math:`\pi^-\pi^+` `Channels </posts/pipi-channels-index/>`_  
 
 PrecisionSM web site (work in progress)
 =======================================
