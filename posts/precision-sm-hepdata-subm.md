@@ -1,7 +1,7 @@
 ---
 title: HEPData submissions cured by PrecisionSM
 date: 2022-04-30
-tags: hepdata
+tags: HEPData
 category: docs
 has_math: true
 hidetitle: true
