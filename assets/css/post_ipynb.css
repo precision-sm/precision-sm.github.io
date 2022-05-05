@@ -1,0 +1,208 @@
+/*
+
+Nikola jupyter notebook customization
+- from https://paulomarconi.github.io/blog/Nikola-guide/
+- revisions by A. Lusiani
+
+*/
+
+
+/*
+  refinements for jupyter nb tables in output cells
+*/
+
+/* code and output in Jupiter notebooks */
+
+.rendered_html {
+  font-size: 87.5%;
+}
+
+.rendered_html tbody tr:nth-child(odd) {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.rendered_html tbody tr:hover{
+  color:#212529;
+  background-color:rgba(0, 0, 0, 0.10);
+}
+
+.rendered_html thead {
+  border-top: 1px solid #a0a0a0;
+  border-bottom: 1px solid #a0a0a0;
+}
+
+.rendered_html tbody {
+  border-bottom: 1px solid #a0a0a0;
+}div.output_subarea {
+  margin: 0px 4px 2px 0px;
+  border: 1px solid #a0a0a0;
+  /* background-color: rgba(0, 0, 0, 0.05); */
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+
+div.prompt {
+  margin: 0px 4px 2px 0px;
+  font-size: 75.0%;
+  background-color: rgba(0, 0, 0, 0.05);
+  border: 1px solid #a0a0a0;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+
+/*
+div.prompt:empty {
+  margin: 0px 4px 2px 0px;
+}
+*/
+
+div.input_area {
+  margin: 0px 4px 2px 0px;
+  font-size: 87.5%;
+  border: 1px solid #a0a0a0;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.05);
+  /* padding: 0.4em; */
+}
+
+div.input_area pre {
+  background: rgba(0, 0, 0, 0.00);;
+}
+
+div.text_cell_render {
+  margin: 0px 4px 2px 0px;
+  border: 1px solid #a0a0a0;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.05);
+  padding: 0.4em;
+}
+
+div.cell.border-box-sizing.rendered {
+  padding: 0;
+}
+
+/* jupyter notebook code cells */
+
+pre, pre code {
+  white-space: pre-wrap;
+}
+
+/* deal with paragraph in table cells */
+
+th > p, td > p, li > p {
+  margin: 0;
+  padding: 0;
+}
+
+/*
+
+from https://paulomarconi.github.io/blog/Nikola-guide/
+
+*/
+
+/*
+div.prompt {
+  padding: 0.6em;
+  font-size: 13px;
+  background-color: #ffffff;
+  margin-right: 0em;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+*/
+
+/*
+div.output_prompt {
+  5px right shift to account for margin in parent container
+  margin: 0px 4px 2px 0px;
+}
+*/
+
+/*
+div.output_area pre {
+  font-size: 13px;
+}
+*/
+
+/*
+div.text_cell_render {
+  padding: 0px;
+  color: #333333;
+}
+*/
+
+/*
+.rendered_html p {
+  text-align: left;
+}
+*/
+
+.rendered_html :visited {
+  text-decoration: none;
+}
+
+.rendered_html :link {
+  text-decoration: none;
+}
+
+/*
+.rendered_html pre, .rendered_html code {
+  background-color: #eeeeee;
+  margin: 1em 0em;
+  font-size: 14px;
+}
+*/
+
+.rendered_html pre {
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  padding-top: 0.05em;
+  padding-bottom: 0.05em;
+}
+
+.page-content > .content p {
+  margin: 0px;
+}
+
+div.input  {
+  border: none;
+  background-color: none;
+}
+
+/* set a max-width for horizontal fluid layout and make it centered */
+.body-content {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 100%; /* or 950px */
+}
+
+/* Widens image-containing divs so that image is full body width */
+
+div.output_subarea {
+  max-width: 100%;
+}
+
+.rendered_html *+ul {
+  margin-top: 0.5em;
+}
+
+.rendered_html ul {
+  margin-left: 0em;
+}
+
+.rendered_html ul > ul {
+  margin-left: 0em;
+}
+
+/*
+.rendered_html ul {
+  margin: 0 0 1em 2em;
+}
+*/
