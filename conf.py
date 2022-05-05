@@ -1,4 +1,4 @@
-#  -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 
 import time
 
@@ -61,9 +61,12 @@ BLOG_DESCRIPTION = "Documentation for Strong-2020 activity PrecisionSM"  # (tran
 # ja        Japanese [NOT jp]
 # ko        Korean
 # lt        Lithuanian
+# mi        Maori
 # ml        Malayalam
+# mr        Marathi
 # nb        Norwegian (Bokmål)
 # nl        Dutch
+# oc        Occitan
 # pa        Punjabi
 # pl        Polish
 # pt        Portuguese
@@ -171,19 +174,21 @@ NAVIGATION_ALT_LINKS = {
 }
 
 # Name of the theme to use.
-# THEME = "bootblog4"
-# THEME = "bootstrap4"
 THEME = "precision_sm"
 
-# Primary color of your theme. This will be used to customize your theme.
-# Must be a HEX value.
+# A theme color. In default themes, it might be displayed by some browsers as
+# the browser UI color (eg. Chrome on Android). Other themes might also use it
+# as an accent color (the default ones don’t). Must be a HEX value.
 THEME_COLOR = '#5670d4'
 
 # Theme configuration. Fully theme-dependent. (translatable)
-# Examples below are for bootblog4.
+# Samples for bootblog4 (enabled) and bootstrap4 (commented) follow.
 # bootblog4 supports: featured_large featured_small featured_on_mobile
 #                     featured_large_image_on_mobile featured_strip_html sidebar
 # bootstrap4 supports: navbar_light (defaults to False)
+#                      navbar_custom_bg (defaults to '')
+
+# Config for bootblog4:
 THEME_CONFIG = {
     DEFAULT_LANG: {
         # Show the latest featured post in a large box, with the previewimage as its background.
@@ -198,9 +203,21 @@ THEME_CONFIG = {
         # Strip HTML from featured post text.
         'featured_strip_html': False,
         # Contents of the sidebar, If empty, the sidebar is not displayed.
-        'sidebar': ""
+        'sidebar': ''
     }
 }
+# Config for bootstrap4:
+# THEME_CONFIG = {
+#     DEFAULT_LANG: {
+#         # Use a light navbar with dark text. Defaults to False.
+#         'navbar_light': False,
+#         # Use a custom navbar color. If unset, 'navbar_light' sets text +
+#         # background color. If set, navbar_light controls only background
+#         # color. Supported values: bg-dark, bg-light, bg-primary, bg-secondary,
+#         # bg-success, bg-danger, bg-warning, bg-info, bg-white, bg-transparent.
+#         'navbar_custom_bg': '',
+#     }
+# }
 
 # POSTS and PAGES contains (wildcard, destination, template) tuples.
 # (translatable)
@@ -242,7 +259,7 @@ POSTS = (
     ("posts/*.txt", "posts", "post.tmpl"),
     ("posts/*.html", "posts", "post.tmpl"),
     ("posts/*.adoc", "posts", "post.tmpl"),
-    ("posts/*.ipynb", "posts", "post.tmpl"),
+    ("posts/*.ipynb", "posts", "post_ipynb.tmpl"),
 )
 
 PAGES = (
@@ -251,9 +268,9 @@ PAGES = (
     ("pages/*.txt", "", "page.tmpl"),
     ("pages/*.html", "", "page.tmpl"),
     ("pages/*.adoc", "", "page.tmpl"),
-    ("pages/*.ipynb", "", "page.tmpl"),
+    ("pages/*.ipynb", "", "post_ipynb.tmpl"),
 )
-
+# And to avoid a conflict because blogs try to generate /index.html
 INDEX_PATH = "posts"
 
 # Below this point, everything is optional
@@ -265,7 +282,7 @@ INDEX_PATH = "posts"
 # (e.g. 'Europe/Zurich')
 # Also, if you want to use a different time zone in some of your posts,
 # you can use the ISO 8601/RFC 3339 format (ex. 2012-03-30T23:00:00+02:00)
-TIMEZONE = "Europe/Brussels"
+TIMEZONE = "UTC"
 
 # If you want to use ISO 8601 (also valid RFC 3339) throughout Nikola
 # (especially in new_post), set this to True.
@@ -273,7 +290,7 @@ TIMEZONE = "Europe/Brussels"
 # FORCE_ISO8601 = False
 
 # Date format used to display post dates. (translatable)
-# Used by babel.dates, CLDR style: http://cldr.unicode.org/translation/date-time
+# Used by babel.dates, CLDR style: http://cldr.unicode.org/translation/date-time-1/date-time
 # You can also use 'full', 'long', 'medium', or 'short'
 # DATE_FORMAT = 'yyyy-MM-dd HH:mm'
 
@@ -302,6 +319,7 @@ TIMEZONE = "Europe/Brussels"
 # Default is:
 # FILES_FOLDERS = {'files': ''}
 # Which means copy 'files' into 'output'
+# FILES_FOLDERS = {'files': 'files'}
 
 # One or more folders containing code listings to be processed and published on
 # the site. The format is a dictionary of {source: relative destination}.
@@ -340,7 +358,7 @@ COMPILERS = {
 
 # Enable reST directives that insert the contents of external files such
 # as "include" and "raw." This maps directly to the docutils file_insertion_enabled
-# config. See: http://docutils.sourceforge.net/docs/user/config.html#file-insertion-enabled
+# config. See: https://docutils.sourceforge.io/docs/user/config.html#file-insertion-enabled
 # REST_FILE_INSERTION_ENABLED = True
 
 # Create by default posts in one file format?
@@ -384,6 +402,8 @@ COMPILERS = {
 
 # If you want to hide the title of your website (for example, if your logo
 # already contains the text), set this to False.
+# Note: if your logo is a SVG image, and you set SHOW_BLOG_TITLE = False,
+# you should explicitly set a height for #logo in CSS.
 # SHOW_BLOG_TITLE = True
 
 # Paths for different autogenerated bits. These are combined with the
@@ -394,6 +414,7 @@ COMPILERS = {
 # output / TRANSLATION[lang] / TAG_PATH / tag.html (list of posts for a tag)
 # output / TRANSLATION[lang] / TAG_PATH / tag RSS_EXTENSION (RSS feed for a tag)
 # (translatable)
+# TAG_PATH = "categories"
 TAG_PATH = "tags"
 
 # By default, the list of tags is stored in
@@ -411,6 +432,7 @@ TAG_PATH = "tags"
 # Set descriptions for tag pages to make them more interesting. The
 # default is no description. The value is used in the meta description
 # and displayed underneath the tag list or index page’s title.
+# (translatable)
 # TAG_DESCRIPTIONS = {
 #    DEFAULT_LANG: {
 #        "blogging": "Meta-blog posts about blogging.",
@@ -419,6 +441,7 @@ TAG_PATH = "tags"
 # }
 
 # Set special titles for tag pages. The default is "Posts about TAG".
+# (translatable)
 # TAG_TITLES = {
 #    DEFAULT_LANG: {
 #        "blogging": "Meta-posts about blogging",
@@ -484,6 +507,7 @@ CATEGORY_OUTPUT_FLAT_HIERARCHY = False
 # Set descriptions for category pages to make them more interesting. The
 # default is no description. The value is used in the meta description
 # and displayed underneath the category list or index page’s title.
+# (translatable)
 # CATEGORY_DESCRIPTIONS = {
 #    DEFAULT_LANG: {
 #        "blogging": "Meta-blog posts about blogging.",
@@ -492,6 +516,7 @@ CATEGORY_OUTPUT_FLAT_HIERARCHY = False
 # }
 
 # Set special titles for category pages. The default is "Posts about CATEGORY".
+# (translatable)
 # CATEGORY_TITLES = {
 #    DEFAULT_LANG: {
 #        "blogging": "Meta-posts about blogging",
@@ -572,9 +597,12 @@ CATEGORY_OUTPUT_FLAT_HIERARCHY = False
 
 
 # If you do not want to display an author publicly, you can mark it as hidden.
-# The author will not be displayed on the author list page and posts.
-# Tag pages will still be generated.
+# The author will not be displayed on the author list page.
+# Author pages and links to them will still be generated.
 HIDDEN_AUTHORS = ['Guest']
+
+# Allow multiple, comma-separated authors for a post? (Requires theme support, present in built-in themes)
+# MULTIPLE_AUTHORS_PER_POST = False
 
 # Final location for the main blog page and sibling paginated pages is
 # output / TRANSLATION[lang] / INDEX_PATH / index-*.html
@@ -662,7 +690,7 @@ REDIRECTIONS = []
 
 # Presets of commands to execute to deploy. Can be anything, for
 # example, you may use rsync:
-# "rsync -rav --delete output/ joe@my.site:/srv/www/site"
+# "rsync -rav --delete --delete-after output/ joe@my.site:/srv/www/site"
 # And then do a backup, or run `nikola ping` from the `ping`
 # plugin (`nikola plugin -i ping`).  Or run `nikola check -l`.
 # You may also want to use github_deploy (see below).
@@ -672,7 +700,7 @@ REDIRECTIONS = []
 # in a `nikola deploy` command as you like.
 # DEPLOY_COMMANDS = {
 #     'default': [
-#         "rsync -rav --delete output/ joe@my.site:/srv/www/site",
+#         "rsync -rav --delete --delete-after output/ joe@my.site:/srv/www/site",
 #     ]
 # }
 
@@ -857,6 +885,7 @@ GALLERIES_DEFAULT_THUMBNAIL = None
 # options, but will have to be referenced manually to be visible on the site
 # (the thumbnail has ``.thumbnail`` added before the file extension by default,
 # but a different naming template can be configured with IMAGE_THUMBNAIL_FORMAT).
+# Panoramas (aspect ratio over 3:1) get 4x larger thumbnails due to scaling issues.
 
 IMAGE_FOLDERS = {'images': 'images'}
 # IMAGE_THUMBNAIL_SIZE = 400
@@ -988,6 +1017,38 @@ LICENSE = ""
 # (translatable)
 CONTENT_FOOTER = 'Contents &copy; {date}         <a href="mailto:{email}">{author}</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         {license}'
 
+# CONTENT_FOOTER = '''
+# <div class="text-center">
+#     <p>
+#         <span class="fa-stack fa-2x">
+#         <a href="https://github.com/<user_name>">
+#             <i class="fa fa-github-square fa-stack-2x"></i>
+#         </a>
+#         </span>
+#         <span class="fa-stack fa-2x">
+#         <a href="https://scholar.google.com/citations?user=ID">
+#             <i class="ai ai-google-scholar-square ai-2x"></i>
+#         </a>
+#         </span>
+#         <span class="fa-stack fa-2x">
+#         <a href="https://www.linkedin.com/in/ID">
+#             <i class="fa fa-square fa-stack-2x"></i>
+#             <i class="fa fa-linkedin fa-inverse fa-stack-1x"></i>
+#         </a>
+#         </span>
+#         <span class="fa-stack fa-2x">
+#         <a href="mailto:{email}">
+#             <i class="fa fa-square fa-stack-2x"></i>
+#             <i class="fa fa-envelope fa-inverse fa-stack-1x"></i>
+#         </a>
+#         </span>
+#     </p>
+#     <p>
+#         {license} Contents &copy; {date}  <a href="mailto:{email}">{author}</a> - Powered by <a href="https://getnikola.com" rel="nofollow">Nikola</a>
+#     </p>
+# </div>
+# '''
+
 # Things that will be passed to CONTENT_FOOTER.format().  This is done
 # for translatability, as dicts are not formattable.  Nikola will
 # intelligently format the setting properly.
@@ -1021,7 +1082,7 @@ RSS_COPYRIGHT_FORMATS = CONTENT_FOOTER_FORMATS
 
 # To use comments, you can choose between different third party comment
 # systems.  The following comment systems are supported by Nikola:
-#   disqus, facebook, intensedebate, isso, muut, commento
+#   disqus, facebook, intensedebate, isso, muut, commento, utterances
 # You can leave this option blank to disable comments.
 COMMENT_SYSTEM = ""
 # And you also need to add your COMMENT_SYSTEM_ID which
@@ -1074,9 +1135,10 @@ PRETTY_URLS = True
 # DEPLOY_FUTURE = False
 # If False, draft posts will not be deployed
 # DEPLOY_DRAFTS = True
+DEPLOY_DRAFTS = False
 
 # Allows scheduling of posts using the rule specified here (new_post -s)
-# Specify an iCal Recurrence Rule: http://www.kanzaki.com/docs/ical/rrule.html
+# Specify an iCal Recurrence Rule: https://www.kanzaki.com/docs/ical/rrule.html
 # SCHEDULE_RULE = ''
 # If True, use the scheduling rule to all posts (not pages!) by default
 # SCHEDULE_ALL = False
@@ -1108,15 +1170,15 @@ MathJax.Hub.Config({
 
 # KaTeX auto-render settings. If you want support for the $.$ syntax (which may
 # conflict with running text!), just use this config:
-KATEX_AUTO_RENDER = """
-delimiters: [
-    {left: "$$", right: "$$", display: true},
-    {left: "\\\\[", right: "\\\\]", display: true},
-    {left: "\\\\begin{equation*}", right: "\\\\end{equation*}", display: true},
-    {left: "$", right: "$", display: false},
-    {left: "\\\\(", right: "\\\\)", display: false}
-]
-"""
+# KATEX_AUTO_RENDER = """
+# delimiters: [
+#     {left: "$$", right: "$$", display: true},
+#     {left: "\\\\[", right: "\\\\]", display: true},
+#     {left: "\\\\begin{equation*}", right: "\\\\end{equation*}", display: true},
+#     {left: "$", right: "$", display: false},
+#     {left: "\\\\(", right: "\\\\)", display: false}
+# ]
+# """
 
 # Do you want to customize the nbconversion of your IPython notebook?
 # IPYNB_CONFIG = {}
@@ -1138,9 +1200,17 @@ MARKDOWN_EXTENSIONS = ['markdown.extensions.fenced_code', 'markdown.extensions.c
 # MARKDOWN_EXTENSION_CONFIGS = {}
 
 
-# Extra options to pass to the pandoc command.
-# by default, it's empty, is a list of strings, for example
-# ['-F', 'pandoc-citeproc', '--bibliography=/Users/foo/references.bib']
+# Extra options to pass to the pandoc command, empty by default.
+# It can be a list of strings or a dict (keys are file extensions).
+# Example for a list of strings (used for all extensions):
+# PANDOC_OPTIONS = ['-F', 'pandoc-citeproc', '--bibliography=/Users/foo/references.bib']
+# Example for a dict, where the keys are the extensions in COMPILERS['pandoc']:
+# COMPILERS['pandoc'] = ['.rst', '.md', '.txt']
+# PANDOC_OPTIONS = {
+#     '.rst': ['-t', 'rst'],
+#     '.md': ['-t', 'markdown'],
+#     '.txt': ['-t', 'markdown-raw_html'],
+# }
 # Pandoc does not demote headers by default.  To enable this, you can use, for example
 # ['--base-header-level=2']
 # PANDOC_OPTIONS = []
@@ -1247,8 +1317,13 @@ COPY_SOURCES = False
 SEARCH_FORM = """
 <!-- Google custom search -->
 <form method="get" action="https://www.google.com/search" class="navbar-form navbar-right" role="search">
-<input type="text" name="q" class="form-control" placeholder="Search" />
-<input type="hidden" name="sitesearch" value="%s" />
+    <div class="input-group">
+        <input type="text" name="q" class="form-control" placeholder="Search">
+        <button type="submit" class="btn btn-secondary">
+            <i class="fa fa-search"></i>
+        </button>
+        <input type="hidden" name="sitesearch" value="%s">
+    </div>
 </form>
 <!-- End of custom search -->
 """ % SITE_URL
@@ -1271,6 +1346,10 @@ SEARCH_FORM = """
 # before </head>
 # (translatable)
 # EXTRA_HEAD_DATA = ""
+EXTRA_HEAD_DATA = '''
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
+'''
 # Google Analytics or whatever else you use. Added to the bottom of <body>
 # in the default template (base.tmpl).
 # (translatable)
@@ -1326,6 +1405,10 @@ FILE_METADATA_UNSLUGIFY_TITLES = True
 #         "tags": str.lower  # nikola: force lowercase 'tags' (input would be string)
 #      }
 # }
+
+# Add any post types here that you want to be displayed without a title.
+# If your theme supports it, the titles will not be shown.
+# TYPES_TO_HIDE_TITLE = []
 
 # Additional metadata that is added to a post when creating a new_post
 # ADDITIONAL_METADATA = {}
@@ -1415,6 +1498,3 @@ GLOBAL_CONTEXT = {}
 # rendered
 GLOBAL_CONTEXT_FILLER = []
 
-# Add any post types here that you want to be displayed without a title.
-# Ir your theme supports it, the titles will not be shown.
-TYPES_TO_HIDE_TITLE = []

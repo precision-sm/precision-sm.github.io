@@ -2,7 +2,7 @@
 engine = mako
 parent = bootstrap4
 author = Alberto Lusiani
-author_url = https://getnikola.com/
+author_url = https://github.com/alusiani
 license = MIT
 based_on = Bootstrap 4 <http://getbootstrap.com/>
 tags = bootstrap
