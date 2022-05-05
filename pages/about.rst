@@ -2,8 +2,8 @@
 .. slug: about
 .. date: 2020-06-29 18:41:26 UTC+02:00
 .. tags:
-.. category: 
-.. link: 
+.. category:
+.. link:
 .. description:
 .. has_math: true
 .. type: text
@@ -20,11 +20,11 @@
     :format: html
 .. .............................................................................
 
-.. figure:: /images/strong-2020-logo-black.png
-    :target: /images/strong-2020-logo-black.png
+.. figure:: /images/strong-2020-logo-transp-250x.png
+    :target: /images/strong-2020-logo-transp-250x.png
     :align: right
     :figclass: thumbnail
-   
+
 The PrecisionSM project is dedicated to low-energy precision tests of the Standard Model of Particle Physics and is part of the `STRONG-2020 <http://www.strong-2020.eu/>`_ project, funded  from the European Union’s Horizon 2020 research and innovation programme under grant agreement No 824093. It is part of the Low Energy Frontier work packages under the name "JRA3-PrecisionSM". Its Physics topics are:
 
 * determination of the Standard Model prediction of the muon

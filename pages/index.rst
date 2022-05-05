@@ -21,10 +21,10 @@
     :format: html
 .. .............................................................................
 
-.. image:: /images/colibri-plain.svg
-   :target: /images/colibri-plain.svg
-   :width: 12 em
+.. figure:: /images/strong-2020-logo-transp-250x.png
+   :target: /images/strong-2020-logo-transp-250x.png
    :align: right
+   :figclass: thumbnail
 
 PrecisionSM web site (work in progress)
 =======================================
