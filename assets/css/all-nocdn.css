@@ -840,3 +840,11 @@ html[dir="rtl"] body {
     min-height: 25px;
 }
 
+/*
+  remove paragraph vertical space inside list items
+*/
+li p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
