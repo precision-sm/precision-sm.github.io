@@ -1,4 +1,4 @@
-.. title: Fedor Ignatov e+e- -> hadrons cross-section plots
+.. title: Fedor Ignatov $e^+e^- \to \text{hadrons}$ cross-section plots
 .. date: 2020-07-04 17:54:32 UTC+02:00
 .. tags:
 .. category: plots
@@ -8,8 +8,9 @@
 .. has_math: true
 .. hidetitle: true
 
-Fedor Ignatov e+e- -> hadrons cross-section plots
-=================================================
+.. raw:: html
+
+  <a />
 
 .. TEASER_END
 

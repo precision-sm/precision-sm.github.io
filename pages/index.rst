@@ -1,4 +1,4 @@
-.. title: Main Page
+.. title: PrecisionSM web site (work in progress)
 .. slug: index
 .. date: 2020-06-28 18:41:26 UTC+02:00
 .. tags:
@@ -7,7 +7,6 @@
 .. description:
 .. has_math: true
 .. type: text
-.. hidetitle: true
 
 .. .............................................................................
 .. default-role:: code
@@ -25,9 +24,6 @@
    :target: http://www.strong-2020.eu/
    :align: right
    :figclass: thumbnail
-
-PrecisionSM web site (work in progress)
-=======================================
 
 * `HEPData submissions <link://category/submissions>`_
 

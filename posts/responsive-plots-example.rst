@@ -6,10 +6,10 @@
 .. link:
 .. description:
 .. type: text
-.. hidetitle: true
 
-Responsive plots example
-========================
+.. raw:: html
+
+  <a />
 
 .. TEASER_END
 
