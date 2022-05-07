@@ -4,11 +4,8 @@ date: 2022-04-30
 tags: HEPData
 category: docs
 has_math: true
-hidetitle: true
 ---
-
-# HEPData submissions cured by PrecisionSM
-
+<a /><!-- TEASER_END -->
 ## $e^+e^- \to \pi^+\pi^- (\gamma)$
 
 ### Novosibirsk Experiments
