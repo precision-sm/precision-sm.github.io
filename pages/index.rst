@@ -22,17 +22,17 @@
 .. .............................................................................
 
 .. figure:: /images/strong-2020-logo-transp-250x.png
-   :target: /images/strong-2020-logo-transp-250x.png
+   :target: http://www.strong-2020.eu/
    :align: right
    :figclass: thumbnail
 
 PrecisionSM web site (work in progress)
 =======================================
 
-* `HEPData submissions </categories/submissions/>`_
+* `HEPData submissions <link://category/submissions>`_
 
-  * `cured by PrecisionSM </posts/precision-sm-hepdata-subm/>`_
+  * `cured by PrecisionSM <link://slug/precision-sm-hepdata-subm>`_
 
-* `HEPData submissions checks </categories/checks/>`_
+* `HEPData submissions checks <link://category/checks/>`_
 
-* `Plots </categories/plots/>`_
+* `Plots <link://category/plots/>`_

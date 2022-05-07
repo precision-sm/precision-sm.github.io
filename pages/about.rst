@@ -21,7 +21,7 @@
 .. .............................................................................
 
 .. figure:: /images/strong-2020-logo-transp-250x.png
-    :target: /images/strong-2020-logo-transp-250x.png
+    :target: http://www.strong-2020.eu/
     :align: right
     :figclass: thumbnail
 
