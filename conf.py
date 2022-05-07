@@ -356,6 +356,14 @@ COMPILERS = {
     "asciidoc": ('.adoc',),
 }
 
+# You can choose what command to use for processing.
+# For example, you can replace asciidoc with asciidoctor
+# Or use the full path to the program.
+# ASCIIDOC_BINARY = "asciidoc"
+
+# Specify options to the asciidoc compiler (as a string).
+# ASCIIDOC_OPTIONS = ""
+
 # Enable reST directives that insert the contents of external files such
 # as "include" and "raw." This maps directly to the docutils file_insertion_enabled
 # config. See: https://docutils.sourceforge.io/docs/user/config.html#file-insertion-enabled
