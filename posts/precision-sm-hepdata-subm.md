@@ -6,6 +6,7 @@ category: docs
 has_math: true
 ---
 <a /><!-- TEASER_END -->
+
 ## $e^+e^- \to \pi^+\pi^- (\gamma)$
 
 ### Novosibirsk Experiments
