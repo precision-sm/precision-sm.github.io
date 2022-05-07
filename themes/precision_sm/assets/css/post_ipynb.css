@@ -195,6 +195,7 @@ div.output_subarea {
 
 .rendered_html ul {
   margin-left: 0em;
+  margin-bottom: 0em;
 }
 
 .rendered_html ul > ul {
