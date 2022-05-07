@@ -1164,9 +1164,10 @@ MathJax.Hub.Config({
         displayMath: [ ['$$','$$'], ["\\\[","\\\]"] ],
         processEscapes: true
     },
-    displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
+    displayAlign: 'left', // can be 'left' or 'center' eq. align
     "HTML-CSS": {
-        styles: {'.MathJax_Display': {"margin": 0}}
+        styles: {'.MathJax_Display': {"margin": 0}},
+        // preferredFont: "STIX",
     }
 });
 </script>
