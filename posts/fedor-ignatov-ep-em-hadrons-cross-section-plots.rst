@@ -6,7 +6,6 @@
 .. description:
 .. type: text
 .. has_math: true
-.. hidetitle: true
 
 .. raw:: html
 
