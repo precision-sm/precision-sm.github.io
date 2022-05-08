@@ -21,12 +21,12 @@
 <meta property="og:site_name" content="PrecisionSM">
 <meta property="og:title" content="Submit HEPData BaBar 2012 $\sigma(e^+e^- \rightarrow \pi^+\pi^- (\gamm">
 <meta property="og:url" content="https://precision-sm.github.io/posts/hepdata-subm-babar-2012-pip-pim/">
-<meta property="og:description" content="BaBar 2012 $\sigma(e^+e^- \to \pi^+ \pi^- (\gamma))$ HEPData submission¶Paper¶
+<meta property="og:description" content="HEPData submit BaBar 2012 $\sigma(e^+e^- \to \pi^+ \pi^- (\gamma))$¶Paper¶
 Phys.Rev.D 86 (2012) 032013, 2012
 InspireHEP 1114155
 
 HEPData documentation for submissions¶
-https://hepdata-submission.r">
+https://hepdata-submission.readt">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2021-11-22T12:00:00Z">
 <meta property="article:tag" content="BaBar">
@@ -124,7 +124,7 @@ bg-dark
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><!-- TEASER_END --></p>
-<h2 id="BaBar-2012-$%5Csigma(e%5E+e%5E--%5Cto-%5Cpi%5E+-%5Cpi%5E--(%5Cgamma))$-HEPData-submission">BaBar 2012 $\sigma(e^+e^- \to \pi^+ \pi^- (\gamma))$ HEPData submission<a class="anchor-link" href="#BaBar-2012-%24%5Csigma(e%5E+e%5E--%5Cto-%5Cpi%5E+-%5Cpi%5E--(%5Cgamma))%24-HEPData-submission">¶</a>
+<h2 id="HEPData-submit-BaBar-2012-$%5Csigma(e%5E+e%5E--%5Cto-%5Cpi%5E+-%5Cpi%5E--(%5Cgamma))$">HEPData submit BaBar 2012 $\sigma(e^+e^- \to \pi^+ \pi^- (\gamma))$<a class="anchor-link" href="#HEPData-submit-BaBar-2012-%24%5Csigma(e%5E+e%5E--%5Cto-%5Cpi%5E+-%5Cpi%5E--(%5Cgamma))%24">¶</a>
 </h2>
 <h3 id="Paper">Paper<a class="anchor-link" href="#Paper">¶</a>
 </h3>
@@ -154,22 +154,23 @@ bg-dark
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [1]:</div>
+<div class="prompt input_prompt">In [19]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
 <span class="kn">import</span> <span class="nn">io</span>
 <span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
 <span class="kn">import</span> <span class="nn">tempfile</span>
-<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">from</span> <span class="nn">array</span> <span class="kn">import</span> <span class="n">array</span>
+<span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">urllib.request</span>
 <span class="kn">from</span> <span class="nn">requests.utils</span> <span class="kn">import</span> <span class="n">requote_uri</span>
-<span class="kn">from</span> <span class="nn">array</span> <span class="kn">import</span> <span class="n">array</span>
 <span class="kn">import</span> <span class="nn">json</span>
 <span class="kn">import</span> <span class="nn">yaml</span>
-<span class="kn">import</span> <span class="nn">itertools</span>
+<span class="kn">from</span> <span class="nn">contextlib</span> <span class="kn">import</span> <span class="n">contextmanager</span>
 </pre></div>
 
     </div>
@@ -179,7 +180,7 @@ bg-dark
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [2]:</div>
+<div class="prompt input_prompt">In [20]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">hepdata_lib</span>
@@ -194,28 +195,55 @@ bg-dark
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Welcome to JupyROOT 6.24/06
-</pre>
 </div>
-</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [21]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">##</span>
+<span class="c1">## globals</span>
+<span class="c1">##</span>
 
+<span class="n">myfolder</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">"hepdata-babar-2012-pip-pim"</span><span class="p">)</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">myfolder</span><span class="p">):</span>
+  <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">myfolder</span><span class="p">)</span>
+
+<span class="n">suppmat_fname</span> <span class="o">=</span> <span class="s2">"BABAR_ISR2pi_EPAPS.txt"</span>
+</pre></div>
+
+    </div>
 </div>
 </div>
 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [3]:</div>
+<div class="prompt input_prompt">In [22]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">##</span>
+<span class="c1">## procedures</span>
+<span class="c1">##</span>
+
+<span class="nd">@contextmanager</span>
+<span class="k">def</span> <span class="nf">cd</span><span class="p">(</span><span class="n">newdir</span><span class="p">):</span>
+  <span class="n">prevdir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
+  <span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">expanduser</span><span class="p">(</span><span class="n">newdir</span><span class="p">))</span>
+  <span class="k">try</span><span class="p">:</span>
+    <span class="k">yield</span>
+  <span class="k">finally</span><span class="p">:</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">prevdir</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [23]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">##</span>
@@ -243,7 +271,7 @@ bg-dark
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [4]:</div>
+<div class="prompt input_prompt">In [24]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">##</span>
@@ -267,7 +295,7 @@ bg-dark
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [5]:</div>
+<div class="prompt input_prompt">In [25]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">##</span>
@@ -276,7 +304,7 @@ bg-dark
 <span class="c1">## and place the file in the location in "tmpfile"</span>
 <span class="c1">##</span>
 <span class="n">babar_data_url</span> <span class="o">=</span> <span class="s2">"https://journals.aps.org/prd/supplemental/10.1103/PhysRevD.86.032013"</span>
-<span class="n">tmpfile</span> <span class="o">=</span> <span class="s2">"babar-2012/BABAR_ISR2pi_EPAPS.txt"</span>
+<span class="n">tmpfile</span> <span class="o">=</span> <span class="n">myfolder</span> <span class="o">/</span> <span class="n">suppmat_fname</span>
 </pre></div>
 
     </div>
@@ -286,7 +314,7 @@ bg-dark
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [6]:</div>
+<div class="prompt input_prompt">In [26]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">##</span>
@@ -312,7 +340,7 @@ bg-dark
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[6]:</div>
+    <div class="prompt output_prompt">Out[26]:</div>
 
 
 
@@ -429,7 +457,7 @@ bg-dark
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [7]:</div>
+<div class="prompt input_prompt">In [27]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">##</span>
@@ -538,7 +566,7 @@ bg-dark
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[7]:</div>
+    <div class="prompt output_prompt">Out[27]:</div>
 
 
 
@@ -714,7 +742,7 @@ bg-dark
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [8]:</div>
+<div class="prompt input_prompt">In [28]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">##</span>
@@ -753,7 +781,7 @@ bg-dark
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[8]:</div>
+    <div class="prompt output_prompt">Out[28]:</div>
 
 
 
@@ -882,7 +910,7 @@ bg-dark
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [9]:</div>
+<div class="prompt input_prompt">In [29]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">##</span>
@@ -916,7 +944,7 @@ bg-dark
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [10]:</div>
+<div class="prompt input_prompt">In [30]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">##</span>
@@ -927,7 +955,7 @@ bg-dark
 <span class="n">table_val</span><span class="o">.</span><span class="n">description</span> <span class="o">=</span> <span class="s2">"Bare cross section of $e^+e^-</span><span class="se">\\</span><span class="s2">rightarrow\pi^+\pi^-(\gamma)$"</span>
 <span class="n">table_val</span><span class="o">.</span><span class="n">location</span> <span class="o">=</span> <span class="s2">"Data from "</span> <span class="o">+</span> <span class="n">babar_data_url</span>
 
-<span class="n">table_val</span><span class="o">.</span><span class="n">keywords</span><span class="p">[</span><span class="s2">"observables"</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"SIG"</span><span class="p">]</span>
+<span class="n">table_val</span><span class="o">.</span><span class="n">keywords</span><span class="p">[</span><span class="s2">"observables"</span><span class="p">]</span> <span class="o">=</span> <span class="n">keyw_observables</span>
 <span class="n">table_val</span><span class="o">.</span><span class="n">keywords</span><span class="p">[</span><span class="s2">"cmenergies"</span><span class="p">]</span> <span class="o">=</span> <span class="n">keyw_cmenergies</span>
 <span class="n">table_val</span><span class="o">.</span><span class="n">keywords</span><span class="p">[</span><span class="s2">"reactions"</span><span class="p">]</span> <span class="o">=</span> <span class="n">keyw_reactions</span>
 <span class="n">table_val</span><span class="o">.</span><span class="n">keywords</span><span class="p">[</span><span class="s2">"phrases"</span><span class="p">]</span> <span class="o">=</span> <span class="n">keyw_phrases</span>
@@ -959,7 +987,7 @@ bg-dark
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [11]:</div>
+<div class="prompt input_prompt">In [31]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">##</span>
@@ -1027,7 +1055,7 @@ bg-dark
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [12]:</div>
+<div class="prompt input_prompt">In [32]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">##</span>
@@ -1071,40 +1099,64 @@ bg-dark
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [13]:</div>
+<div class="prompt input_prompt">In [33]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">##</span>
 <span class="c1">## assembly and submission</span>
 <span class="c1">##</span>
 
-<span class="n">hd_subm</span> <span class="o">=</span> <span class="n">Submission</span><span class="p">()</span>
+<span class="c1">##--- all output will go here</span>
+<span class="k">with</span> <span class="n">cd</span><span class="p">(</span><span class="n">myfolder</span><span class="p">):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">"creating submission in "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">myfolder</span> <span class="o">/</span> <span class="s2">"submission.tar.gz"</span><span class="p">))</span>
+  <span class="n">hd_subm</span> <span class="o">=</span> <span class="n">Submission</span><span class="p">()</span>
 
-<span class="c1">##--- general info</span>
-<span class="n">hd_subm</span><span class="o">.</span><span class="n">add_record_id</span><span class="p">(</span><span class="mi">1114155</span><span class="p">,</span> <span class="s2">"inspire"</span><span class="p">)</span>
-<span class="n">hd_subm</span><span class="o">.</span><span class="n">add_link</span><span class="p">(</span><span class="s2">"arXiv"</span><span class="p">,</span> <span class="s2">"https://arxiv.org/abs/1205.2228"</span><span class="p">)</span>
-<span class="n">hd_subm</span><span class="o">.</span><span class="n">add_link</span><span class="p">(</span><span class="s2">"Webpage with data files"</span><span class="p">,</span> <span class="n">babar_data_url</span><span class="p">)</span>
+  <span class="c1">##--- general info</span>
+  <span class="n">hd_subm</span><span class="o">.</span><span class="n">add_record_id</span><span class="p">(</span><span class="mi">1114155</span><span class="p">,</span> <span class="s2">"inspire"</span><span class="p">)</span>
+  <span class="n">hd_subm</span><span class="o">.</span><span class="n">add_link</span><span class="p">(</span><span class="s2">"arXiv"</span><span class="p">,</span> <span class="s2">"https://arxiv.org/abs/1205.2228"</span><span class="p">)</span>
+  <span class="n">hd_subm</span><span class="o">.</span><span class="n">add_link</span><span class="p">(</span><span class="s2">"Webpage with data files"</span><span class="p">,</span> <span class="n">babar_data_url</span><span class="p">)</span>
 
-<span class="c1">##--- use temp file for abstract</span>
-<span class="n">tmp</span> <span class="o">=</span> <span class="n">tempfile</span><span class="o">.</span><span class="n">NamedTemporaryFile</span><span class="p">(</span><span class="n">mode</span><span class="o">=</span><span class="s1">'w+t'</span><span class="p">,</span> <span class="n">delete</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="k">try</span><span class="p">:</span>
-  <span class="n">tmp</span><span class="o">.</span><span class="n">writelines</span><span class="p">(</span><span class="n">paper_abstract</span><span class="p">)</span>
-<span class="k">finally</span><span class="p">:</span>
-  <span class="n">tmp</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-<span class="n">hd_subm</span><span class="o">.</span><span class="n">read_abstract</span><span class="p">(</span><span class="n">tmp</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+  <span class="c1">##--- use temp file for abstract</span>
+  <span class="n">tmp</span> <span class="o">=</span> <span class="n">tempfile</span><span class="o">.</span><span class="n">NamedTemporaryFile</span><span class="p">(</span><span class="n">mode</span><span class="o">=</span><span class="s1">'w+t'</span><span class="p">,</span> <span class="n">delete</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+  <span class="k">try</span><span class="p">:</span>
+    <span class="n">tmp</span><span class="o">.</span><span class="n">writelines</span><span class="p">(</span><span class="n">paper_abstract</span><span class="p">)</span>
+  <span class="k">finally</span><span class="p">:</span>
+    <span class="n">tmp</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+  <span class="n">hd_subm</span><span class="o">.</span><span class="n">read_abstract</span><span class="p">(</span><span class="n">tmp</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
 
-<span class="c1">##--- add tables</span>
-<span class="n">hd_subm</span><span class="o">.</span><span class="n">add_table</span><span class="p">(</span><span class="n">table_val</span><span class="p">)</span>
-<span class="n">hd_subm</span><span class="o">.</span><span class="n">add_table</span><span class="p">(</span><span class="n">table_syst_unc</span><span class="p">)</span>
-<span class="n">hd_subm</span><span class="o">.</span><span class="n">add_table</span><span class="p">(</span><span class="n">table_stat_cov</span><span class="p">)</span>
+  <span class="c1">##--- add tables</span>
+  <span class="n">hd_subm</span><span class="o">.</span><span class="n">add_table</span><span class="p">(</span><span class="n">table_val</span><span class="p">)</span>
+  <span class="n">hd_subm</span><span class="o">.</span><span class="n">add_table</span><span class="p">(</span><span class="n">table_syst_unc</span><span class="p">)</span>
+  <span class="n">hd_subm</span><span class="o">.</span><span class="n">add_table</span><span class="p">(</span><span class="n">table_stat_cov</span><span class="p">)</span>
 
-<span class="c1">##---</span>
-<span class="n">outdir</span> <span class="o">=</span> <span class="s2">"babar-pip-pim-2012-insp1114155-hdsubm"</span>
-<span class="n">hd_subm</span><span class="o">.</span><span class="n">create_files</span><span class="p">(</span><span class="n">outdir</span><span class="p">)</span>
-<span class="n">os</span><span class="o">.</span><span class="n">unlink</span><span class="p">(</span><span class="n">tmp</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+  <span class="c1">##--- create submission</span>
+  <span class="n">outdir</span> <span class="o">=</span> <span class="s2">"submission"</span>
+  <span class="n">hd_subm</span><span class="o">.</span><span class="n">create_files</span><span class="p">(</span><span class="n">outdir</span><span class="p">)</span>
+  <span class="n">os</span><span class="o">.</span><span class="n">unlink</span><span class="p">(</span><span class="n">tmp</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"submission created"</span><span class="p">)</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>creating submission in hepdata-babar-2012-pip-pim/submission.tar.gz
+submission created
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
