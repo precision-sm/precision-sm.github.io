@@ -565,16 +565,17 @@ bg-dark
 <span class="c1">##</span>
 <span class="c1">## - drop first column with number of systematic contribution</span>
 <span class="c1">## - transpose to get energy bins in rows, contribution in columns</span>
+<span class="c1">## - add to data frame</span>
 <span class="c1">## </span>
 <span class="n">tmp_df</span> <span class="o">=</span> <span class="n">tmp_df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
 <span class="c1">##--- name columns of the 10 syst contributoins</span>
 <span class="n">tmp_df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"unc_</span><span class="si">%02d</span><span class="s2">"</span> <span class="o">%</span> <span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
-
-<span class="c1">##--- add these last columns to the first data frame</span>
-<span class="n">sigma_syst_df</span> <span class="o">=</span> <span class="n">sigma_syst_df</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
-  <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
-    <span class="n">column</span><span class="p">:</span> <span class="n">tmp_df</span><span class="p">[</span><span class="n">column</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="o">/</span><span class="mi">10</span> <span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">tmp_df</span>
-  <span class="p">})</span>
+<span class="n">sigma_syst_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span>
+  <span class="p">[</span>
+    <span class="n">sigma_syst_df</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
+    <span class="n">tmp_df</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">/</span><span class="mi">10</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+  <span class="p">],</span>
+  <span class="n">axis</span><span class="o">=</span><span class="mi">1</span>
 <span class="p">)</span>
 
 <span class="n">sigma_syst_df</span>
