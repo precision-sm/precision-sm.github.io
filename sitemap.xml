@@ -15,7 +15,7 @@
  </url>
  <url>
   <loc>https://precision-sm.github.io/archive.html</loc>
-  <lastmod>2022-05-09T16:28:00Z</lastmod>
+  <lastmod>2022-05-09T17:58:00Z</lastmod>
  </url>
  <url>
   <loc>https://precision-sm.github.io/categories/</loc>
@@ -51,7 +51,15 @@
  </url>
  <url>
   <loc>https://precision-sm.github.io/posts/</loc>
-  <lastmod>2022-05-07T09:54:00Z</lastmod>
+  <lastmod>2022-05-09T17:58:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://precision-sm.github.io/posts/example-display-responsive-plot/</loc>
+  <lastmod>2022-05-09T17:58:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://precision-sm.github.io/posts/example-root-plot-with-hepdata-submissions/</loc>
+  <lastmod>2022-05-09T17:54:00Z</lastmod>
  </url>
  <url>
   <loc>https://precision-sm.github.io/posts/fedor-ignatov-ep-em-hadrons-cross-section-plots/</loc>
@@ -59,10 +67,6 @@
  </url>
  <url>
   <loc>https://precision-sm.github.io/posts/hepdata-check-babar-2012-pip-pim/</loc>
-  <lastmod>2022-05-07T09:54:00Z</lastmod>
- </url>
- <url>
-  <loc>https://precision-sm.github.io/posts/hepdata-example-root-plot/</loc>
   <lastmod>2022-05-07T09:54:00Z</lastmod>
  </url>
  <url>
@@ -75,10 +79,6 @@
  </url>
  <url>
   <loc>https://precision-sm.github.io/posts/precision-sm-hepdata-subm/</loc>
-  <lastmod>2022-05-07T09:54:00Z</lastmod>
- </url>
- <url>
-  <loc>https://precision-sm.github.io/posts/responsive-plots-example/</loc>
   <lastmod>2022-05-07T09:54:00Z</lastmod>
  </url>
  <url>
