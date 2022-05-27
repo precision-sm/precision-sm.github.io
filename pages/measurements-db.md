@@ -29,7 +29,7 @@ has_math: true
 * hepdata: [ins100180](https://www.hepdata.net/record/ins100180)
 * method: Direct
 * quotes: $F_\pi$
-* energy: 1.44 - 9
+* energy \[GeV\]: 1.44 - 9
 * rad_corr:
     * No Mention
 * comment:
@@ -40,7 +40,7 @@ has_math: true
 * hepdata: [ins124109](https://www.hepdata.net/record/ins124109)
 * method: Direct
 * quotes: $F_\pi$
-* energy: 1.6 - 1.6
+* energy \[GeV\]: 1.6 - 1.6
 * rad_corr:
     * No Mention
 * comment:
@@ -51,7 +51,7 @@ has_math: true
 * hepdata: [ins158283](https://www.hepdata.net/record/ins158283)
 * method: Direct
 * quotes: $F_\pi$
-* energy: 1.45 - 1.52
+* energy \[GeV\]: 1.45 - 1.52
 * rad_corr:
     * No Mention
 * comment:
@@ -61,7 +61,7 @@ has_math: true
 
 * method: Direct
 * quotes: $F_\pi$
-* energy: 3.671 - 3.671
+* energy \[GeV\]: 3.671 - 3.671
 * rad_corr:
     * Yes
 * comment:
@@ -71,7 +71,7 @@ has_math: true
 
 * method: Direct
 * quotes: $F_\pi$
-* energy: 3.772 - 4.17
+* energy \[GeV\]: 3.772 - 4.17
 * rad_corr:
     * Yes
 * comment:
@@ -81,7 +81,7 @@ has_math: true
 
 * method: ISR
 * quotes: $\sigma_{\pi+\pi-}
-* energy: 0.3 - 1
+* energy \[GeV\]: 0.3 - 1
 * rad_corr:
     * Yes
 * comment:
@@ -92,7 +92,7 @@ has_math: true
 * hepdata: [ins73648](https://www.hepdata.net/record/ins73648)
 * method: Direct
 * quotes: $\sigma$
-* energy: 0.705 - 0.99
+* energy \[GeV\]: 0.705 - 0.99
 * rad_corr:
     * Yes in an approximate formula \[REF given\]
 * comment:
@@ -103,7 +103,7 @@ has_math: true
 * hepdata: [ins109771](https://www.hepdata.net/record/ins109771)
 * method: Direct
 * quotes: $F_\pi$
-* energy: 0.91 - 1.08
+* energy \[GeV\]: 0.91 - 1.08
 * rad_corr:
     * NO description
 * comment:
@@ -114,7 +114,7 @@ has_math: true
 * hepdata: [ins195944](https://www.hepdata.net/record/ins195944)
 * method: Fixed Target
 * quotes: $F_\pi$
-* energy: 0.1 - 0.18
+* energy \[GeV\]: 0.1 - 0.18
 * rad_corr:
     * Not referenced
 * comment:
