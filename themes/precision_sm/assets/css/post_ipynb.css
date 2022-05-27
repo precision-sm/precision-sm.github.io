@@ -1,20 +1,56 @@
 /*
 
-Nikola jupyter notebook customization
-- from https://paulomarconi.github.io/blog/Nikola-guide/
-- revisions by A. Lusiani
+  Nikola jupyter notebook customization
+  - A. Lusiani
+  - something from from https://paulomarconi.github.io/blog/Nikola-guide/
 
 */
-
 
 /*
-  refinements for jupyter nb tables in output cells
+  text smaller than default
+  use Nikola standard of have zero top-margin and some bottom-margin
+  on most HTML elements, removing some inconsistent standard in
+  ipython.min.css of having also non-zero top-margin in some cases
 */
-
-/* code and output in Jupiter notebooks */
 
 .rendered_html {
   font-size: 87.5%;
+}
+
+.rendered_html p,
+.rendered_html dl,
+.rendered_html ol,
+.rendered_html ul,
+.rendered_html table,
+.rendered_html h1,
+.rendered_html h2,
+.rendered_html h3,
+.rendered_html h4,
+.rendered_html h5,
+.rendered_html h6
+{
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  /* line-height: 1.2; */
+}
+
+/* correct ipython.min.css */
+
+.rendered_html *+p {
+  margin-top: 0em;
+}
+
+/*
+  have tables inheriting current font instead of being fixed to 12px
+  reduce padding accordingly
+*/
+
+.rendered_html table {
+  font-size: inherit;
+}
+
+.rendered_html tr, .rendered_html th, .rendered_html td {
+  padding: 0.2em 0.4em;
 }
 
 .rendered_html tbody tr:nth-child(odd) {
@@ -33,7 +69,18 @@ Nikola jupyter notebook customization
 
 .rendered_html tbody {
   border-bottom: 1px solid #a0a0a0;
-}div.output_subarea {
+}
+
+/*
+  refine Jupyter notebook rendering
+*/
+
+/*hide anchor links that are generated for headers*/
+.anchor-link {
+  display:none;
+}
+
+div.output_subarea {
   margin: 0px 4px 2px 0px;
   border: 1px solid #a0a0a0;
   /* background-color: rgba(0, 0, 0, 0.05); */
@@ -51,12 +98,6 @@ div.prompt {
   -moz-border-radius: 4px;
   border-radius: 4px;
 }
-
-/*
-div.prompt:empty {
-  margin: 0px 4px 2px 0px;
-}
-*/
 
 div.input_area {
   margin: 0px 4px 2px 0px;
@@ -101,9 +142,7 @@ th > p, td > p, li > p {
 }
 
 /*
-
-from https://paulomarconi.github.io/blog/Nikola-guide/
-
+  from https://paulomarconi.github.io/blog/Nikola-guide/
 */
 
 /*
@@ -189,6 +228,7 @@ div.output_subarea {
   max-width: 100%;
 }
 
+/*
 .rendered_html *+ul {
   margin-top: 0.5em;
 }
@@ -201,6 +241,7 @@ div.output_subarea {
 .rendered_html ul > ul {
   margin-left: 0em;
 }
+*/
 
 /*
 .rendered_html ul {
