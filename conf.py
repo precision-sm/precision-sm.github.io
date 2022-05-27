@@ -144,6 +144,7 @@ NAVIGATION_LINKS = {
   DEFAULT_LANG: (
      (
       (
+        ('/measurements-db/', 'Measurements Database'),
         ('/categories/submissions', 'Data Submissions'),
         ('/categories/checks', 'Data Submissions Checks'),
         ('/categories/plots', 'Plots'),
@@ -523,6 +524,11 @@ CATEGORY_OUTPUT_FLAT_HIERARCHY = False
 #    },
 # }
 
+CATEGORY_DESCRIPTIONS = {
+   DEFAULT_LANG: {
+   },
+}
+
 # Set special titles for category pages. The default is "Posts about CATEGORY".
 # (translatable)
 # CATEGORY_TITLES = {
@@ -531,6 +537,15 @@ CATEGORY_OUTPUT_FLAT_HIERARCHY = False
 #        "open source": "Posts about open source software"
 #    },
 # }
+
+CATEGORY_TITLES = {
+   DEFAULT_LANG: {
+       "docs": "Documentation",
+       "submissions": "HEPData submissions",
+       "checks": "Checks of HEPData submissions",
+       "plots": "Plots",
+   },
+}
 
 # If you do not want to display a category publicly, you can mark it as hidden.
 # The category will not be displayed on the category list page.
