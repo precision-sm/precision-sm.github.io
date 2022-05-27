@@ -860,3 +860,66 @@ li p {
   border-top: 2px solid #a0a0a0;
 }
 
+/* tables */
+
+table {
+  margin-left: auto;
+  margin-right: auto;
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: inherit;
+  table-layout: fixed;
+  margin-bottom: 1em;
+}
+
+thead {
+  border-top: 1px solid #a0a0a0;
+  border-bottom: 1px solid #a0a0a0;
+}
+
+tbody {
+  border-bottom: 1px solid #a0a0a0;
+}
+
+tr,
+th,
+td {
+  text-align: right;
+  vertical-align: middle;
+  padding: 0.2em 0.4em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
+}
+
+th {
+  font-weight: bold;
+}
+
+tbody tr:nth-child(odd) {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+tbody tr:hover{
+  color:#212529;
+  background-color:rgba(0, 0, 0, 0.10);
+}
+
+* + table {
+  margin-top: 1em;
+}
+
+/*
+  adjustement to display an anchored section since its beginning
+*/
+
+:target:before {
+  content: "";
+  display: block;
+  height:  75px; /* fixed header height*/
+  margin: -75px 0 0; /* negative fixed header height */
+}
+
