@@ -25,6 +25,8 @@
    :align: right
    :figclass: thumbnail
 
+* `Measurements Database </measurements-db/>`_
+
 * `HEPData submissions <link://category/submissions>`_
 
   * `cured by PrecisionSM <link://slug/precision-sm-hepdata-subm>`_
