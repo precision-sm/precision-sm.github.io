@@ -7,7 +7,11 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://precision-sm.github.io/</loc>
-  <lastmod>2022-06-06T14:32:00Z</lastmod>
+  <lastmod>2023-02-20T16:20:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://precision-sm.github.io/2pi-db/</loc>
+  <lastmod>2023-02-03T16:51:00Z</lastmod>
  </url>
  <url>
   <loc>https://precision-sm.github.io/about/</loc>
@@ -15,7 +19,7 @@
  </url>
  <url>
   <loc>https://precision-sm.github.io/archive.html</loc>
-  <lastmod>2022-06-06T14:32:00Z</lastmod>
+  <lastmod>2023-02-03T15:30:00Z</lastmod>
  </url>
  <url>
   <loc>https://precision-sm.github.io/categories/</loc>

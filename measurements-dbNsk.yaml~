@@ -1,0 +1,262 @@
+---
+inspirehep-1789269:
+  channel: $\pi^+\pi^-$
+  experiment: SND (VEPP-2000, Novosibirsk)
+  year: 2021
+  reference: https://inspirehep.net/literature/1789269
+  inspirehep: '1789269'
+  hepdata: ins1789269
+  method: Direct
+  quotes:
+  - - $F_\pi$
+    - $\sigma_{\pi+\pi-}$
+    - tot
+    - stat
+    - syst
+  E_lo: 0.5251
+  E_hi: 0.8832
+  rad_corr:
+  - Yes by MCGPJ
+  comment:
+  -  
+  status: checked
+
+inspirehep-728191:
+  channel: $\pi^+\pi^-$
+  experiment: CMD2 (VEPP-2M, Novosibirsk)
+  year: 2006
+  reference: https://inspirehep.net/literature/728191
+  inspirehep: '728191'
+  hepdata: ins728191
+  method: Direct
+  quotes:
+  - - $|F_\pi|^{2}$
+    - $\sigma_{\pi+\pi-}$
+    - tot
+    - stat
+    - syst
+  E_lo: 0.37
+  E_hi: 0.52
+  rad_corr:
+  - Yes by MCGPJ
+  comment:
+  - 
+  status: checked
+
+inspirehep-568807:
+  channel: $\pi^+\pi^-$
+  experiment: CMD2 (VEPP-2M, Novosibirsk)
+  year: 2002
+  reference:
+  - - https://inspirehep.net/literature/568807
+    - https://inspirehep.net/literature/624947
+  inspirehep: '568807'
+  hepdata: ins568807
+  method: Direct
+  quotes:
+  - - $F_\pi$
+    - $\sigma_{\pi+\pi-}$
+    - tot
+    - stat
+    - syst
+  E_lo: 0.6105
+  E_hi: 0.96152
+  rad_corr:
+  - Yes by MCGPJ
+  comment:
+  - data according to errata ins624947
+  status: checked
+
+inspirehep-728302:
+  channel: $\pi^+\pi^-$
+  experiment: CMD2 (VEPP-2M, Novosibirsk)
+  year: 2007
+  reference: https://inspirehep.net/literature/728302
+  inspirehep: '728302'
+  hepdata: ins728302
+  method: Direct
+  quotes:
+  - - $F_\pi$
+    - $\sigma_{\pi+\pi-}$
+    - tot
+    - stat
+    - syst
+  E_lo: 0.6
+  E_hi: 0.97
+  rad_corr:
+  - Yes by MCGPJ
+  comment:
+  - 
+  status: checked
+
+inspirehep-712216:
+  channel: $\pi^+\pi^-$
+  experiment: CMD2 (VEPP-2M, Novosibirsk)
+  year: 2005
+  reference: https://inspirehep.net/literature/712216
+  inspirehep: '712216'
+  hepdata: ins712216
+  method: Direct
+  quotes:
+  - - $F_\pi$
+    - tot
+    - stat
+    - syst
+  E_lo: 0.98
+  E_hi: 1.38
+  rad_corr:
+  - Yes by MCGPJ
+  comment:
+  - 
+  status: checked
+
+inspirehep-686349:
+  channel: $\pi^+\pi^-$
+  experiment: SND (VEPP-2M, Novosibirsk)
+  year: 2005
+  reference:
+  - - https://inspirehep.net/literature/686349
+    - https://inspirehep.net/literature/716141
+  inspirehep: '686349'
+  hepdata: ins686349
+  method: Direct
+  quotes:
+  - - $F_\pi$
+    - $\sigma_{\pi+\pi-}$
+    - tot
+    - stat
+    - syst
+  E_lo: 0.39
+  E_hi: 0.97
+  rad_corr:
+  - Yes by MCGPJ
+  comment:
+  -  data according to errata ins716141
+  status: checked
+
+inspirehep-221309:
+  channel: $\pi^+\pi^-$
+  experiment: OLYA (VEPP-2M, Novosibirsk)
+  year: 1984
+  reference: https://inspirehep.net/literature/221309
+  inspirehep: '221309'
+  hepdata: ins221309
+  method: Direct
+  quotes:
+  - - $F_\pi$
+    - $\sigma_{\pi+\pi-}$
+    - tot
+    - stat
+    - syst
+  E_lo: 0.4
+  E_hi: 1.397
+  rad_corr:
+  - Yes partially
+  comment:
+  - data should be corrected by VP: was used only lepton part of VP_{lep} in luminosity, and VP_{lep} was subtracted from mesuared Fpi. The correction (alpha(tmin)/alpha_lep(tmin))^2*(alpha_lep(s)/alpha)^2, tmin=-s*(1-cos(thcut))/2, cos(thcut)=0.71
+  status: checked
+
+inspirehep-221309:
+  channel: $\pi^+\pi^-$
+  experiment: CMD (VEPP-2M, Novosibirsk)
+  year: 1983
+  reference: https://inspirehep.net/literature/221309
+  inspirehep: '221309'
+  hepdata: ins221309
+  method: Direct
+  quotes:
+  - - $F_\pi$
+    - $\sigma_{\pi+\pi-}$
+    - tot
+    - stat
+    - syst
+  E_lo: 0.36
+  E_hi: 0.82
+  rad_corr:
+  -  Yes partially
+  comment:
+  - data should be corrected by VP: was used only lepton part of VP_{lep} in luminosity, and VP_{lep} was subtracted from mesuared Fpi. The correction (alpha(tmin)/alpha_lep(tmin))^2*(alpha_lep(s)/alpha)^2, tmin=-s*(1-cos(thcut))/2, cos(thcut)=0.6
+  status: checked
+
+inspirehep-167191:
+  channel: $\pi^+\pi^-$
+  experiment: TOF (VEPP-2M, Novosibirsk) 
+  year: 1981
+  reference: https://inspirehep.net/literature/167191
+  inspirehep: '167191'
+  hepdata: ins167191
+  method: Direct
+  quotes:
+  - - $F_\pi$
+    - $\sigma_{\pi+\pi-}$
+    - tot
+    - stat
+  E_lo: 0.4
+  E_hi: 0.46
+  rad_corr:
+  - Yes partially
+  comment:
+  - - data should be corrected by VP: was used only lepton part of VP_{lep} in luminosity, and VP_{lep} was subtracted from mesuared Fpi. The correction (alpha(tmin)/alpha_lep(tmin))^2*(alpha_lep(s)/alpha)^2, tmin=-s*(1-cos(thcut))/2, cos(thcut)=0.24
+    - part of systematic is included in total error
+    - cross section without FSR
+  status: checked
+
+inspirehep-1392895:
+  channel: $\pi^+\pi^-$
+  experiment: VEPP-2 (Novosibirsk)
+  year: 1967
+  reference:
+  - - https://inspirehep.net/literature/1392895
+    - https://inspirehep.net/literature/57008
+  inspirehep: '1392895'
+  hepdata: ins1392895
+  method: Direct
+  quotes:
+  - - $F_\pi$
+    - tot
+  E_lo: 0.58
+  E_hi: 1.02
+  rad_corr:
+  - No, included in the final report ins57008 with Baier group calculation
+  comment:
+  - systematic is included in total error
+  status: checked
+
+inspirehep-69313:
+  channel: $\pi^+\pi^-$
+  experiment: VEPP-2 (Novosibirsk)
+  year: 1971
+  reference: https://inspirehep.net/literature/69313
+  inspirehep: '69313'
+  hepdata: ins69313
+  method: Direct
+  quotes:
+  - - $F_\pi$
+    - tot
+  E_lo: 1.02
+  E_hi: 1.02
+  rad_corr:
+  - Yes by Baier group
+  comment:
+  - systematic is included in total error
+  status: checked
+
+inspirehep-75634:
+  channel: $\pi^+\pi^-$
+  experiment: VEPP-2 (Novosibirsk)
+  year: 1972
+  reference: https://inspirehep.net/literature/75634
+  inspirehep: '75634'
+  hepdata: ins75634
+  method: Direct
+  quotes:
+  - - $F_\pi$
+    - tot
+  E_lo: 1.18
+  E_hi: 1.34
+  rad_corr:
+  - Yes by Baier group
+  comment:
+  - systematic is included in total error
+  status: checked
+
