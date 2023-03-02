@@ -67,7 +67,7 @@ inspirehep-568807:
     - data according to errata ins624947
   status:
     - checked
-inspirehep-728302:
+inspirehep-728302: #DONE
   channel: $\pi^+\pi^-$
   experiment: CMD2 (VEPP-2M, Novosibirsk)
   year: 2007
@@ -134,7 +134,7 @@ inspirehep-686349:
     - data according to errata ins716141
   status:
     - checked
-inspirehep-221309:
+inspirehep-221309: #DONE
   channel: $\pi^+\pi^-$
   experiment: OLYA (VEPP-2M, Novosibirsk)
   year: 1984
@@ -188,7 +188,7 @@ inspirehep-221309:
       - tmin=-s*(1-cos(thcut))/2, cos(thcut)=0.6
   status:
     - checked
-inspirehep-167191:
+inspirehep-167191: #DONE
   channel: $\pi^+\pi^-$
   experiment: TOF (VEPP-2M, Novosibirsk)
   year: 1981

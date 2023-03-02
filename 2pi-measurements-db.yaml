@@ -151,6 +151,110 @@ inspirehep-100180:
     - Errors not divided
   status:
     - checked
+inspirehep-195944:
+  channel: $\pi^+\pi^-$
+  experiment: NA007 (CERN)
+  year: 1984
+  reference: https://inspirehep.net/literature/195944
+  inspirehep: '195944'
+  hepdata: ins195944
+  method: Direct
+  quotes:
+    - - $|F_\pi|^{2}$
+      - stat
+      - syst
+  E_lo: 0.318
+  E_hi: 0.422
+  rad_corr:
+    -
+  comment:
+    -
+  status:
+    - checked
+inspirehep-109771:
+  channel: $\pi^+\pi^-$
+  experiment: ACO (Orsay)
+  year: 1976
+  reference: https://inspirehep.net/literature/109771
+  inspirehep: '109771'
+  hepdata: ins109771
+  method: Direct
+  quotes:
+    - - $|F_\pi|^{2}$
+      - stat
+  E_lo: 0.915
+  E_hi: 1.076
+  rad_corr:
+    - NO description
+  comment:
+    - Report number LAL-1287. PAPER MISSING. Systematic errors to be added.
+  status:
+    - checked
+inspirehep-73648:
+  channel: $\pi^+\pi^-$
+  experiment: ACO (Orsay)
+  year: 1972
+  reference: https://inspirehep.net/literature/73648
+  inspirehep: '73648'
+  hepdata: ins73648
+  method: Direct
+  quotes:
+    - - $\sigma_{\pi+\pi-}$
+      - stat
+  E_lo: 0.705
+  E_hi: 0.990
+  rad_corr:
+    - Yes in an approximate formula
+  comment:
+    - Not clear if sigma_bare or not. Systematic errors to be added.
+  status:
+    - checked
+inspirehep-267118:
+  channel: $\pi^+\pi^-$
+  experiment: DM2 (DCI, Orsay)
+  year: 1989
+  reference: https://inspirehep.net/literature/267118
+  inspirehep: '267118'
+  hepdata: ins267118
+  method: Direct
+  quotes:
+    - - $|F_\pi|^{2}$
+      - stat
+      - syst
+    - - $\sigma_{\pi+\pi-}$
+      - stat
+      - syst
+  E_lo: 1.350
+  E_hi: 2.385
+  rad_corr:
+    -
+  comment:
+    -
+  status:
+    - checked
+inspirehep-134061:
+  channel: $\pi^+\pi^-$
+  experiment: DM1 (DCI, Orsay)
+  year: 1978
+  reference: https://inspirehep.net/literature/134061
+  inspirehep: '134061'
+  hepdata: ins134061
+  method: Direct
+  quotes:
+    - - $|F_\pi|^{2}$
+      - stat
+      - syst
+    - - $\sigma_{\pi+\pi-}$
+      - stat
+      - syst
+  E_lo: 0.483
+  E_hi: 1.096
+  rad_corr:
+    -
+  comment:
+    -
+  status:
+    - checked
 inspirehep-1789269:
   channel: $\pi^+\pi^-$
   experiment: SND (VEPP-2000, Novosibirsk)
@@ -181,9 +285,8 @@ inspirehep-686349:
   channel: $\pi^+\pi^-$
   experiment: SND (VEPP-2M, Novosibirsk)
   year: 2005
-  reference:
-    - - https://inspirehep.net/literature/686349
-      - https://inspirehep.net/literature/716141
+  reference: https://inspirehep.net/literature/686349
+  errata: https://inspirehep.net/literature/716141
   inspirehep: '686349'
   hepdata: ins686349
   method: Direct
