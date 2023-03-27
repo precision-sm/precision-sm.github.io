@@ -183,7 +183,7 @@ inspirehep-859660:
   E_lo: 0.32
   E_hi: 0.92
   rad_corr:
-    - Func. from PHOKHARA 5.0 Eur.Phys.J. C47 (2006), Phys.Lett.B611, 116 (2005)
+    - Func. from PHOKHARA 5.0 Eur.Phys.J. C47 (2006), Phys.Lett. B611 116 (2005)
     - VP corr. from 'alphaQEDn.uu' package by F. Jegerlehner (2003)
     - FSR correction from Eur.Phys.J. C24, 51-69 (2002)
   comment:
