@@ -7,43 +7,43 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://precision-sm.github.io/</loc>
-  <lastmod>2025-05-09T16:08:00Z</lastmod>
+  <lastmod>2025-05-09T16:56:00Z</lastmod>
  </url>
  <url>
   <loc>https://precision-sm.github.io/2pi-db/</loc>
-  <lastmod>2025-05-09T16:08:00Z</lastmod>
+  <lastmod>2025-05-09T16:56:00Z</lastmod>
  </url>
  <url>
   <loc>https://precision-sm.github.io/3pi-db/</loc>
-  <lastmod>2025-05-09T16:08:00Z</lastmod>
+  <lastmod>2025-05-09T16:56:00Z</lastmod>
  </url>
  <url>
   <loc>https://precision-sm.github.io/about/</loc>
-  <lastmod>2025-05-09T16:08:00Z</lastmod>
+  <lastmod>2025-05-09T16:56:00Z</lastmod>
  </url>
  <url>
   <loc>https://precision-sm.github.io/archive.html</loc>
-  <lastmod>2025-05-09T16:08:00Z</lastmod>
+  <lastmod>2025-05-09T16:56:00Z</lastmod>
  </url>
  <url>
   <loc>https://precision-sm.github.io/categories/</loc>
-  <lastmod>2025-05-09T16:08:00Z</lastmod>
+  <lastmod>2025-05-09T16:56:00Z</lastmod>
  </url>
  <url>
   <loc>https://precision-sm.github.io/categories/checks/</loc>
-  <lastmod>2025-05-09T16:08:00Z</lastmod>
+  <lastmod>2025-05-09T16:56:00Z</lastmod>
  </url>
  <url>
   <loc>https://precision-sm.github.io/categories/docs/</loc>
-  <lastmod>2025-05-09T16:08:00Z</lastmod>
+  <lastmod>2025-05-09T16:56:00Z</lastmod>
  </url>
  <url>
   <loc>https://precision-sm.github.io/categories/plots/</loc>
-  <lastmod>2025-05-09T16:08:00Z</lastmod>
+  <lastmod>2025-05-09T16:56:00Z</lastmod>
  </url>
  <url>
   <loc>https://precision-sm.github.io/categories/submissions/</loc>
-  <lastmod>2025-05-09T16:08:00Z</lastmod>
+  <lastmod>2025-05-09T16:56:00Z</lastmod>
  </url>
  <url>
   <loc>https://precision-sm.github.io/jsroot/files/draw.htm</loc>
@@ -59,55 +59,55 @@
  </url>
  <url>
   <loc>https://precision-sm.github.io/measurements-db/</loc>
-  <lastmod>2025-05-09T16:08:00Z</lastmod>
+  <lastmod>2025-05-09T16:56:00Z</lastmod>
  </url>
  <url>
   <loc>https://precision-sm.github.io/pi0g-db/</loc>
-  <lastmod>2025-05-09T16:08:00Z</lastmod>
+  <lastmod>2025-05-09T16:56:00Z</lastmod>
  </url>
  <url>
   <loc>https://precision-sm.github.io/posts/</loc>
-  <lastmod>2025-05-09T16:08:00Z</lastmod>
+  <lastmod>2025-05-09T16:56:00Z</lastmod>
  </url>
  <url>
   <loc>https://precision-sm.github.io/posts/example-display-responsive-plot/</loc>
-  <lastmod>2025-05-09T16:08:00Z</lastmod>
+  <lastmod>2025-05-09T16:56:00Z</lastmod>
  </url>
  <url>
   <loc>https://precision-sm.github.io/posts/example-root-plot-with-hepdata-submissions/</loc>
-  <lastmod>2025-05-09T16:08:00Z</lastmod>
+  <lastmod>2025-05-09T16:56:00Z</lastmod>
  </url>
  <url>
   <loc>https://precision-sm.github.io/posts/fedor-ignatov-ep-em-hadrons-cross-section-plots/</loc>
-  <lastmod>2025-05-09T16:08:00Z</lastmod>
+  <lastmod>2025-05-09T16:56:00Z</lastmod>
  </url>
  <url>
   <loc>https://precision-sm.github.io/posts/hepdata-check-babar-2012-pip-pim/</loc>
-  <lastmod>2025-05-09T16:08:00Z</lastmod>
+  <lastmod>2025-05-09T16:56:00Z</lastmod>
  </url>
  <url>
   <loc>https://precision-sm.github.io/posts/hepdata-subm-babar-2012-pip-pim/</loc>
-  <lastmod>2025-05-09T16:08:00Z</lastmod>
+  <lastmod>2025-05-09T16:56:00Z</lastmod>
  </url>
  <url>
   <loc>https://precision-sm.github.io/posts/plot-babar-2012-pip-pim/</loc>
-  <lastmod>2025-05-09T16:08:00Z</lastmod>
+  <lastmod>2025-05-09T16:56:00Z</lastmod>
  </url>
  <url>
   <loc>https://precision-sm.github.io/posts/precision-sm-hepdata-subm/</loc>
-  <lastmod>2025-05-09T16:08:00Z</lastmod>
+  <lastmod>2025-05-09T16:56:00Z</lastmod>
  </url>
  <url>
   <loc>https://precision-sm.github.io/tags/</loc>
-  <lastmod>2025-05-09T16:08:00Z</lastmod>
+  <lastmod>2025-05-09T16:56:00Z</lastmod>
  </url>
  <url>
   <loc>https://precision-sm.github.io/tags/babar/</loc>
-  <lastmod>2025-05-09T16:08:00Z</lastmod>
+  <lastmod>2025-05-09T16:56:00Z</lastmod>
  </url>
  <url>
   <loc>https://precision-sm.github.io/tags/hepdata/</loc>
-  <lastmod>2025-05-09T16:08:00Z</lastmod>
+  <lastmod>2025-05-09T16:56:00Z</lastmod>
  </url>
  <url>
   <loc>https://precision-sm.github.io/vpl/jsplot_2.html</loc>
