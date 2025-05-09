@@ -1,6 +1,6 @@
 ---
-title: Database for $e^+e^- \rightarrow \pi^+\pi^-$ channels
-date: 2023-02-03
+title: Database for $e^+e^- \rightarrow \pi^+\pi^-\pi^0$ channels
+date: 2025-05-09
 tags: HEPData
 category: docs
 has_math: true

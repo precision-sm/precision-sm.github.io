@@ -30,6 +30,10 @@
 * Measurements Database:   
   
     * `$e^+e^- \\rightarrow \\pi^+\\pi^-$ </2pi-db>`_
+	
+    * `$e^+e^- \\rightarrow \\pi^+\\pi^-\\pi^0$ </3pi-db>`_
+	
+    * `$e^+e^- \\rightarrow \\pi^0\\gamma$ </pi0g-db>`_
 
   
 
