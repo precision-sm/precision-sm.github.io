@@ -119,13 +119,13 @@ bg-dark
         
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
-    <div class="cell border-box-sizing text_cell rendered">
+    <div class="cell border-box-sizing text_cell rendered" id="cell-id=fa3874ee-a795-4b7a-ae91-dea7381f83aa">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><!-- TEASER_END --></p>
-<h2 id="HEPData-submit-BaBar-2012-$%5Csigma(e%5E+e%5E--%5Cto-%5Cpi%5E+-%5Cpi%5E--(%5Cgamma))$">HEPData submit BaBar 2012 $\sigma(e^+e^- \to \pi^+ \pi^- (\gamma))$<a class="anchor-link" href="#HEPData-submit-BaBar-2012-%24%5Csigma(e%5E+e%5E--%5Cto-%5Cpi%5E+-%5Cpi%5E--(%5Cgamma))%24">¶</a>
+<!-- TEASER_END -->
+<h2 id="HEPData-submit-BaBar-2012-$%5Csigma(e%5E+e%5E--%5Cto-%5Cpi%5E+-%5Cpi%5E--(%5Cgamma))$">HEPData submit BaBar 2012 $\sigma(e^+e^- \to \pi^+ \pi^- (\gamma))$<a class="anchor-link" href="#HEPData-submit-BaBar-2012-$%5Csigma(e%5E+e%5E--%5Cto-%5Cpi%5E+-%5Cpi%5E--(%5Cgamma))$">¶</a>
 </h2>
 <h3 id="Paper">Paper<a class="anchor-link" href="#Paper">¶</a>
 </h3>
@@ -153,78 +153,66 @@ bg-dark
 <h3 id="Notes">Notes<a class="anchor-link" href="#Notes">¶</a>
 </h3>
 <p>In the supplementary material, numbers are printed into strings. We do not convert these strings to numeric format when reading the supplementary material, since the hepdata_lib code works with strings as well.</p>
-
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=fbe9b162-0f47-41cb-8726-d0f07740d9fe">
 <div class="input">
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
-<span class="kn">import</span> <span class="nn">io</span>
-<span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
-<span class="kn">import</span> <span class="nn">tempfile</span>
-<span class="kn">from</span> <span class="nn">array</span> <span class="kn">import</span> <span class="n">array</span>
-<span class="kn">import</span> <span class="nn">math</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">urllib.request</span>
-<span class="kn">from</span> <span class="nn">requests.utils</span> <span class="kn">import</span> <span class="n">requote_uri</span>
-<span class="kn">import</span> <span class="nn">json</span>
-<span class="kn">import</span> <span class="nn">yaml</span>
-<span class="kn">from</span> <span class="nn">contextlib</span> <span class="kn">import</span> <span class="n">contextmanager</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">io</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">tempfile</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">array</span><span class="w"> </span><span class="kn">import</span> <span class="n">array</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">urllib.request</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">requests.utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">requote_uri</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">yaml</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">contextlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">contextmanager</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+</div>
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=a0ac8a2e-4235-4cb3-b056-9c16a545e842">
 <div class="input">
 <div class="prompt input_prompt">In [2]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">## import hepdata_lib</span>
-<span class="kn">from</span> <span class="nn">hepdata_lib</span> <span class="kn">import</span> <span class="n">Submission</span>
-<span class="kn">from</span> <span class="nn">hepdata_lib</span> <span class="kn">import</span> <span class="n">Table</span>
-<span class="kn">from</span> <span class="nn">hepdata_lib</span> <span class="kn">import</span> <span class="n">Variable</span><span class="p">,</span> <span class="n">Uncertainty</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1">## import hepdata_lib</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">hepdata_lib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Submission</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">hepdata_lib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Table</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">hepdata_lib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Variable</span><span class="p">,</span> <span class="n">Uncertainty</span>
 <span class="c1">## from hepdata_lib import RootFileReader</span>
 <span class="c1">## from hepdata_lib import root_utils</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Welcome to JupyROOT 6.24/06
 </pre>
 </div>
 </div>
-
 </div>
 </div>
-
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=af3bed9c-c99a-41b6-88d1-d3d927ab8033">
 <div class="input">
 <div class="prompt input_prompt">In [3]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">##</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1">##</span>
 <span class="c1">## globals</span>
 <span class="c1">##</span>
 
@@ -234,23 +222,21 @@ bg-dark
 
 <span class="n">suppmat_fname</span> <span class="o">=</span> <span class="s2">"BABAR_ISR2pi_EPAPS.txt"</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+</div>
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=3980ecde-766a-4321-9e7b-7b3c666fa416">
 <div class="input">
 <div class="prompt input_prompt">In [4]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">##</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1">##</span>
 <span class="c1">## procedures</span>
 <span class="c1">##</span>
 
 <span class="nd">@contextmanager</span>
-<span class="k">def</span> <span class="nf">cd</span><span class="p">(</span><span class="n">newdir</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">cd</span><span class="p">(</span><span class="n">newdir</span><span class="p">):</span>
   <span class="n">prevdir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
   <span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">expanduser</span><span class="p">(</span><span class="n">newdir</span><span class="p">))</span>
   <span class="k">try</span><span class="p">:</span>
@@ -258,18 +244,16 @@ bg-dark
   <span class="k">finally</span><span class="p">:</span>
     <span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">prevdir</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+</div>
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=5a9462e7-0354-4a79-b0e4-9cbd9a281fb1">
 <div class="input">
 <div class="prompt input_prompt">In [5]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">##</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1">##</span>
 <span class="c1">## abstract</span>
 <span class="c1">##</span>
 <span class="n">paper_abstract</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">"""A precise measurement of the cross section of the process $e^+e^- \to</span>
@@ -286,18 +270,16 @@ bg-dark
 <span class="s2">stat}) \pm 3.1({\rm syst}))\times 10^{-10}$."""</span>
 <span class="n">paper_abstract</span> <span class="o">=</span> <span class="s1">' '</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">paper_abstract</span><span class="o">.</span><span class="n">splitlines</span><span class="p">())</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+</div>
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=3d804c63-dfd6-4a32-9715-ac2064b080f2">
 <div class="input">
 <div class="prompt input_prompt">In [6]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">##</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1">##</span>
 <span class="c1">## download BaBar Phys. Rev. D 86 (2012) 032013 suppl. mat.</span>
 <span class="c1">##</span>
 <span class="c1">## was available without authentication until end 2021</span>
@@ -310,18 +292,16 @@ bg-dark
 <span class="c1"># tmpfile, headers = urllib.request.urlretrieve(babar_data_url)</span>
 <span class="c1"># tmpfile</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+</div>
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=c4001d2a-b87d-479f-adc2-7468be042341">
 <div class="input">
 <div class="prompt input_prompt">In [7]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">##</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1">##</span>
 <span class="c1">## download with authentication from PRD supplementary material archive</span>
 <span class="c1">## in https://journals.aps.org/prd/supplemental/10.1103/PhysRevD.86.032013</span>
 <span class="c1">## and place the file in the location in "tmpfile"</span>
@@ -329,18 +309,16 @@ bg-dark
 <span class="n">babar_data_url</span> <span class="o">=</span> <span class="s2">"https://journals.aps.org/prd/supplemental/10.1103/PhysRevD.86.032013"</span>
 <span class="n">tmpfile</span> <span class="o">=</span> <span class="n">myfolder</span> <span class="o">/</span> <span class="n">suppmat_fname</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+</div>
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=8927a773-1c8c-479b-9435-284e55e6e8cb">
 <div class="input">
 <div class="prompt input_prompt">In [8]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">##</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1">##</span>
 <span class="c1">## read cross-section values and uncertainties by energy bins</span>
 <span class="c1">##</span>
 <span class="n">sigma_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span>
@@ -352,23 +330,15 @@ bg-dark
 <span class="n">sigma_df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="s2">"colon"</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">sigma_df</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[8]:</div>
-
-
-
+<div class="prompt output_prompt">Out[8]:</div>
 <div class="output_html rendered_html output_subarea output_execute_result"><div>
-<style scoped>
+<style scoped="">
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
@@ -384,106 +354,103 @@ bg-dark
 <table border="1" class="dataframe">
 <thead><tr style="text-align: right;">
 <th></th>
-      <th>E_lo</th>
-      <th>E_hi</th>
-      <th>sigma_val</th>
-      <th>sigma_unc</th>
-    </tr></thead>
+<th>E_lo</th>
+<th>E_hi</th>
+<th>sigma_val</th>
+<th>sigma_unc</th>
+</tr></thead>
 <tbody>
 <tr>
 <th>0</th>
-      <td>0.30</td>
-      <td>0.31</td>
-      <td>25.490436</td>
-      <td>2.699430</td>
-    </tr>
+<td>0.30</td>
+<td>0.31</td>
+<td>25.490436</td>
+<td>2.699430</td>
+</tr>
 <tr>
 <th>1</th>
-      <td>0.31</td>
-      <td>0.32</td>
-      <td>35.480116</td>
-      <td>2.914640</td>
-    </tr>
+<td>0.31</td>
+<td>0.32</td>
+<td>35.480116</td>
+<td>2.914640</td>
+</tr>
 <tr>
 <th>2</th>
-      <td>0.32</td>
-      <td>0.33</td>
-      <td>45.485797</td>
-      <td>3.046690</td>
-    </tr>
+<td>0.32</td>
+<td>0.33</td>
+<td>45.485797</td>
+<td>3.046690</td>
+</tr>
 <tr>
 <th>3</th>
-      <td>0.33</td>
-      <td>0.34</td>
-      <td>51.782467</td>
-      <td>3.133550</td>
-    </tr>
+<td>0.33</td>
+<td>0.34</td>
+<td>51.782467</td>
+<td>3.133550</td>
+</tr>
 <tr>
 <th>4</th>
-      <td>0.34</td>
-      <td>0.35</td>
-      <td>64.415646</td>
-      <td>3.499530</td>
-    </tr>
+<td>0.34</td>
+<td>0.35</td>
+<td>64.415646</td>
+<td>3.499530</td>
+</tr>
 <tr>
 <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
 <tr>
 <th>332</th>
-      <td>2.50</td>
-      <td>2.60</td>
-      <td>0.047650</td>
-      <td>0.018634</td>
-    </tr>
+<td>2.50</td>
+<td>2.60</td>
+<td>0.047650</td>
+<td>0.018634</td>
+</tr>
 <tr>
 <th>333</th>
-      <td>2.60</td>
-      <td>2.70</td>
-      <td>0.024211</td>
-      <td>0.013667</td>
-    </tr>
+<td>2.60</td>
+<td>2.70</td>
+<td>0.024211</td>
+<td>0.013667</td>
+</tr>
 <tr>
 <th>334</th>
-      <td>2.70</td>
-      <td>2.80</td>
-      <td>0.013945</td>
-      <td>0.014118</td>
-    </tr>
+<td>2.70</td>
+<td>2.80</td>
+<td>0.013945</td>
+<td>0.014118</td>
+</tr>
 <tr>
 <th>335</th>
-      <td>2.80</td>
-      <td>2.90</td>
-      <td>0.009181</td>
-      <td>0.013260</td>
-    </tr>
+<td>2.80</td>
+<td>2.90</td>
+<td>0.009181</td>
+<td>0.013260</td>
+</tr>
 <tr>
 <th>336</th>
-      <td>2.90</td>
-      <td>3.00</td>
-      <td>0.010228</td>
-      <td>0.012373</td>
-    </tr>
+<td>2.90</td>
+<td>3.00</td>
+<td>0.010228</td>
+<td>0.012373</td>
+</tr>
 </tbody>
 </table>
 <p>337 rows × 4 columns</p>
 </div></div>
-
-</div>
-
 </div>
 </div>
-
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+</div>
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=7b9eb4e4-29e8-4eef-b470-27898f7ccd70">
 <div class="input">
 <div class="prompt input_prompt">In [9]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">##</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1">##</span>
 <span class="c1">## read systematics</span>
 <span class="c1">##</span>
 
@@ -585,23 +552,15 @@ bg-dark
 
 <span class="n">sigma_syst_df</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[9]:</div>
-
-
-
+<div class="prompt output_prompt">Out[9]:</div>
 <div class="output_html rendered_html output_subarea output_execute_result"><div>
-<style scoped>
+<style scoped="">
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
@@ -617,165 +576,162 @@ bg-dark
 <table border="1" class="dataframe">
 <thead><tr style="text-align: right;">
 <th></th>
-      <th>E_lo</th>
-      <th>E_hi</th>
-      <th>unc_syst_perc_tot</th>
-      <th>unc_01</th>
-      <th>unc_02</th>
-      <th>unc_03</th>
-      <th>unc_04</th>
-      <th>unc_05</th>
-      <th>unc_06</th>
-      <th>unc_07</th>
-      <th>unc_08</th>
-      <th>unc_09</th>
-      <th>unc_10</th>
-    </tr></thead>
+<th>E_lo</th>
+<th>E_hi</th>
+<th>unc_syst_perc_tot</th>
+<th>unc_01</th>
+<th>unc_02</th>
+<th>unc_03</th>
+<th>unc_04</th>
+<th>unc_05</th>
+<th>unc_06</th>
+<th>unc_07</th>
+<th>unc_08</th>
+<th>unc_09</th>
+<th>unc_10</th>
+</tr></thead>
 <tbody>
 <tr>
 <th>0</th>
-      <td>0.3</td>
-      <td>0.4</td>
-      <td>1.38</td>
-      <td>0.53</td>
-      <td>0.38</td>
-      <td>1.01</td>
-      <td>0.35</td>
-      <td>0.16</td>
-      <td>0.09</td>
-      <td>0.30</td>
-      <td>0.27</td>
-      <td>0.10</td>
-      <td>0.34</td>
-    </tr>
+<td>0.3</td>
+<td>0.4</td>
+<td>1.38</td>
+<td>0.53</td>
+<td>0.38</td>
+<td>1.01</td>
+<td>0.35</td>
+<td>0.16</td>
+<td>0.09</td>
+<td>0.30</td>
+<td>0.27</td>
+<td>0.10</td>
+<td>0.34</td>
+</tr>
 <tr>
 <th>1</th>
-      <td>0.4</td>
-      <td>0.5</td>
-      <td>0.81</td>
-      <td>0.27</td>
-      <td>0.21</td>
-      <td>0.25</td>
-      <td>0.43</td>
-      <td>0.16</td>
-      <td>0.09</td>
-      <td>0.20</td>
-      <td>0.14</td>
-      <td>0.27</td>
-      <td>0.34</td>
-    </tr>
+<td>0.4</td>
+<td>0.5</td>
+<td>0.81</td>
+<td>0.27</td>
+<td>0.21</td>
+<td>0.25</td>
+<td>0.43</td>
+<td>0.16</td>
+<td>0.09</td>
+<td>0.20</td>
+<td>0.14</td>
+<td>0.27</td>
+<td>0.34</td>
+</tr>
 <tr>
 <th>2</th>
-      <td>0.5</td>
-      <td>0.6</td>
-      <td>1.02</td>
-      <td>0.19</td>
-      <td>0.21</td>
-      <td>0.62</td>
-      <td>0.52</td>
-      <td>0.10</td>
-      <td>0.03</td>
-      <td>0.30</td>
-      <td>0.16</td>
-      <td>0.27</td>
-      <td>0.34</td>
-    </tr>
+<td>0.5</td>
+<td>0.6</td>
+<td>1.02</td>
+<td>0.19</td>
+<td>0.21</td>
+<td>0.62</td>
+<td>0.52</td>
+<td>0.10</td>
+<td>0.03</td>
+<td>0.30</td>
+<td>0.16</td>
+<td>0.27</td>
+<td>0.34</td>
+</tr>
 <tr>
 <th>3</th>
-      <td>0.6</td>
-      <td>0.9</td>
-      <td>0.50</td>
-      <td>0.10</td>
-      <td>0.11</td>
-      <td>0.24</td>
-      <td>0.10</td>
-      <td>0.10</td>
-      <td>0.03</td>
-      <td>0.13</td>
-      <td>0.11</td>
-      <td>0.10</td>
-      <td>0.34</td>
-    </tr>
+<td>0.6</td>
+<td>0.9</td>
+<td>0.50</td>
+<td>0.10</td>
+<td>0.11</td>
+<td>0.24</td>
+<td>0.10</td>
+<td>0.10</td>
+<td>0.03</td>
+<td>0.13</td>
+<td>0.11</td>
+<td>0.10</td>
+<td>0.34</td>
+</tr>
 <tr>
 <th>4</th>
-      <td>0.9</td>
-      <td>1.2</td>
-      <td>0.65</td>
-      <td>0.05</td>
-      <td>0.17</td>
-      <td>0.42</td>
-      <td>0.30</td>
-      <td>0.16</td>
-      <td>0.09</td>
-      <td>0.20</td>
-      <td>0.13</td>
-      <td>0.13</td>
-      <td>0.34</td>
-    </tr>
+<td>0.9</td>
+<td>1.2</td>
+<td>0.65</td>
+<td>0.05</td>
+<td>0.17</td>
+<td>0.42</td>
+<td>0.30</td>
+<td>0.16</td>
+<td>0.09</td>
+<td>0.20</td>
+<td>0.13</td>
+<td>0.13</td>
+<td>0.34</td>
+</tr>
 <tr>
 <th>5</th>
-      <td>1.2</td>
-      <td>1.4</td>
-      <td>1.39</td>
-      <td>0.04</td>
-      <td>0.31</td>
-      <td>1.01</td>
-      <td>0.70</td>
-      <td>0.16</td>
-      <td>0.09</td>
-      <td>0.30</td>
-      <td>0.27</td>
-      <td>0.10</td>
-      <td>0.34</td>
-    </tr>
+<td>1.2</td>
+<td>1.4</td>
+<td>1.39</td>
+<td>0.04</td>
+<td>0.31</td>
+<td>1.01</td>
+<td>0.70</td>
+<td>0.16</td>
+<td>0.09</td>
+<td>0.30</td>
+<td>0.27</td>
+<td>0.10</td>
+<td>0.34</td>
+</tr>
 <tr>
 <th>6</th>
-      <td>1.4</td>
-      <td>2.0</td>
-      <td>1.98</td>
-      <td>0.03</td>
-      <td>0.31</td>
-      <td>1.01</td>
-      <td>1.20</td>
-      <td>0.16</td>
-      <td>0.09</td>
-      <td>1.00</td>
-      <td>0.51</td>
-      <td>0.10</td>
-      <td>0.34</td>
-    </tr>
+<td>1.4</td>
+<td>2.0</td>
+<td>1.98</td>
+<td>0.03</td>
+<td>0.31</td>
+<td>1.01</td>
+<td>1.20</td>
+<td>0.16</td>
+<td>0.09</td>
+<td>1.00</td>
+<td>0.51</td>
+<td>0.10</td>
+<td>0.34</td>
+</tr>
 <tr>
 <th>7</th>
-      <td>2.0</td>
-      <td>3.0</td>
-      <td>5.24</td>
-      <td>0.03</td>
-      <td>0.31</td>
-      <td>1.01</td>
-      <td>5.00</td>
-      <td>0.16</td>
-      <td>0.09</td>
-      <td>1.00</td>
-      <td>0.51</td>
-      <td>0.10</td>
-      <td>0.34</td>
-    </tr>
+<td>2.0</td>
+<td>3.0</td>
+<td>5.24</td>
+<td>0.03</td>
+<td>0.31</td>
+<td>1.01</td>
+<td>5.00</td>
+<td>0.16</td>
+<td>0.09</td>
+<td>1.00</td>
+<td>0.51</td>
+<td>0.10</td>
+<td>0.34</td>
+</tr>
 </tbody>
 </table>
 </div></div>
-
-</div>
-
 </div>
 </div>
-
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+</div>
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=aac1a008-4700-4ebe-9fcf-0ba2ba6fc692">
 <div class="input">
 <div class="prompt input_prompt">In [10]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">##</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1">##</span>
 <span class="c1">## get stat unc correlation</span>
 <span class="c1">## it is a sequence of 337*337 values</span>
 <span class="c1">##</span>
@@ -798,23 +754,15 @@ bg-dark
 
 <span class="n">sigma_stat_cov_df</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[10]:</div>
-
-
-
+<div class="prompt output_prompt">Out[10]:</div>
 <div class="output_html rendered_html output_subarea output_execute_result"><div>
-<style scoped>
+<style scoped="">
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
@@ -830,118 +778,115 @@ bg-dark
 <table border="1" class="dataframe">
 <thead><tr style="text-align: right;">
 <th></th>
-      <th>E_lo_i</th>
-      <th>E_hi_i</th>
-      <th>E_lo_j</th>
-      <th>E_hi_j</th>
-      <th>cov</th>
-    </tr></thead>
+<th>E_lo_i</th>
+<th>E_hi_i</th>
+<th>E_lo_j</th>
+<th>E_hi_j</th>
+<th>cov</th>
+</tr></thead>
 <tbody>
 <tr>
 <th>0</th>
-      <td>0.30</td>
-      <td>0.31</td>
-      <td>0.3</td>
-      <td>0.31</td>
-      <td>7.164117e+00</td>
-    </tr>
+<td>0.30</td>
+<td>0.31</td>
+<td>0.3</td>
+<td>0.31</td>
+<td>7.164117e+00</td>
+</tr>
 <tr>
 <th>1</th>
-      <td>0.31</td>
-      <td>0.32</td>
-      <td>0.3</td>
-      <td>0.31</td>
-      <td>8.112126e-01</td>
-    </tr>
+<td>0.31</td>
+<td>0.32</td>
+<td>0.3</td>
+<td>0.31</td>
+<td>8.112126e-01</td>
+</tr>
 <tr>
 <th>2</th>
-      <td>0.32</td>
-      <td>0.33</td>
-      <td>0.3</td>
-      <td>0.31</td>
-      <td>2.924933e-02</td>
-    </tr>
+<td>0.32</td>
+<td>0.33</td>
+<td>0.3</td>
+<td>0.31</td>
+<td>2.924933e-02</td>
+</tr>
 <tr>
 <th>3</th>
-      <td>0.33</td>
-      <td>0.34</td>
-      <td>0.3</td>
-      <td>0.31</td>
-      <td>2.160734e-01</td>
-    </tr>
+<td>0.33</td>
+<td>0.34</td>
+<td>0.3</td>
+<td>0.31</td>
+<td>2.160734e-01</td>
+</tr>
 <tr>
 <th>4</th>
-      <td>0.34</td>
-      <td>0.35</td>
-      <td>0.3</td>
-      <td>0.31</td>
-      <td>5.264122e-02</td>
-    </tr>
+<td>0.34</td>
+<td>0.35</td>
+<td>0.3</td>
+<td>0.31</td>
+<td>5.264122e-02</td>
+</tr>
 <tr>
 <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
 <tr>
 <th>113564</th>
-      <td>2.50</td>
-      <td>2.60</td>
-      <td>2.9</td>
-      <td>3.00</td>
-      <td>1.793598e-13</td>
-    </tr>
+<td>2.50</td>
+<td>2.60</td>
+<td>2.9</td>
+<td>3.00</td>
+<td>1.793598e-13</td>
+</tr>
 <tr>
 <th>113565</th>
-      <td>2.60</td>
-      <td>2.70</td>
-      <td>2.9</td>
-      <td>3.00</td>
-      <td>1.110301e-13</td>
-    </tr>
+<td>2.60</td>
+<td>2.70</td>
+<td>2.9</td>
+<td>3.00</td>
+<td>1.110301e-13</td>
+</tr>
 <tr>
 <th>113566</th>
-      <td>2.70</td>
-      <td>2.80</td>
-      <td>2.9</td>
-      <td>3.00</td>
-      <td>1.148924e-13</td>
-    </tr>
+<td>2.70</td>
+<td>2.80</td>
+<td>2.9</td>
+<td>3.00</td>
+<td>1.148924e-13</td>
+</tr>
 <tr>
 <th>113567</th>
-      <td>2.80</td>
-      <td>2.90</td>
-      <td>2.9</td>
-      <td>3.00</td>
-      <td>4.000000e-06</td>
-    </tr>
+<td>2.80</td>
+<td>2.90</td>
+<td>2.9</td>
+<td>3.00</td>
+<td>4.000000e-06</td>
+</tr>
 <tr>
 <th>113568</th>
-      <td>2.90</td>
-      <td>3.00</td>
-      <td>2.9</td>
-      <td>3.00</td>
-      <td>1.530000e-04</td>
-    </tr>
+<td>2.90</td>
+<td>3.00</td>
+<td>2.9</td>
+<td>3.00</td>
+<td>1.530000e-04</td>
+</tr>
 </tbody>
 </table>
 <p>113569 rows × 5 columns</p>
 </div></div>
-
-</div>
-
 </div>
 </div>
-
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+</div>
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=b1844080-765a-4356-a0c6-946187e9b2b7">
 <div class="input">
 <div class="prompt input_prompt">In [11]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">##</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1">##</span>
 <span class="c1">## HEPData information that is common across tables</span>
 <span class="c1">##</span>
 
@@ -950,7 +895,7 @@ bg-dark
 <span class="c1">##</span>
 <span class="c1">## configure properties common to all tables</span>
 <span class="c1">##</span>
-<span class="k">def</span> <span class="nf">table_common_config</span><span class="p">(</span><span class="n">table</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">table_common_config</span><span class="p">(</span><span class="n">table</span><span class="p">):</span>
   <span class="n">table</span><span class="o">.</span><span class="n">location</span> <span class="o">=</span> <span class="s2">"Data from "</span> <span class="o">+</span> <span class="n">babar_data_url</span>
   <span class="n">table</span><span class="o">.</span><span class="n">keywords</span><span class="p">[</span><span class="s2">"observables"</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"SIG"</span><span class="p">]</span>
   <span class="n">table</span><span class="o">.</span><span class="n">keywords</span><span class="p">[</span><span class="s2">"cmenergies"</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"0.3-3.0"</span><span class="p">]</span>
@@ -965,22 +910,20 @@ bg-dark
 <span class="c1">##</span>
 <span class="c1">## configure properties common to all dep vars</span>
 <span class="c1">##</span>
-<span class="k">def</span> <span class="nf">var_dep_common_config</span><span class="p">(</span><span class="n">var</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">var_dep_common_config</span><span class="p">(</span><span class="n">var</span><span class="p">):</span>
   <span class="n">var</span><span class="o">.</span><span class="n">add_qualifier</span><span class="p">(</span><span class="s2">"RE"</span><span class="p">,</span> <span class="n">keyw_reaction1</span><span class="p">)</span>
   <span class="n">var</span><span class="o">.</span><span class="n">add_qualifier</span><span class="p">(</span><span class="s2">"SQRT(S)"</span><span class="p">,</span> <span class="s2">"0.3-3.0"</span><span class="p">,</span> <span class="s2">"GeV"</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+</div>
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=5abeb86b-895e-4435-9f3b-85c76b6b1371">
 <div class="input">
 <div class="prompt input_prompt">In [12]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">##</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1">##</span>
 <span class="c1">## bare cross section value and total uncertainty</span>
 <span class="c1">##</span>
 
@@ -1007,18 +950,16 @@ bg-dark
 <span class="n">table_val</span><span class="o">.</span><span class="n">add_variable</span><span class="p">(</span><span class="n">val_y</span><span class="p">)</span>
 <span class="c1">## table_val.add_image("image.eps")</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+</div>
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=4dbc0c02-f10d-4c37-9c86-5dcaef3780be">
 <div class="input">
 <div class="prompt input_prompt">In [13]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">##</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1">##</span>
 <span class="c1">## systematic uncertainty</span>
 <span class="c1">##</span>
 
@@ -1072,18 +1013,16 @@ bg-dark
 <span class="k">for</span> <span class="n">var</span> <span class="ow">in</span> <span class="p">[</span><span class="n">syst_unc_x</span><span class="p">]</span> <span class="o">+</span> <span class="nb">vars</span><span class="p">:</span>
   <span class="n">table_syst_unc</span><span class="o">.</span><span class="n">add_variable</span><span class="p">(</span><span class="n">var</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+</div>
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=045ffa92-c05f-42ed-9e00-e51a2b2e01a6">
 <div class="input">
 <div class="prompt input_prompt">In [14]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">##</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1">##</span>
 <span class="c1">## statistical covariance</span>
 <span class="c1">##</span>
 
@@ -1111,18 +1050,16 @@ bg-dark
 <span class="k">for</span> <span class="n">var</span> <span class="ow">in</span> <span class="p">[</span><span class="n">stat_cov_x</span><span class="p">,</span> <span class="n">stat_cov_y</span><span class="p">,</span> <span class="n">stat_cov_z</span><span class="p">]:</span>
   <span class="n">table_stat_cov</span><span class="o">.</span><span class="n">add_variable</span><span class="p">(</span><span class="n">var</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+</div>
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=7dafcdb9-8ec0-4473-ab4f-3d1a9ed49939">
 <div class="input">
 <div class="prompt input_prompt">In [15]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">##</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1">##</span>
 <span class="c1">## assembly and submission</span>
 <span class="c1">##</span>
 
@@ -1156,43 +1093,32 @@ bg-dark
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">"submission created"</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>creating submission in hepdata-babar-2012-pip-pim/submission.tar.gz
 submission created
 </pre>
 </div>
 </div>
-
 </div>
 </div>
-
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=a544a046-dabc-473a-8748-9d67349a2e5d">
 <div class="input">
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span> 
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 </div>
     </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
@@ -1220,7 +1146,7 @@ MathJax.Hub.Config({
     }
 });
 </script></article><!--End of body content--><footer id="footer">
-            Contents © 2023         <a href="mailto:alusiani%20at%20gmail.com">PrecisionSM Group</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+            Contents © 2025         <a href="mailto:alusiani%20at%20gmail.com">PrecisionSM Group</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
             
             
         </footer>
