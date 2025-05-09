@@ -1,4 +1,4 @@
-.. title: PrecisionSM web site (work in progress)
+.. title: Low energy $e^+e^-$ channels database
 .. slug: index
 .. date: 2020-06-28 18:41:26 UTC+02:00
 .. tags:
@@ -18,14 +18,20 @@
 .. role:: text-danger
 .. role:: html(raw)
     :format: html
+.. role:: raw-math(raw)
+    :format: latex html
 .. .............................................................................
 
 .. figure:: /images/strong-2020-logo-transp-250x.png
    :target: http://www.strong-2020.eu/
    :align: right
    :figclass: thumbnail
+ 
+* Measurements Database:   
+  
+    * `$e^+e^- \\rightarrow \\pi^+\\pi^-$ </2pi-db>`_
 
-* `Measurements Database </measurements-db/>`_
+  
 
 * `HEPData submissions <link://category/submissions>`_
 

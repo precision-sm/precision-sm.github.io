@@ -1,0 +1,718 @@
+---
+inspirehep-1385603:
+  channel: $\pi^+\pi^-$
+  experiment: BESIII (BEPC, Beijing)
+  year: 2016
+  reference: https://inspirehep.net/literature/1385603
+  inspirehep: '1385603'
+  hepdata: ins1385603
+  method: Direct
+  quotes:
+    - - $|F_\pi|^{2}$
+      - stat
+      - syst
+      - $Cov^{stat}(x,y)$
+    - - $\sigma_{\pi+\pi-(\gamma_{FSR})}^{bare}$
+      - stat
+      - syst
+      - $Cov^{stat}(x,y)$
+  E_lo: 0.6
+  E_hi: 0.9
+  rad_corr:
+    - Yes, FSR
+  comment:
+    -
+  status:
+    - checked
+inspirehep-1114155:
+  channel: $\pi^+\pi^-$
+  experiment: BaBar (SLAC, Stanford U.)
+  year: 2012
+  reference: https://inspirehep.net/literature/1114155
+  inspirehep: '1114155'
+  hepdata: ins1114155
+  method: Direct
+  quotes:
+    - - In preparation
+  E_lo: 0.3
+  E_hi: 3.0
+  rad_corr:
+    - In preparation
+  comment:
+    - In preparation
+  status:
+    - In preparation
+inspirehep-1643020:
+  channel: $\pi^+\pi^-$
+  experiment: CLEOc (CESR, Cornell)
+  year: 2018
+  reference: https://inspirehep.net/literature/1643020
+  inspirehep: '1643020'
+  hepdata: ins1643020
+  method: ISR
+  quotes:
+    - - $\sigma_{\pi+\pi-}
+      - stat
+      - syst
+  E_lo: 0.3
+  E_hi: 1.0
+  rad_corr:
+    - Yes, according to PHOKHARA
+  comment:
+    - No cov matrix
+  status:
+    - checked
+inspirehep-1189656:
+  channel: $\pi^+\pi^-$
+  experiment: CLEOc (CESR, Cornell)
+  year: 2013
+  reference: https://inspirehep.net/literature/1189656
+  inspirehep: '1189656'
+  hepdata: ins1189656
+  method: Direct
+  quotes:
+    - - $F_\pi$
+      - stat
+      - syst
+    - - $\sigma_{\pi+\pi-}$
+      - stat
+      - syst
+  E_lo: 3.772
+  E_hi: 4.17
+  rad_corr:
+    - 'Yes'
+  comment:
+    - Unclear if the PFF is with or w/out VP, FSR
+  status:
+    - checked
+inspirehep-693873:
+  channel: $\pi^+\pi^-$
+  experiment: CLEOc (CESR, Cornell)
+  year: 2005
+  reference: https://inspirehep.net/literature/693873
+  inspirehep: '693873'
+  hepdata: ins693873
+  method: Direct
+  quotes:
+    - - $F_\pi$
+      - stat
+      - syst
+    - - $\sigma_{\pi+\pi-}$
+      - stat
+      - syst
+  E_lo: 3.671
+  E_hi: 3.671
+  rad_corr:
+    - 'Yes'
+  comment:
+    - Unclear if the PFF is with or w/out VP, FSR
+  status:
+    - checked
+inspirehep-1634981:
+  channel: $\pi^+\pi^-$
+  experiment: KLOE (DAPHNE, Frascati)
+  year: 2017
+  reference: https://inspirehep.net/literature/1634981
+  inspirehep: '1634981'
+  hepdata: ins1634981
+  method: Direct
+  quotes:
+    - - $d\sigma/dQ^2 (\pi\pi\gamma)$
+      - stat
+      - syst
+    - - $\sigma$
+      - stat
+      - syst
+    - - $F_\pi$
+      - stat
+      - syst
+  E_lo: 0.32
+  E_hi: 0.97
+  rad_corr:
+    - VP corr. updated to 'alphaQED16.tar.gz' package by F. Jegerlehner (2016)
+    - Remaining are in inspirehep-797438, inspirehep-859660, inspirehep-1208095
+  comment:
+    - combination of KLOE08, KLOE10 and KLOE12 data;
+    - updates for inspirehep-797438, inspirehep-859660, inspirehep-1208095
+  status:
+    - In preparation
+inspirehep-1208095:
+  channel: $\pi^+\pi^-$
+  experiment: KLOE (DAPHNE, Frascati)
+  year: 2012
+  reference: https://inspirehep.net/literature/1208095
+  inspirehep: '1208095'
+  hepdata: ins1208095
+  method: Direct
+  quotes:
+    - - $\sigma$
+      - stat
+      - syst
+    - - $F_\pi$
+      - stat
+      - syst
+  E_lo: 0.59
+  E_hi: 0.97
+  rad_corr:
+    - FSR corrections on muons from PHOKHARA 4.0 Eur.Phys.J. C39, 411 (2005)
+    - VP corr. for $F_\pi$ from 'alphaQEDn.uu' package by F. Jegerlehner (2003)
+    - pointlike pion FSR corr. for $F_\pi$ from Eur.Phys.J. C4, 51-69 (2002)
+  comment:
+    - normalized to muons
+    - updated data available at inspirehep-1634981
+  status:
+    - In preparation
+inspirehep-859660:
+  channel: $\pi^+\pi^-$
+  experiment: KLOE (DAPHNE, Frascati)
+  year: 2010
+  reference: https://inspirehep.net/literature/859660
+  inspirehep: '859660'
+  hepdata: ins859660
+  method: Direct
+  quotes:
+    - - $d\sigma/dQ^2 (\pi\pi\gamma)$
+      - stat
+      - syst
+    - - $\sigma$
+      - stat
+      - syst
+    - - $F_\pi$
+      - stat
+      - syst
+  E_lo: 0.32
+  E_hi: 0.92
+  rad_corr:
+    - Func. from PHOKHARA 5.0 Eur.Phys.J. C47 (2006), Phys.Lett.B611, 116 (2005)
+    - VP corr. from 'alphaQEDn.uu' package by F. Jegerlehner (2003)
+    - FSR correction from Eur.Phys.J. C24, 51-69 (2002)
+  comment:
+    - normalized to Bhabha luminosity
+    - updated data available at inspirehep-1634981
+  status:
+    - In preparation
+inspirehep-797438:
+  channel: $\pi^+\pi^-$
+  experiment: KLOE (DAPHNE, Frascati)
+  year: 2008
+  reference: https://inspirehep.net/literature/797438
+  inspirehep: '797438'
+  hepdata: ins797438
+  method: Direct
+  quotes:
+    - - $d\sigma/dQ^2 (\pi+\pi-\gamma)$
+      - stat
+      - syst
+    - - $\sigma_{\pi+\pi-(\gamma)}$
+      - stat
+      - syst
+    - - $|F_\pi|^{2}$
+      - stat
+      - syst
+  E_lo: 0.59
+  E_hi: 0.97
+  rad_corr:
+    - Rad. func. from PHOKHARA 2.0 Eur.Phys.J. C27, 563 (2003)
+    - VP corr. from 'alphaQEDn.uu' package by F. Jegerlehner (2003)
+    - FSR correction from Eur.Phys.J. C24, 51-69 (2002)
+  comment:
+    - normalized to Bhabha luminosity
+    - updated data available at inspirehep-1634981
+  status:
+    - In review
+inspirehep-655225:
+  channel: $\pi^+\pi^-$
+  experiment: KLOE (DAPHNE, Frascati)
+  year: 2004
+  reference: https://inspirehep.net/literature/655225
+  inspirehep: '655225'
+  hepdata: ins655225
+  method: Direct
+  quotes:
+    - - $d\sigma/dQ^2 (\pi\pi\gamma)$
+      - stat
+      - syst
+    - - $\sigma_{\pi+\pi-}$
+      - stat
+      - syst
+    - - $|F_\pi|^{2}$
+      - stat
+  E_lo: 0.59
+  E_hi: 0.97
+  rad_corr:
+    - Rad. func. from PHOKHARA 3.0 Eur.Phys.J. C33, 333 (2004)
+    - VP corr. from 'alphaQEDn.uu' package by F. Jegerlehner (2003)
+    - FSR correction from Eur.Phys.J. C24, 51-69 (2002)
+  comment:
+    - normalized to Bhabha luminosity
+    - superseded by inspirehep-797438
+  status:
+    - In review
+inspirehep-158283:
+  channel: $\pi^+\pi^-$
+  experiment: MEA (ADONE, Lab. Naz. Frascati)
+  year: 1980
+  reference: https://inspirehep.net/literature/158283
+  inspirehep: '158283'
+  hepdata: ins158283
+  method: Direct
+  quotes:
+    - - $|F_\pi|^{2}$
+      - stat
+    - - $\sigma_{\pi+\pi-}$
+      - stat
+  E_lo: 1.45
+  E_hi: 1.52
+  rad_corr:
+    - No Mention
+  comment:
+    - Errors not divided; no mention to formula from $F_\pi$, $s$
+  status:
+    - checked
+inspirehep-124109:
+  channel: $\pi^+\pi^-$
+  experiment: MEA (ADONE, Lab. Naz. Frascati)
+  year: 1977
+  reference: https://inspirehep.net/literature/124109
+  inspirehep: '124109'
+  hepdata: ins124109
+  method: Direct
+  quotes:
+    - - $|F_\pi|^{2}$
+      - tot
+    - - $\sigma_{\pi+\pi-}$
+      - tot
+  E_lo: 1.6
+  E_hi: 1.6
+  rad_corr:
+    - No Mention
+  comment:
+    - Errors not divided; no mention to formula from $F_\pi$, $s$
+  status:
+    - checked
+inspirehep-100180:
+  channel: $\pi^+\pi^-$
+  experiment: BCF (ADONE, Lab. Naz. Frascati)
+  year: 1975
+  reference: https://inspirehep.net/literature/100180
+  inspirehep: '100180'
+  hepdata: ins100180
+  method: Direct
+  quotes:
+    - - $F_\pi$
+      - tot
+  E_lo: 1.2
+  E_hi: 3.0
+  rad_corr:
+    - No Mention
+  comment:
+    - Errors not divided
+  status:
+    - checked
+inspirehep-195944:
+  channel: $\pi^+\pi^-$
+  experiment: NA007 (CERN)
+  year: 1984
+  reference: https://inspirehep.net/literature/195944
+  inspirehep: '195944'
+  hepdata: ins195944
+  method: Direct
+  quotes:
+    - - $|F_\pi|^{2}$
+      - stat
+      - syst
+  E_lo: 0.318
+  E_hi: 0.422
+  rad_corr:
+    - 'Yes'
+  comment:
+    -
+  status:
+    - checked
+inspirehep-109771:
+  channel: $\pi^+\pi^-$
+  experiment: ACO (Orsay)
+  year: 1976
+  reference: https://inspirehep.net/literature/109771
+  inspirehep: '109771'
+  hepdata: ins109771
+  method: Direct
+  quotes:
+    - - $|F_\pi|^{2}$
+      - stat
+  E_lo: 0.915
+  E_hi: 1.076
+  rad_corr:
+    - NO description
+  comment:
+    - Report number LAL-1287 (PAPER MISSING); systematic errors to be added
+  status:
+    - checked
+inspirehep-73648:
+  channel: $\pi^+\pi^-$
+  experiment: ACO (Orsay)
+  year: 1972
+  reference: https://inspirehep.net/literature/73648
+  inspirehep: '73648'
+  hepdata: ins73648
+  method: Direct
+  quotes:
+    - - $\sigma_{\pi+\pi-}$
+      - stat
+  E_lo: 0.705
+  E_hi: 0.990
+  rad_corr:
+    - Yes in an approximate formula
+  comment:
+    - Not clear if sigma_bare or not; systematic errors to be added
+  status:
+    - checked
+inspirehep-267118:
+  channel: $\pi^+\pi^-$
+  experiment: DM2 (DCI, Orsay)
+  year: 1989
+  reference: https://inspirehep.net/literature/267118
+  inspirehep: '267118'
+  hepdata: ins267118
+  method: Direct
+  quotes:
+    - - $|F_\pi|^{2}$
+      - stat
+      - syst
+    - - $\sigma_{\pi+\pi-}$
+      - stat
+      - syst
+  E_lo: 1.350
+  E_hi: 2.385
+  rad_corr:
+    - Yes, in the peaking approximation
+  comment:
+    -
+  status:
+    - checked
+inspirehep-134061:
+  channel: $\pi^+\pi^-$
+  experiment: DM1 (DCI, Orsay)
+  year: 1978
+  reference: https://inspirehep.net/literature/134061
+  inspirehep: '134061'
+  hepdata: ins134061
+  method: Direct
+  quotes:
+    - - $|F_\pi|^{2}$
+      - stat
+      - syst
+    - - $\sigma_{\pi+\pi-}$
+      - stat
+      - syst
+  E_lo: 0.483
+  E_hi: 1.096
+  rad_corr:
+    - 'Yes'
+  comment:
+    -
+  status:
+    - checked
+inspirehep-1789269:
+  channel: $\pi^+\pi^-$
+  experiment: SND (VEPP-2000, Novosibirsk)
+  year: 2021
+  reference: https://inspirehep.net/literature/1789269
+  inspirehep: '1789269'
+  hepdata: ins1789269
+  method: Direct
+  quotes:
+    - - $|F_\pi|^{2}$
+      - stat
+      - syst
+    - - $\sigma_{\pi+\pi-}$
+      - stat
+      - syst
+    - - $\sigma_{\pi+\pi-}^{bare}$
+      - stat
+      - syst
+  E_lo: 0.5251
+  E_hi: 0.8832
+  rad_corr:
+    - Yes by MCGPJ
+  comment:
+    -
+  status:
+    - checked
+inspirehep-686349:
+  channel: $\pi^+\pi^-$
+  experiment: SND (VEPP-2M, Novosibirsk)
+  year: 2005
+  reference: https://inspirehep.net/literature/686349
+  errata: https://inspirehep.net/literature/716141
+  inspirehep: '686349'
+  hepdata: ins686349
+  method: Direct
+  quotes:
+    - - $|F_\pi|^{2}$
+      - only uncorrelated
+    - - $\sigma_{\pi+\pi-}$
+      - only uncorrelated
+    - - $\sigma_{\pi+\pi-}^{pol}$
+      - only uncorrelated
+  E_lo: 0.39
+  E_hi: 0.97
+  rad_corr:
+    - Yes by MCGPJ
+  comment:
+    - data according to errata HEP-EX/0605013
+  status:
+    - checked
+inspirehep-728302:
+  channel: $\pi^+\pi^-$
+  experiment: CMD2 (VEPP-2M, Novosibirsk)
+  year: 2007
+  reference: https://inspirehep.net/literature/728302
+  inspirehep: '728302'
+  hepdata: ins728302
+  method: Direct
+  quotes:
+    - - $|F_\pi|^{2}$
+      - stat
+      - syst
+    - - $\sigma_{\pi+\pi-}^{bare}$
+      - stat
+      - syst
+  E_lo: 0.6
+  E_hi: 0.97
+  rad_corr:
+    - Yes by MCGPJ
+  comment:
+    -
+  status:
+    - checked
+inspirehep-728191:
+  channel: $\pi^+\pi^-$
+  experiment: CMD2 (VEPP-2M, Novosibirsk)
+  year: 2006
+  reference: https://inspirehep.net/literature/728191
+  inspirehep: '728191'
+  hepdata: ins728191
+  method: Direct
+  quotes:
+    - - $|F_\pi|^{2}$
+      - stat
+      - syst
+    - - $\sigma_{\pi+\pi-}^{bare}$
+      - stat
+      - syst
+  E_lo: 0.37
+  E_hi: 0.52
+  rad_corr:
+    - Yes by MCGPJ
+  comment:
+    -
+  status:
+    - checked
+inspirehep-712216:
+  channel: $\pi^+\pi^-$
+  experiment: CMD2 (VEPP-2M, Novosibirsk)
+  year: 2005
+  reference: https://inspirehep.net/literature/712216
+  inspirehep: '712216'
+  hepdata: ins712216
+  method: Direct
+  quotes:
+    - - $|F_\pi|^{2}$
+      - stat
+      - syst
+  E_lo: 0.98
+  E_hi: 1.38
+  rad_corr:
+    - Yes by MCGPJ
+  comment:
+    -
+  status:
+    - checked
+inspirehep-568807:
+  channel: $\pi^+\pi^-$
+  experiment: CMD2 (VEPP-2M, Novosibirsk)
+  year: 2002
+  reference:
+    - - https://inspirehep.net/literature/568807
+      - https://inspirehep.net/literature/624947
+  inspirehep: '568807'
+  hepdata: ins568807
+  method: Direct
+  quotes:
+    - - $|F_\pi|^{2}$
+      - stat
+      - syst
+    - - $\sigma_{\pi+\pi-}^{bare}$
+      - stat
+      - syst
+  E_lo: 0.6105
+  E_hi: 0.96152
+  rad_corr:
+    - Yes by MCGPJ
+  comment:
+    - data according to errata HEP-EX/0308008
+  status:
+    - checked
+inspirehep-221309-T1:
+  channel: $\pi^+\pi^-$
+  experiment: OLYA (VEPP-2M, Novosibirsk)
+  year: 1984
+  reference: https://inspirehep.net/literature/221309
+  inspirehep: '221309'
+  hepdata: ins221309
+  method: Direct
+  quotes:
+    - - $|F_\pi|^{2}$
+      - stat
+      - syst
+    - - $\sigma_{\pi+\pi-}$
+      - stat
+      - syst
+  E_lo: 0.4
+  E_hi: 1.397
+  rad_corr:
+    - Yes partially
+  comment:
+    - - data should be corrected by VP
+      - used only lepton part of VP_{lep} in luminosity
+      - VP_{lep} subtracted from measured Fpi
+    - - correction
+      - (alpha(tmin)/alpha_lep(tmin))^2*(alpha_lep(s)/alpha)^2
+      - tmin=-s*(1-cos(thcut))/2, cos(thcut)=0.71
+  status:
+    - checked
+inspirehep-221309-T2:
+  channel: $\pi^+\pi^-$
+  experiment: CMD (VEPP-2M, Novosibirsk)
+  year: 1983
+  reference: https://inspirehep.net/literature/221309
+  inspirehep: '221309'
+  hepdata: ins221309
+  method: Direct
+  quotes:
+    - - $|F_\pi|^{2}$
+      - stat
+      - syst
+    - - $\sigma_{\pi+\pi-}$
+      - stat
+      - syst
+  E_lo: 0.36
+  E_hi: 0.82
+  rad_corr:
+    - Yes partially
+  comment:
+    - - data should be corrected by VP
+      - used only lepton part of VP_{lep} in luminosity
+      - VP_{lep} was subtracted from measured Fpi
+    - - correction
+      - (alpha(tmin)/alpha_lep(tmin))^2*(alpha_lep(s)/alpha)^2
+      - tmin=-s*(1-cos(thcut))/2, cos(thcut)=0.6
+  status:
+    - checked
+inspirehep-167191:
+  channel: $\pi^+\pi^-$
+  experiment: TOF (VEPP-2M, Novosibirsk)
+  year: 1981
+  reference: https://inspirehep.net/literature/167191
+  inspirehep: '167191'
+  hepdata: ins167191
+  method: Direct
+  quotes:
+    - - $F_\pi$
+      - stat
+    - - $\sigma_{\pi+\pi-}$
+      - stat
+  E_lo: 0.4
+  E_hi: 0.46
+  rad_corr:
+    - Yes partially
+  comment:
+    - - data should be corrected by VP
+      - used only lepton part of VP_{lep} in luminosity
+      - VP_{lep} subtracted from measured Fpi
+    - - correction
+      - (alpha(tmin)/alpha_lep(tmin))^2*(alpha_lep(s)/alpha)^2
+      - tmin=-s*(1-cos(thcut))/2, cos(thcut)=0.24
+    - - part of systematic is included in total error
+    - - cross section without FSR
+  status:
+    - checked
+inspirehep-75634:
+  channel: $\pi^+\pi^-$
+  experiment: VEPP-2 (Novosibirsk)
+  year: 1972
+  reference: https://inspirehep.net/literature/75634
+  inspirehep: '75634'
+  hepdata: ins75634
+  method: Direct
+  quotes:
+    - - $|F_\pi|^{2}$
+      - tot
+    - - $\sigma_{\pi+\pi-}$
+      - tot
+  E_lo: 1.18
+  E_hi: 1.34
+  rad_corr:
+    - Yes by Baier group
+  comment:
+    - systematic is included in total error
+  status:
+    - checked
+inspirehep-69313:
+  channel: $\pi^+\pi^-$
+  experiment: VEPP-2 (Novosibirsk)
+  year: 1971
+  reference: https://inspirehep.net/literature/69313
+  inspirehep: '69313'
+  hepdata: ins69313
+  method: Direct
+  quotes:
+    - - $|F_\pi|^{2}$
+      - tot
+  E_lo: 1.02
+  E_hi: 1.02
+  rad_corr:
+    - Yes by Baier group
+  comment:
+    - systematic is included in total error
+  status:
+    - checked
+inspirehep-57008:
+  channel: $\pi^+\pi^-$
+  experiment: VEPP-2 (Novosibirsk)
+  year: 1969
+  reference: https://inspirehep.net/literature/57008
+  inspirehep: '57008'
+  hepdata: ins57008
+  method: Direct
+  quotes:
+    - - $|F_\pi|^{2}$
+      - tot
+  E_lo: 0.575
+  E_hi: 1.000
+  rad_corr:
+    - Yes by Baier group calculation
+  comment:
+    - systematic is included in total error
+  status:
+    - checked
+inspirehep-1392895:
+  channel: $\pi^+\pi^-$
+  experiment: VEPP-2 (Novosibirsk)
+  year: 1967
+  reference: https://inspirehep.net/literature/1392895
+  inspirehep: '1392895'
+  hepdata: ins1392895
+  method: Direct
+  quotes:
+    - - $|F_\pi|^{2}$
+      - tot
+  E_lo: 0.58
+  E_hi: 1.02
+  rad_corr:
+    - No, included in the final report ins57008 with Baier group calculation
+  comment:
+    - systematic is included in total error
+  status:
+    - checked

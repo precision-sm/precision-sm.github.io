@@ -1,3 +1,4 @@
+---
 inspirehep-100180:
   channel: $\pi^+\pi^-$
   experiment: BCF (ADONE, Frascati)
@@ -7,16 +8,18 @@ inspirehep-100180:
   hepdata: ins100180
   method: Direct
   quotes:
-  - - $F_\pi$
-    - tot
-    - stat
-    - syst
+    - - $F_\pi$
+      - tot
+      - stat
+      - syst
   E_lo: 1.44
   E_hi: 9.0
   rad_corr:
-  - No Mention
+    - No Mention
   comment:
-  - Errors not divided
+    - Errors not divided
+  status:
+    -
 inspirehep-124109:
   channel: $\pi^+\pi^-$
   experiment: MEA (ADONE, Frascati)
@@ -26,16 +29,18 @@ inspirehep-124109:
   hepdata: ins124109
   method: Direct
   quotes:
-  - - $F_\pi$
-    - tot
-    - stat
-    - syst
+    - - $F_\pi$
+      - tot
+      - stat
+      - syst
   E_lo: 1.6
   E_hi: 1.6
   rad_corr:
-  - No Mention
+    - No Mention
   comment:
-  - Errors not divided; no mention to fomula from $F_\pi$, s
+    - Errors not divided; no mention to fomula from $F_\pi$, s
+  status:
+    -
 inspirehep-158283:
   channel: $\pi^+\pi^-$
   experiment: MEA (ADONE, Frascati)
@@ -45,16 +50,18 @@ inspirehep-158283:
   hepdata: ins158283
   method: Direct
   quotes:
-  - - $F_\pi$
-    - tot
-    - stat
-    - syst
+    - - $F_\pi$
+      - tot
+      - stat
+      - syst
   E_lo: 1.45
   E_hi: 1.52
   rad_corr:
-  - No Mention
+    - No Mention
   comment:
-  - Errors not divided; fomula from $F_\pi$, s
+    - Errors not divided; fomula from $F_\pi$, s
+  status:
+    -
 inspirehep-693873:
   channel: $\pi^+\pi^-$
   experiment: CLEOc (CESR, Cornell)
@@ -64,16 +71,16 @@ inspirehep-693873:
   hepdata: .na.character
   method: Direct
   quotes:
-  - - $F_\pi$
-    - tot
-    - stat
-    - syst
+    - - $F_\pi$
+      - tot
+      - stat
+      - syst
   E_lo: 3.671
   E_hi: 3.671
   rad_corr:
-  - 'Yes'
+    - 'Yes'
   comment:
-  - Unclear if the PFF is with or w/out VP, FSR
+    - Unclear if the PFF is with or w/out VP, FSR
 inspirehep-1189656:
   channel: $\pi^+\pi^-$
   experiment: CLEOc (CESR, Cornell)
@@ -83,16 +90,18 @@ inspirehep-1189656:
   hepdata: .na.character
   method: Direct
   quotes:
-  - - $F_\pi$
-    - tot
-    - stat
-    - syst
+    - - $F_\pi$
+      - tot
+      - stat
+      - syst
   E_lo: 3.772
   E_hi: 4.17
   rad_corr:
-  - 'Yes'
+    - 'Yes'
   comment:
-  - Unclear if the PFF is with or w/out VP, FSR
+    - Unclear if the PFF is with or w/out VP, FSR
+  status:
+    -
 inspirehep-1643020:
   channel: $\pi^+\pi^-$
   experiment: CLEOc (CESR, Cornell)
@@ -102,16 +111,18 @@ inspirehep-1643020:
   hepdata: .na.character
   method: ISR
   quotes:
-  - - $\sigma_{\pi+\pi-}
-    - tot
-    - stat
-    - syst
+    - - $\sigma_{\pi+\pi-}
+      - tot
+      - stat
+      - syst
   E_lo: 0.3
   E_hi: 1.0
   rad_corr:
-  - 'Yes'
+    - 'Yes'
   comment:
-  - RC according to PHOKHARANo cov matrix
+    - RC according to PHOKHARANo cov matrix
+  status:
+    -
 inspirehep-73648:
   channel: $\pi^+\pi^-$
   experiment: ACO (Orsay)
@@ -121,16 +132,18 @@ inspirehep-73648:
   hepdata: ins73648
   method: Direct
   quotes:
-  - - $\sigma$
-    - tot
-    - stat
-    - syst
+    - - $\sigma$
+      - tot
+      - stat
+      - syst
   E_lo: 0.705
   E_hi: 0.99
   rad_corr:
-  - Yes in an approximate formula \[REF given\]
+    - Yes in an approximate formula \[REF given\]
   comment:
-  - Not clear if sigma_bare or not. Systematic errors to be added.
+    - Not clear if sigma_bare or not. Systematic errors to be added.
+  status:
+    -
 inspirehep-109771:
   channel: $\pi^+\pi^-$
   experiment: ACO (Orsay)
@@ -140,16 +153,18 @@ inspirehep-109771:
   hepdata: ins109771
   method: Direct
   quotes:
-  - - $F_\pi$
-    - tot
-    - stat
-    - syst
+    - - $F_\pi$
+      - tot
+      - stat
+      - syst
   E_lo: 0.91
   E_hi: 1.08
   rad_corr:
-  - NO description
+    - NO description
   comment:
-  - Report number: LAL-1287. PAPER MISSING. Systematic errors to be added.
+    - Report number: LAL-1287. PAPER MISSING. Systematic errors to be added.
+  status:
+    -
 inspirehep-195944:
   channel: $\pi^+\pi^-$
   experiment: NA7 (Fixed target, CERN)
@@ -159,13 +174,15 @@ inspirehep-195944:
   hepdata: ins195944
   method: Fixed Target
   quotes:
-  - - $F_\pi$
-    - tot
-    - stat
-    - syst
+    - - $F_\pi$
+      - tot
+      - stat
+      - syst
   E_lo: 0.1
   E_hi: 0.18
   rad_corr:
-  - Not referenced
+    - Not referenced
   comment:
-  - Not clear if FSR is applied or not. VP to be applied (\~1.5%)
+    - Not clear if FSR is applied or not. VP to be applied (\~1.5%)
+  status:
+    -
