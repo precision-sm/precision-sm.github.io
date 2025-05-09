@@ -1,12 +1,12 @@
 ---
-title: Database for $e^+e^- \rightarrow \pi^+\pi^-\pi^0$ channels
-date: 2025-05-09
+title: Database for $e^+e^- \rightarrow \pi^0\gamma$ channels
+date: 2023-02-03
 tags: HEPData
 category: docs
 has_math: true
 ---
-<!--
 
+<!--
 
 |Experiment         | Year  |   Reference (link to INSPIRE-HEP)         |    Link to Hepdata                       |Details     | Status | 
 |:------------------|:-----:|:------------------------------------------|:----------------------------------------:|:-------------------|:------:|
