@@ -5,69 +5,63 @@ tags: HEPData
 category: docs
 has_math: true
 ---
-<!--
+
 
 
 |Experiment         | Year  |   Reference (link to INSPIRE-HEP)         |    Link to Hepdata                       |Details     | Status | 
 |:------------------|:-----:|:------------------------------------------|:----------------------------------------:|:-------------------|:------:|
-|BESIII (BEPC, Beijing)|2016 | [Phys.Lett.B 753(2016) 629-638](https://inspirehep.net/literature/1385603) [errata: [Phys.Lett.B 812 (2021) 135982](https://inspirehep.net/literature/1385603)]| [ins1385603](https://www.hepdata.net/record/ins1385603)| [details](#inspirehep-1385603) | Finalized |  
+<!-- |BESIII (BEPC, Beijing)|2016 | [Phys.Lett.B 753(2016) 629-638](https://inspirehep.net/literature/1385603) [errata: [Phys.Lett.B 812 (2021) 135982](https://inspirehep.net/literature/1385603)]| [ins1385603](https://www.hepdata.net/record/ins1385603)| [details](#inspirehep-1385603) | Finalized |  -->
 | | | | | | | 
 | | | | | | |
-|BaBar (SLAC, Stanford U.)|2012 | [Phys.Rev.D 86 (2012) 032013](https://inspirehep.net/literature/1114155) | [ins1114155](https://www.hepdata.net/record/ins1114155)| [details](#inspirehep-1114155) | Finalized |  
+|BaBar (SLAC, Stanford U.)|2021 | [Phys.Rev.D 104 (2021) 11, 112003](https://inspirehep.net/literature/1937349) | [ins1937349](https://www.hepdata.net/record/ins1937349)| [details](#inspirehep-1937349) | In preparation |  
 | | | | | | | 
 | | | | | | | 
-|CLEO (CESR, Cornell U.)|2018 | [Phys.Rev.D 97 (2018) 3, 032012](https://inspirehep.net/literature/1643020) | [ins1643020](https://www.hepdata.net/record/ins1643020)| [details](#inspirehep-1643020) | Finalized | 
-|CLEO (CESR, Cornell U.)|2013 | [Phys.Rev.Lett. 110 (2013) 2, 022002](https://inspirehep.net/literature/1189656) | [ins1189656](https://www.hepdata.net/record/ins1189656)| [details](#inspirehep-1189656) | Finalized | 
-|CLEOc (CESR, Cornell U.)|2005 | [Phys.Rev.Lett. 95 (2005) 261803](https://inspirehep.net/literature/693873) | [ins693873](https://www.hepdata.net/record/ins693873)| [details](#inspirehep-693873) | Finalized | 
-| | | | | | | 
-| | | | | | |
-|KLOE (DAPHNE, Frascati)|2017 | [JHEP 03 (2018) 173](https://inspirehep.net/literature/1634981) | | [details](#inspirehep-1634981) | In Preparation |
-|KLOE (DAPHNE, Frascati)|2012 | [Phys.Lett.B 720 (2013) 336-343](https://inspirehep.net/literature/1208095) | | [details](#inspirehep-1208095) | In Preparation |
-|KLOE (DAPHNE, Frascati)|2010 | [Phys.Lett.B 700 (2011) 102-110](https://inspirehep.net/literature/859660) | [ins859660](https://www.hepdata.net/record/ins859660) | [details](#inspirehep-859660) | Finalized |
-|KLOE (DAPHNE, Frascati)|2008 | [Phys.Lett.B 670 (2009) 285-291](https://inspirehep.net/literature/797438) |[ins797438](https://www.hepdata.net/record/ins797438) | [details](#inspirehep-797438) | In Review |
-|KLOE (DAPHNE, Frascati)|2004 | [Phys.Lett.B 606 (2005) 12-24, 2005](https://inspirehep.net/literature/655225) |[ins655225](https://www.hepdata.net/record/ins655225) | [details](#inspirehep-655225) | In Review |
+|GG2 (ADONE, Lab. Naz. Frascati)|1981 | [Nucl.Phys.B 184 (1981) 31-39](https://inspirehep.net/literature/158474) | [ins158474](https://www.hepdata.net/record/ins158474)| [details](#inspirehep-158474) | Finalized | 
+|GG2 (ADONE, Lab. Naz. Frascati)|1973 | [Phys.Lett.B 44 (1973) 533-536](https://inspirehep.net/literature/84794) | [ins84794](https://www.hepdata.net/record/ins84794)| [details](#inspirehep-84794) | Finalized | 
 | | | | | | | 
 | | | | | | | 
-|MEA (ADONE, Lab. Naz. Frascati)|1980 | [Lett.Nuovo Cim. 28 (1980) 337-342](https://inspirehep.net/literature/158283) | [ins158283](https://www.hepdata.net/record/ins158283)| [details](#inspirehep-158283) | Finalized | 
-|MEA (ADONE, Lab. Naz. Frascati)|1977 | [Phys.Lett.B 67 (1977) 239-242](https://inspirehep.net/literature/124109) | [ins124109](https://www.hepdata.net/record/ins124109)| [details](#inspirehep-124109) | Finalized | 
-|BCF (ADONE, Lab. Naz. Frascati)|1975 | [Lett.Nuovo Cim. 14 (1975) 418](https://inspirehep.net/literature/100180) | [ins100180](https://www.hepdata.net/record/ins100180)| [details](#inspirehep-100180) | Finalized | 
+|MEA (ADONE, Lab. Naz. Frascati)|1980 | [Lett.Nuovo Cim. 28 (1980) 195-200](https://inspirehep.net/literature/158282) | [ins158282](https://www.hepdata.net/record/ins158282)| [details](#inspirehep-158282) | Finalized | 
+|MEA (ADONE, Lab. Naz. Frascati)|1979 | [Lett.Nuovo Cim. 25 (1979) 5-12](https://inspirehep.net/literature/145867) | [ins145867](https://www.hepdata.net/record/ins145867)| [details](#inspirehep-145867) | Finalized | 
 | | | | | | | 
 | | | | | | | 
-|NA007 (CERN) | 1984 | [Phys.Lett.B 138 (1984) 454-458](https://inspirehep.net/literature/195944)|[ins195944](https://www.hepdata.net/record/ins195944)|[details](#inspirehep-195944) | Finalized | 
+|ACO (Orsay)|1976| [Phys.Lett.B 63 (1976) 357-361](https://inspirehep.net/literature/99834) |[ins99834](https://www.hepdata.net/record/ins99834) |[details](#inspirehep-99834)| Finalized | 
+|ACO (Orsay)|1974| [Phys.Lett.B 48 (1974) 155-158](https://inspirehep.net/literature/95375) |[ins95375](https://www.hepdata.net/record/ins95375) |[details](#inspirehep-95375) | Finalized | 
+|ACO (Orsay)|1972| [Phys.Lett.B 42 (1972) 507-510](https://inspirehep.net/literature/84977) |[ins84977](https://www.hepdata.net/record/ins84977) |[details](#inspirehep-84977) | Finalized | 
+|ACO (Orsay)|1970| [Phys.Lett.B 32 (1970) 416-420](https://inspirehep.net/literature/63115) |[ins63115](https://www.hepdata.net/record/ins63115) |[details](#inspirehep-63115) | Finalized | 
+|ACO (Orsay)|1969| [Phys.Lett.B 28 (1969) 513-516](https://inspirehep.net/literature/56682) |[ins56682](https://www.hepdata.net/record/ins56682) |[details](#inspirehep-56682) | Finalized | 
+|DM2 (DCI, Orsay)|1992| [Z.Phys.C 56 (1992) 15-20](https://inspirehep.net/literature/339265) |[ins339265](https://www.hepdata.net/record/ins339265) |[details](#inspirehep-339265) | Finalized | 
+|DM1 (DCI, Orsay)|1980| [Nucl.Phys.B 172 (1980) 13-24](https://inspirehep.net/literature/140174) |[ins140174](https://www.hepdata.net/record/ins140174) |[details](#inspirehep-140174)| Finalized | 
 | | | | | | | 
 | | | | | | | 
-|ACO (Orsay)|1976| [LAL-1287](https://inspirehep.net/literature/109771)|[ins109771](https://www.hepdata.net/record/ins109771)|[details](#inspirehep-109771)| Finalized | 
-|ACO (Orsay)|1972| [Phys.Lett.B 39 (1972) 289-293](https://inspirehep.net/literature/73648)|[ins73648](https://www.hepdata.net/record/ins73648)|[details](#inspirehep-73648)| Finalized | 
-|DM2 (DCI, Orsay)|1989| [Phys.Lett.B 220 (1989) 321-327](https://inspirehep.net/literature/267118)|[ins267118](https://www.hepdata.net/record/ins267118)|[details](#inspirehep-267118)| Finalized | 
-|DM1 (DCI, Orsay)|1978| [Phys.Lett.B 76 (1978) 512-516](https://inspirehep.net/literature/134061)|[ins134061](https://www.hepdata.net/record/ins134061)|[details](#inspirehep-134061)| Finalized | 
+|SND (VEPP-2M, Novosibirsk) |2020 | [Eur.Phys.J.C 80 (2020) 10, 993](https://inspirehep.net/literature/1809286) | [ins1809286](https://www.hepdata.net/record/ins1809286) | [details](#inspirehep-1809286) | In preparation | 
+|SND (VEPP-2M, Novosibirsk) |2003 | [Phys.Rev.D 68 (2003) 052006](https://inspirehep.net/literature/619011) | [ins619011](https://www.hepdata.net/record/ins619011) | [details](#inspirehep-619011) | Finalized | 
+|SND (VEPP-2M, Novosibirsk) |2002 | [Phys.Rev.D 66 (2002) 032001](https://inspirehep.net/literature/582183) | [ins582183](https://www.hepdata.net/record/ins582183) | [details](#inspirehep-582183) | Finalized | 
+|SND (VEPP-2M, Novosibirsk) |2001 | [Phys.Rev.D 63 (2001) 072002](https://inspirehep.net/literature/533574) | [ins533574](https://www.hepdata.net/record/ins533574) | [details](#inspirehep-533574) | Finalized | 
+|SND (VEPP-2M, Novosibirsk) |1999 | [Phys.Lett.B 462 (1999) 365-370](https://inspirehep.net/literature/508003) | [ins508003](https://www.hepdata.net/record/ins508003) | [details](#inspirehep-508003) | Finalized |  
 | | | | | | | 
 | | | | | | | 
-|SND (VEPP-2000, Novosibirsk) |2021 | [JHEP 01 (2021) 113](https://inspirehep.net/literature/1789269) | [ins1789269](https://www.hepdata.net/record/ins1789269)| [details](#inspirehep-1789269) | Finalized | 
-|SND (VEPP-2M, Novosibirsk)|2005 | [J.Exp.Theor.Phys. 101 (2005) 6, 1053-1070, Zh.Eksp.Teor.Fiz. 128 (2005) 6, 1201-1219](https://inspirehep.net/literature/686349) [errata: [HEP-EX/0605013](https://inspirehep.net/literature/716141)]| [ins686349](https://www.hepdata.net/record/ins686349)| [details](#inspirehep-686349) | Finalized |  
+|SND-2k (VEPP-2000, Novosibirsk) |2015 | [J.Exp.Theor.Phys. 121 (2015) 1, 27-34, Zh.Eksp.Teor.Fiz. 148 (2015) 1, 34-41](https://inspirehep.net/literature/1389908) | [ins1389908](https://www.hepdata.net/record/ins1389908) | [details](#inspirehep-1389908) | In preparation | 
 | | | | | | | 
 | | | | | | | 
-|CMD3 (VEPP-2M, Novosibirsk)|2024 | [Phys.Rev.D 109 (2024) 11, 112002](https://inspirehep.net/literature/2634277) | [ins2634277](https://www.hepdata.net/record/ins2634277)| [details](#inspirehep-2634277) | In Preparation |  
+|CMD2 (VEPP-2M, Novosibirsk)|2006 | [Phys.Lett.B 642 (2006) 203-209](https://inspirehep.net/literature/734590) | [ins734590](https://www.hepdata.net/record/ins734590)| [details](#inspirehep-734590) | In preparation | 
+|CMD2 (VEPP-2M, Novosibirsk)|2004 | [Phys.Lett.B 578 (2004) 285-289](https://inspirehep.net/literature/523691) | [ins523691](https://www.hepdata.net/record/ins523691)| [details](#inspirehep-523691) | In preparation | 
+|CMD2 (VEPP-2M, Novosibirsk)|2000 | [Phys.Lett.B 476 (2000) 33-39](https://inspirehep.net/literature/624947) | [ins624947](https://www.hepdata.net/record/ins624947)| [details](#inspirehep-624947) | In preparation | 
+|CMD2 (VEPP-2M, Novosibirsk)|1998 | [Phys.Lett.B 434 (1998) 426-436](https://inspirehep.net/literature/480170) | [ins480170](https://www.hepdata.net/record/ins480170)| [details](#inspirehep-480170) | In preparation | 
+|CMD2 (VEPP-2M, Novosibirsk)|1995 | [Phys.Lett.B 364 (1995) 199-206](https://inspirehep.net/literature/406880) | [ins406880](https://www.hepdata.net/record/ins406880)| [details](#inspirehep-406880) | In preparation | 
 | | | | | | | 
 | | | | | | | 
-|CMD2 (VEPP-2M, Novosibirsk)|2007 | [Phys.Lett.B 648 (2007) 28-38](https://inspirehep.net/literature/728302) | [ins728302](https://www.hepdata.net/record/ins728302)| [details](#inspirehep-728302) | Finalized |  
-|CMD2 (VEPP-2M, Novosibirsk)|2006 | [JETP Lett. 84 (2006) 413-417, Pisma Zh.Eksp.Teor.Fiz. 84 (2006) 491-495](https://inspirehep.net/literature/728191) | [ins728191](https://www.hepdata.net/record/ins728191)| [details](#inspirehep-728191) | Finalized |  
-|CMD2 (VEPP-2M, Novosibirsk)|2005 | [JETP Lett. 82 (2005) 743-747, Pisma Zh.Eksp.Teor.Fiz. 82 (2005) 841-845](https://inspirehep.net/literature/712216) | [ins712216](https://www.hepdata.net/record/ins712216)| [details](#inspirehep-712216) | Finalized |  
-|CMD2 (VEPP-2M, Novosibirsk)|2002 | [Phys.Lett.B 527 (2002) 161-172](https://inspirehep.net/literature/568807) [errata: [HEP-EX/0308008](https://inspirehep.net/literature/624947)] | [ins568807](https://www.hepdata.net/record/ins568807)| [details](#inspirehep-568807) | Finalized | 
+|ND (VEPP-2M, Novosibirsk)|1991 | [Phys.Rept. 202 (1991) 99-170](https://inspirehep.net/literature/321108) | [ins321108](https://www.hepdata.net/record/ins321108) | [details](#inspirehep-321108) | Finalized | 
+|OLYA (VEPP-2M, Novosibirsk)|1984 | [L.M. Kurdadze et al., Preprint INP 84-7, Novosibirsk, 1984](https://inspirehep.net/literature/1408355) | [ins1408355](https://www.hepdata.net/record/ins1408355) | [details](#inspirehep-1408355) | In preparation | 
+|OLYA (VEPP-2M, Novosibirsk)|1982 | [L.M. Kurdadze et al., JETP Lett. 36 (1982) 274-276, Pisma Zh.Eksp.Teor.Fiz. 36 (1982) 221-223](https://inspirehep.net/literature/185895) | [ins185895](https://www.hepdata.net/record/ins185895) | [details](#inspirehep-185895) | In preparation | 
+|OLYA (VEPP-2M, Novosibirsk)|1978 | [Yad.Fiz. 27 (1978) 976-984](https://inspirehep.net/literature/137035) | [ins137035](https://www.hepdata.net/record/ins137035) | [details](#inspirehep-137035) | In preparation | 
+|CMD (VEPP-2M, Novosibirsk)|1989 | [L. M. Barkov, et al. Preprint INP 89-15 (1989)](0954389) | [0954389](0954389) | [details](#preprint-0954389) | In preparation | 
+|OLYA (VEPP-2M, Novosibirsk)|1987 | [L. M. Barkov, et al., JETP Lett. 46 (1987) 164-167, Pisma Zh.Eksp.Teor.Fiz. 46 (1987) 132-134](https://inspirehep.net/literature/255953) | [ins255953](https://www.hepdata.net/record/ins255953) | [details](#inspirehep-255953) | In preparation | 
 | | | | | | | 
 | | | | | | | 
-|OLYA (VEPP-2M, Novosibirsk)|1984 | [Nucl.Phys.B 256 (1985) 365-384](https://inspirehep.net/literature/221309) | [ins221309](https://www.hepdata.net/record/ins221309) [Table 1](https://www.hepdata.net/record/129523)| [details](#inspirehep-221309-T1) | Finalized | 
-|CMD (VEPP-2M, Novosibirsk)|1983 | [Nucl.Phys.B 256 (1985) 365-384](https://inspirehep.net/literature/221309) | [ins221309](https://www.hepdata.net/record/ins221309) [Table 2](https://www.hepdata.net/record/129524)| [details](#inspirehep-221309-T2) | Finalized | 
-| | | | | | | 
-| | | | | | | 
-|TOF (VEPP-2M, Novosibirsk)|1981 | [Yad.Fiz. 33 (1981) 709-714, Sov.J.Nucl.Phys. 33 (1981) 368-370](https://inspirehep.net/literature/167191) | [ins167191](https://www.hepdata.net/record/ins167191)| [details](#inspirehep-167191) | Finalized | 
-| | | | | | | 
-| | | | | | | 
-|VEPP-2 (Novosibirsk) |1972 | [Phys.Lett.B 41 (1972) 205-208](https://inspirehep.net/literature/75634) | [ins75634](https://www.hepdata.net/record/ins75634) |[details](#inspirehep-75634) | Finalized | 
-|VEPP-2 (Novosibirsk)|1971 | [Phys.Lett.B 34 (1971) 328-332](https://inspirehep.net/literature/69313) | [ins69313](https://www.hepdata.net/record/ins69313)| [details](#inspirehep-69313) | Finalized | 
-|VEPP-2 (Novosibirsk) |1969 | [Yad.Fiz. 9 (1969) 114-119](https://inspirehep.net/literature/57008), [Phys.Lett.B 25 (1967) 6, 433-435](https://inspirehep.net/literature/1392895)| [ins57008](https://www.hepdata.net/record/ins57008)|[details](#inspirehep-57008)  | Finalized | 
+|VEPP-2 (Novosibirsk) |1971 | [Phys.Lett.B 34 (1971) 328-332](https://inspirehep.net/literature/69313) | [ins69313](https://www.hepdata.net/record/ins69313) |[details](#inspirehep-69313) | Finalized | 
 
 
-
+<!--
 
 
 ----
@@ -76,26 +70,7 @@ has_math: true
 
 ----
 
-
-
-
-
-
-<a name="inspirehep-1385603"></a>[BESIII (BEPC, Beijing), 2016](https://inspirehep.net/literature/1385603)
-
-* hepdata: [ins1385603](https://www.hepdata.net/record/ins1385603)
-* method: Direct
-* quotes:
-	* $|F_\pi|^2$ (stat, syst and $Cov^{stat}(x,y)$)
-	* $\sigma_{\pi^+\pi^-(\gamma_{FSR})}^{bare}$ (stat, syst and $Cov^{stat}(x,y)$)
-* energy\[GeV\]: 0.6 - 0.9
-* radiative corrections:
-    * Yes, FSR
-* comment:
-    *  
-----
-
-<a name="inspirehep-1114155"></a>[BaBar (SLAC, Stanford U.), 2012](https://inspirehep.net/literature/1114155)
+<a name="inspirehep-1937349"></a>[BaBar (SLAC, Stanford U.), 2012](https://inspirehep.net/literature/1114155)
 
 * hepdata: [ins1114155](https://www.hepdata.net/record/ins1114155)
 * method: Direct

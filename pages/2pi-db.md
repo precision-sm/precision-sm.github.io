@@ -30,14 +30,18 @@ has_math: true
 | | | | | | | 
 |MEA (ADONE, Lab. Naz. Frascati)|1980 | [Lett.Nuovo Cim. 28 (1980) 337-342](https://inspirehep.net/literature/158283) | [ins158283](https://www.hepdata.net/record/ins158283)| [details](#inspirehep-158283) | Finalized | 
 |MEA (ADONE, Lab. Naz. Frascati)|1977 | [Phys.Lett.B 67 (1977) 239-242](https://inspirehep.net/literature/124109) | [ins124109](https://www.hepdata.net/record/ins124109)| [details](#inspirehep-124109) | Finalized | 
-|BCF (ADONE, Lab. Naz. Frascati)|1975 | [Lett.Nuovo Cim. 14 (1975) 418](https://inspirehep.net/literature/100180) | [ins100180](https://www.hepdata.net/record/ins100180)| [details](#inspirehep-100180) | Finalized | 
 | | | | | | | 
 | | | | | | | 
-|NA007 (CERN) | 1984 | [Phys.Lett.B 138 (1984) 454-458](https://inspirehep.net/literature/195944)|[ins195944](https://www.hepdata.net/record/ins195944)|[details](#inspirehep-195944) | Finalized | 
+|BCF (ADONE, Lab. Naz. Frascati)|1975 | [Lett.Nuovo Cim. 14 (1975) 418](https://inspirehep.net/literature/100180) | [ins100180](https://www.hepdata.net/record/ins100180) | [details](#inspirehep-100180) | Finalized | 
 | | | | | | | 
 | | | | | | | 
-|ACO (Orsay)|1976| [LAL-1287](https://inspirehep.net/literature/109771)|[ins109771](https://www.hepdata.net/record/ins109771)|[details](#inspirehep-109771)| Finalized | 
-|ACO (Orsay)|1972| [Phys.Lett.B 39 (1972) 289-293](https://inspirehep.net/literature/73648)|[ins73648](https://www.hepdata.net/record/ins73648)|[details](#inspirehep-73648)| Finalized | 
+|NA007 (CERN) | 1984 | [Phys.Lett.B 138 (1984) 454-458](https://inspirehep.net/literature/195944) |[ins195944](https://www.hepdata.net/record/ins195944) |[details](#inspirehep-195944) | Finalized | 
+| | | | | | | 
+| | | | | | | 
+|ACO (Orsay)|1976| [LAL-1287](https://inspirehep.net/literature/109771) |[ins109771](https://www.hepdata.net/record/ins109771) |[details](#inspirehep-109771)| Finalized | 
+|ACO (Orsay)|1972| [Phys.Lett.B 39 (1972) 289-293](https://inspirehep.net/literature/73648) |[ins73648](https://www.hepdata.net/record/ins73648) |[details](#inspirehep-73648)| Finalized | 
+| | | | | | | 
+| | | | | | | 
 |DM2 (DCI, Orsay)|1989| [Phys.Lett.B 220 (1989) 321-327](https://inspirehep.net/literature/267118)|[ins267118](https://www.hepdata.net/record/ins267118)|[details](#inspirehep-267118)| Finalized | 
 |DM1 (DCI, Orsay)|1978| [Phys.Lett.B 76 (1978) 512-516](https://inspirehep.net/literature/134061)|[ins134061](https://www.hepdata.net/record/ins134061)|[details](#inspirehep-134061)| Finalized | 
 | | | | | | | 
