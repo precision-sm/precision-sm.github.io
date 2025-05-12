@@ -13,6 +13,9 @@ has_math: true
 |BaBar (SLAC, Stanford U.)|2021 | [Phys.Rev.D 104 (2021) 11, 112003](https://inspirehep.net/literature/1937349) | [ins1937349](https://www.hepdata.net/record/ins1937349)| [details](#inspirehep-1937349) | In preparation |  
 | | | | | | | 
 | | | | | | | 
+|Belle-II (KEK, Tsukuba)|2024 | [Phys.Rev.D 110 (2024) 11, 112005](https://inspirehep.net/literature/2775022) | [ins2775022](https://www.hepdata.net/record/ins2775022)| [details](#inspirehep-2775022) | Finalized |  
+| | | | | | | 
+| | | | | | | 
 |GG2 (ADONE, Lab. Naz. Frascati)|1981 | [Nucl.Phys.B 184 (1981) 31-39](https://inspirehep.net/literature/158474) | [ins158474](https://www.hepdata.net/record/ins158474)| [details](#inspirehep-158474) | Finalized | 
 |GG2 (ADONE, Lab. Naz. Frascati)|1973 | [Phys.Lett.B 44 (1973) 533-536](https://inspirehep.net/literature/84794) | [ins84794](https://www.hepdata.net/record/ins84794)| [details](#inspirehep-84794) | Finalized | 
 | | | | | | | 
@@ -62,9 +65,9 @@ has_math: true
 
 
 ----
-
+<!--
 <center>([download](../3pi-measurements-db.yaml))</center>
-
+-->
 ----
 
 <a name="inspirehep-1937349"></a>[BaBar (SLAC, Stanford U.), 2021](https://inspirehep.net/literature/1937349)
@@ -78,6 +81,19 @@ has_math: true
     * In preparation 
 * comment:
     * In preparation 
+
+----
+
+<a name="inspirehep-2775022"></a>[Belle-II (KEK, Tsukuba), 2024](https://inspirehep.net/literature/2775022)
+
+* hepdata: [ins2775022](https://www.hepdata.net/record/ins2775022)
+* method: ISR
+* quotes:
+	* $\sigma_{\pi^+\pi^-\pi^0}^{dressed}$ (stat, syst, $Cov^{stat}(x,y)$ and $Cov^{syst}(x,y)$)
+* energy\[GeV\]: 0.62 - 3.5
+* radiative corrections:
+    * Yes
+
 ----
 
 <a name="inspirehep-158474"></a>[GG2 (ADONE, Lab. Naz. Frascati), 1981](https://inspirehep.net/literature/158474)
@@ -452,7 +468,7 @@ has_math: true
 
 ----
 
-<a name="inspirehep-255953"></a>[CMD (VEPP-2M, Novosibirsk), 1989](https://inspirehep.net/literature/255953)
+<a name="inspirehep-255953"></a>[CMD (VEPP-2M, Novosibirsk), 1987](https://inspirehep.net/literature/255953)
 
 * hepdata: [ins255953](https://www.hepdata.net/record/ins255953)
 * method: Direct

@@ -75,9 +75,9 @@ has_math: true
 
 
 ----
-
+<!--
 <center>([download](../2pi-measurements-db.yaml))</center>
-
+-->
 ----
 
 
