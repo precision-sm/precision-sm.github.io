@@ -295,7 +295,7 @@ has_math: true
 * method: Direct
 * quotes:
 	* $F_\pi$ (tot)
-* energy\[GeV\]: 1.2 -3.0
+* energy\[GeV\]: 1.2 - 3.0
 * radiative corrections:
     * No Mention
 * comment:

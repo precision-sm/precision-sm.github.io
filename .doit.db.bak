@@ -151,7 +151,7 @@
 'copy_files:output\\jsroot\\scripts\\JSRoot.math.js', (138240, 281)
 'copy_files:output\\vpl\\plots\\draw_k+k-pi0.root', (138752, 278)
 'copy_files', (139264, 56)
-'sitemap:output\\sitemap.xml', (139776, 4863)
+'sitemap:output\\sitemap.xml', (139776, 4857)
 'render_listings', (144896, 56)
 'render_posts', (145408, 56)
 'copy_files:output\\vpl\\cs.json', (145920, 242)

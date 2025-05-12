@@ -144,7 +144,7 @@ NAVIGATION_LINKS = {
   DEFAULT_LANG: (
      (
       (
-        ('/measurements-db/', 'Measurements Database'),
+        ('/', 'Measurements Database'),
         ('/categories/submissions', 'Data Submissions'),
         ('/categories/checks', 'Data Submissions Checks'),
         ('/categories/plots', 'Plots'),
