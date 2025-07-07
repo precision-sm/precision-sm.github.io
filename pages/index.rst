@@ -45,4 +45,4 @@
 
 * `Plots <link://category/plots/>`_
 
-* `Past presentations </presentations/>`_
+* `List of presentations </presentations/>`_

@@ -545,7 +545,7 @@ CATEGORY_TITLES = {
        "submissions": "HEPData submissions",
        "checks": "Checks of HEPData submissions",
        "plots": "Plots",
-       "presentations": "Past presentations",
+       "presentations": "List of presentations",
    },
 }
 
