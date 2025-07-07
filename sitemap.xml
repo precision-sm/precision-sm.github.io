@@ -7,7 +7,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://precision-sm.github.io/</loc>
-  <lastmod>2025-05-09T16:56:00Z</lastmod>
+  <lastmod>2025-07-07T11:43:00Z</lastmod>
  </url>
  <url>
   <loc>https://precision-sm.github.io/2pi-db/</loc>
@@ -23,7 +23,7 @@
  </url>
  <url>
   <loc>https://precision-sm.github.io/archive.html</loc>
-  <lastmod>2025-05-12T09:11:00Z</lastmod>
+  <lastmod>2025-07-07T11:46:00Z</lastmod>
  </url>
  <url>
   <loc>https://precision-sm.github.io/categories/</loc>
@@ -96,6 +96,10 @@
  <url>
   <loc>https://precision-sm.github.io/posts/precision-sm-hepdata-subm/</loc>
   <lastmod>2025-05-09T16:56:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://precision-sm.github.io/presentations/</loc>
+  <lastmod>2025-07-07T11:43:00Z</lastmod>
  </url>
  <url>
   <loc>https://precision-sm.github.io/tags/</loc>
