@@ -44,3 +44,5 @@
 * `HEPData submissions checks <link://category/checks/>`_
 
 * `Plots <link://category/plots/>`_
+
+* `Past presentations </presentations/>`_

@@ -148,6 +148,7 @@ NAVIGATION_LINKS = {
         ('/categories/submissions', 'Data Submissions'),
         ('/categories/checks', 'Data Submissions Checks'),
         ('/categories/plots', 'Plots'),
+        ('/categories/presentations', 'Past presentations'),
         # ('/categories/elaborations', 'Elaborations'),
       ),
       'Contents'
@@ -544,6 +545,7 @@ CATEGORY_TITLES = {
        "submissions": "HEPData submissions",
        "checks": "Checks of HEPData submissions",
        "plots": "Plots",
+       "presentations": "Past presentations",
    },
 }
 
