@@ -1,6 +1,6 @@
 ---
 title: List of Past Presentations 
-date: 2025-07-07
+date: 2025-11-26
 tags: STRONG2020Presentations
 category: docs
 has_math: true
