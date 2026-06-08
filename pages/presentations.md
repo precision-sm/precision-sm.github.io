@@ -7,11 +7,17 @@ has_math: true
 ---
 
 ----
-July 2025: <a name="EPS-HEP2025"></a>[2025 European Physical Society Conference on High Energy Physics  (EPS-HEP2025) - Marseille, France.](https://indico.in2p3.fr/event/33627/overview){:target="_blank"}
+June 2026: <a name="PhiPsi26"></a>[14<sup>th</sup> International Workshop on e<sup>+</sup>e<sup>–</sup> collisions from Phi to Psi (PhiPsi26) - Pisa, Italy.](https://indico.sns.it/event/140/overview){:target="_blank"}
+
+* Title: "PrecisionSM: an annotated database for low-energy positron-electron hadronic cross sections"
+* Contribution: [Presentation](https://indico.sns.it/event/140/contributions/1272/){:target="_blank"}
+* Proceeding: [In preparation](https://indico.sns.it/event/140/contributions/1272/){:target="_blank"}
+----
+July 2025: <a name="EPS-HEP2025"></a>[2025 European Physical Society Conference on High Energy Physics (EPS-HEP2025) - Marseille, France.](https://indico.in2p3.fr/event/33627/overview){:target="_blank"}
 
 * Title: "PrecisionSM: an annotated database for low-energy positron-electron hadronic cross sections"
 * Contribution: [Presentation](https://indico.in2p3.fr/event/33627/contributions/155106/){:target="_blank"}
-* Proceeding: [In preparation](https://indico.in2p3.fr/event/33627/contributions/155106/){:target="_blank"}
+* Proceeding: [PoS EPS-HEP2025 (2026) 287](https://inspirehep.net/literature/3088384){:target="_blank"}
 ----
 July 2024: <a name="ICHEP2024"></a>[42<sup>nd</sup> International Conference on High Energy Physics (ICHEP 2024) - Prague, Czech Republic.](https://indico.cern.ch/event/1291157/overview){:target="_blank"}
 
@@ -19,13 +25,13 @@ July 2024: <a name="ICHEP2024"></a>[42<sup>nd</sup> International Conference on 
 * Contribution: [Poster](https://indico.cern.ch/event/1291157/contributions/5876651/){:target="_blank"}
 * Proceeding: [PoS ICHEP2024 (2025) 578](https://inspirehep.net/literature/2867765){:target="_blank"}
 ----
-August 2023: <a name="EPS-HEP2023"></a>[2023 European Physical Society Conference on High Energy Physics  (EPS-HEP2023) - Hamburg, Germany.](https://indico.desy.de/event/34916/overview){:target="_blank"}
+August 2023: <a name="EPS-HEP2023"></a>[2023 European Physical Society Conference on High Energy Physics (EPS-HEP2023) - Hamburg, Germany.](https://indico.desy.de/event/34916/overview){:target="_blank"}
 
 * Title: "PrecisionSM: an annotated database for low-energy positrons-electrons into hadrons"
 * Contribution: [Poster](https://indico.desy.de/event/34916/contributions/150227/){:target="_blank"}
 * Proceeding: [PoS EPS-HEP2023 (2024) 376](https://inspirehep.net/literature/2751739){:target="_blank"}
 ----
-July 2023: <a name="LeptonPhoton2023"></a>[31<sup>st</sup> International Symposium on Lepton Photon Interactions at High Energies  (31<sup>st</sup> Lepton Photon) - Melbourne, Australia.](https://indico.cern.ch/event/1114856/){:target="_blank"}
+July 2023: <a name="LeptonPhoton2023"></a>[31<sup>st</sup> International Symposium on Lepton Photon Interactions at High Energies (31<sup>st</sup> Lepton Photon) - Melbourne, Australia.](https://indico.cern.ch/event/1114856/){:target="_blank"}
 
 * Title: "The Strong2020 and RadioMonteCarlow activities"
 * Contribution: [Poster](https://indico.cern.ch/event/1114856/contributions/5361995/){:target="_blank"}

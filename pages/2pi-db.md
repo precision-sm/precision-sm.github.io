@@ -43,7 +43,7 @@ has_math: true
 | | | | | | | 
 | | | | | | | 
 |DM2 (DCI, Orsay)|1989| [Phys.Lett.B 220 (1989) 321-327](https://inspirehep.net/literature/267118)|[ins267118](https://www.hepdata.net/record/ins267118)|[details](#inspirehep-267118)| Finalized | 
-|DM1 (DCI, Orsay)|1978| [Phys.Lett.B 76 (1978) 512-516](https://inspirehep.net/literature/134061)|[ins134061](https://www.hepdata.net/record/ins134061)|[details](#inspirehep-134061)| Finalized | 
+|DM1 (ACO, Orsay)|1978| [Phys.Lett.B 76 (1978) 512-516](https://inspirehep.net/literature/134061)|[ins134061](https://www.hepdata.net/record/ins134061)|[details](#inspirehep-134061)| Finalized | 
 | | | | | | | 
 | | | | | | | 
 |SND (VEPP-2000, Novosibirsk) |2021 | [JHEP 01 (2021) 113](https://inspirehep.net/literature/1789269) | [ins1789269](https://www.hepdata.net/record/ins1789269)| [details](#inspirehep-1789269) | Finalized | 
@@ -88,7 +88,7 @@ has_math: true
 <a name="inspirehep-1385603"></a>[BESIII (BEPC, Beijing), 2016](https://inspirehep.net/literature/1385603)
 
 * hepdata: [ins1385603](https://www.hepdata.net/record/ins1385603)
-* method: Direct
+* method: ISR
 * quotes:
 	* $|F_\pi|^2$ (stat, syst and $Cov^{stat}(x,y)$)
 	* $\sigma_{\pi^+\pi^-(\gamma_{FSR})}^{bare}$ (stat, syst and $Cov^{stat}(x,y)$)
@@ -102,7 +102,7 @@ has_math: true
 <a name="inspirehep-1114155"></a>[BaBar (SLAC, Stanford U.), 2012](https://inspirehep.net/literature/1114155)
 
 * hepdata: [ins1114155](https://www.hepdata.net/record/ins1114155)
-* method: Direct
+* method: ISR
 * quotes:
 	* In preparation 
 * energy\[GeV\]: 0.3 - 3
@@ -128,7 +128,7 @@ has_math: true
 <a name="inspirehep-1189656"></a>[CLEO (CESR, Cornell U.), 2013](https://inspirehep.net/literature/1189656)
  
 * hepdata: [ins1189656](https://www.hepdata.net/record/ins1189656) 
-* method: Direct
+* method: Energy scan
 * quotes:
 	* $F_\pi$ (stat, syst)
 	* $\sigma_{\pi^+\pi^-}$ (stat, syst)
@@ -143,7 +143,7 @@ has_math: true
 <a name="inspirehep-693873"></a>[CLEO (CESR, Cornell U.), 2005](https://inspirehep.net/literature/693873)
  
 * hepdata: [ins693873](https://www.hepdata.net/record/ins693873) 
-* method: Direct
+* method: Energy scan
 * quotes:
 	* $F_\pi$ (stat, syst)
 	* $\sigma_{\pi^+\pi^-}$ (stat, syst)
@@ -159,7 +159,7 @@ has_math: true
 * status: **in preparation**
 
 * hepdata: [1634981](https://www.hepdata.net/record/ins1634981)
-* method: Direct
+* method: ISR
 * quotes:
      * $d\sigma/dQ^2 (\pi^+\pi^-\gamma)$ (stat, syst)
      * $\sigma_{\pi^+\pi^-}$ (stat, syst)
@@ -180,7 +180,7 @@ has_math: true
 * status: **in preparation**
 
 * hepdata: ins1208095
-* method: Direct
+* method: ISR
 * quotes:
      * $\sigma$ (stat, syst)
      *  $F_\pi$ (stat, syst)
@@ -200,7 +200,7 @@ has_math: true
 <a name="inspirehep-859660"></a> [KLOE (DAPHNE, Frascati), 2010](https://inspirehep.net/literature/859660)
 
 * hepdata: [ins859660](https://www.hepdata.net/record/ins859660)
-*  method: Direct
+*  method: ISR
 *  quotes:
      * $d\sigma/dQ^2 (\pi\pi\gamma)$ (stat, syst)
      * $\sigma$ (stat, syst)
@@ -221,7 +221,7 @@ has_math: true
 * status: **in review**
 
 * hepdata: [ins797438](https://www.hepdata.net/record/ins797438)
-*  method: Direct
+*  method: ISR
 * quotes:
     * $d\sigma/dQ^2 (\pi^+\pi^-\gamma)$ (stat, syst)
     * $\sigma_{\pi^+\pi^-(\gamma)}$ (stat, syst)
@@ -243,7 +243,7 @@ has_math: true
 * status: **in review**
 
 * hepdata: [ins655225](https://www.hepdata.net/record/ins655225)
-* method: Direct
+* method: ISR
 * quotes:
     * $d\sigma/dQ^2 (\pi^+\pi^-\gamma)$ (stat, syst)
     * $\sigma_{(\pi^+\pi^-)}$ (stat, syst)
@@ -262,7 +262,7 @@ has_math: true
 <a name="inspirehep-158283"></a>[MEA (ADONE, Lab. Naz. Frascati), 1980](https://inspirehep.net/literature/158283)
 
 * hepdata: [ins158283](https://www.hepdata.net/record/ins158283)
-* method: Direct
+* method: Energy scan
 * quotes:
 	* $|F_\pi|^2$ (stat)
 	* $\sigma_{\pi^+\pi^-}$ (stat)
@@ -277,7 +277,7 @@ has_math: true
 <a name="inspirehep-124109"></a>[MEA (ADONE, Lab. Naz. Frascati), 1977](https://inspirehep.net/literature/124109)
 
 * hepdata: [ins124109](https://www.hepdata.net/record/ins124109)
-* method: Direct
+* method: Energy scan
 * quotes:
 	* $|F_\pi|^2$ (tot)
 	* $\sigma_{\pi^+\pi^-}$ (tot)
@@ -292,7 +292,7 @@ has_math: true
 <a name="inspirehep-100180"></a>[BCF (ADONE, Lab. Naz. Frascati), 1975](https://inspirehep.net/literature/100180)
 
 * hepdata: [ins100180](https://www.hepdata.net/record/ins100180)
-* method: Direct
+* method: Energy scan
 * quotes:
 	* $F_\pi$ (tot)
 * energy\[GeV\]: 1.2 - 3.0
@@ -306,7 +306,7 @@ has_math: true
 <a name="inspirehep-195944"></a>[NA007 (CERN), 1984](https://inspirehep.net/literature/195944)
 
 *  hepdata: [ins109771](https://www.hepdata.net/record/ins195944)
-*  method: Direct
+*  method: Energy scan
 *  quotes:
      * $|F_\pi|^2$ (stat, syst)
 * energy\[GeV\]: 0.318 - 0.422   
@@ -319,7 +319,7 @@ has_math: true
 <a name="inspirehep-109771"></a>[ACO (Orsay), 1976](https://inspirehep.net/literature/109771)
 
 *  hepdata: ins109771
-*  method: Direct
+*  method: Energy scan
 *  quotes:
    * $|F_\pi|^{2}$ (stat)
 * energy\[GeV\]: 0.915 -  1.076
@@ -332,7 +332,7 @@ has_math: true
 <a name="inspirehep-73648"></a>[ACO (Orsay), 1972](https://inspirehep.net/literature/73648)
 
 *  hepdata: [ins73648](https://www.hepdata.net/record/ins73648)
-*  method: Direct
+*  method: Energy scan
 *  quotes:
      * $\sigma_{\pi^+\pi^-}$ (stat)
 * energy\[GeV\]: 0.705 - 0.990   
@@ -345,7 +345,7 @@ has_math: true
 <a name="inspirehep-267118"></a>[DM2 (DCI, Orsay), 1989](https://inspirehep.net/literature/267118)
  
 *  hepdata: [ins267118](https://www.hepdata.net/record/ins267118)
-*  method: Direct
+*  method: Energy scan
 *  quotes:
     * $|F_\pi|^{2}$ (stat, syst)
     * $\sigma_{\pi^+\pi^-}$ (stat, syst)
@@ -356,10 +356,10 @@ has_math: true
     - 
   
 ----
-<a name="inspirehep-134061"></a>[DM1 (DCI, Orsay), 1978](https://inspirehep.net/literature/134061)
+<a name="inspirehep-134061"></a>[DM1 (ACO, Orsay), 1978](https://inspirehep.net/literature/134061)
  
 *  hepdata: [ins134061](https://www.hepdata.net/record/ins134061)
-*  method: Direct
+*  method: Energy scan
 * quotes:
     * $|F_\pi|^{2}$ (stat, syst)
     * $\sigma_{\pi^+\pi^-}$ (stat, syst)
@@ -373,7 +373,7 @@ has_math: true
 <a name="inspirehep-1789269"></a>[SND (VEPP-2000, Novosibirsk), 2021](https://inspirehep.net/literature/1789269)
 
 *  hepdata: [ins1789269](https://www.hepdata.net/record/ins1789269)
-*  method: Direct
+*  method: Energy scan
 *  quotes:
       * $|F_\pi|^2$ (stat, syst)
       * $\sigma_{\pi^+\pi^-}$ (stat, syst)
@@ -387,7 +387,7 @@ has_math: true
 <a name="inspirehep-686349"></a>[SND (VEPP-2M, Novosibirsk), 2005](https://inspirehep.net/literature/686349) ([errata](https://inspirehep.net/literature/716141))
   
 * hepdata: [ins686349](https://www.hepdata.net/record/ins686349)
-* method: Direct
+* method: Energy scan
 * quotes:
 	* $|F_\pi|^2$ (only uncorrelated errors)
 	* $\sigma_{\pi^+\pi^-}$ (only uncorrelated errors)
@@ -415,7 +415,7 @@ has_math: true
 <a name="inspirehep-728302"></a>[CMD2 (VEPP-2M, Novosibirsk), 2007](https://inspirehep.net/literature/728302)
 
 *  hepdata: [ins728302](https://www.hepdata.net/record/ins728302)
-*  method: Direct
+*  method: Energy scan
 *  quotes:
 	* $|F_\pi|^2$ (stat, syst)
 	* $\sigma_{\pi^+\pi^-}^{bare}$ (stat, syst)
@@ -428,7 +428,7 @@ has_math: true
 <a name="inspirehep-728191"></a>[CMD2 (VEPP-2M, Novosibirsk), 2006](https://inspirehep.net/literature/728191)
 
 * hepdata: [ins728191](https://www.hepdata.net/record/ins728191)
-* method: Direct
+* method: Energy scan
 * quotes:
 	* $|F_\pi|^2$ (stat, syst)
 	* $\sigma_{\pi^+\pi^-}^{bare}$ (stat, syst)
@@ -441,7 +441,7 @@ has_math: true
 <a name="inspirehep-712216"></a>[CMD2 (VEPP-2M, Novosibirsk), 2005](https://inspirehep.net/literature/712216)
 
 * hepdata: [ins712216](https://www.hepdata.net/record/ins712216)
-* method: Direct
+* method: Energy scan
 * quotes:
 	* $|F_\pi|^2$ (stat, syst)
 * energy\[GeV\]: 0.98 - 1.38
@@ -453,7 +453,7 @@ has_math: true
 <a name="inspirehep-568807"></a>[CMD2 (VEPP-2M, Novosibirsk), 2002](https://inspirehep.net/literature/568807) ([errata](https://inspirehep.net/literature/624947))
 
 * hepdata: [ins568807](https://www.hepdata.net/record/ins568807)
-* method: Direct
+* method: Energy scan
 * quotes:
 	* $|F_\pi|^2$ (tot, stat, syst)
 	* $\sigma_{\pi^+\pi^-}^{bare}$ (tot, stat, syst)
@@ -468,7 +468,7 @@ has_math: true
 <a name="inspirehep-221309-T1"></a>[OLYA (VEPP-2M, Novosibirsk), 1984](https://inspirehep.net/literature/221309)
 
 * hepdata: [ins221309](https://www.hepdata.net/record/ins221309)
-* method: Direct
+* method: Energy scan
 * quotes:
 	* $|F_\pi|^2$ (stat, syst)
 	* $\sigma_{\pi^+\pi^-}$ (stat, syst)
@@ -489,7 +489,7 @@ has_math: true
 <a name="inspirehep-221309-T2"></a>[CMD (VEPP-2M, Novosibirsk), 1983](https://inspirehep.net/literature/221309)
 
 * hepdata: [ins221309](https://www.hepdata.net/record/ins221309)
-* method: Direct
+* method: Energy scan
 * quotes:
 	* $|F_\pi|^2$ (stat, syst)
 	* $\sigma_{\pi^+\pi^-}$ (stat, syst)
@@ -510,7 +510,7 @@ has_math: true
 <a name="inspirehep-167191"></a>[TOF (VEPP-2M, Novosibirsk), 1981](https://inspirehep.net/literature/167191)
 
 * hepdata: [ins167191](https://www.hepdata.net/record/ins167191)
-* method: Direct
+* method: Energy scan
 * quotes:
 	* $F_\pi$ (stat)
 	* $\sigma_{\pi^+\pi^-}$ (stat)
@@ -533,7 +533,7 @@ has_math: true
 <a name="inspirehep-75634"></a>[VEPP-2 (Novosibirsk), 1972](https://inspirehep.net/literature/75634)
 
 *  hepdata: [ins75634](https://www.hepdata.net/record/ins75634)
-*  method: Direct
+*  method: Energy scan
 *  quotes:
 	* $|F_\pi|^2$ (tot)
 	* $\sigma_{\pi^+\pi^-}$ (tot)
@@ -548,7 +548,7 @@ has_math: true
 <a name="inspirehep-69313"></a>[VEPP-2 (Novosibirsk), 1971](https://inspirehep.net/literature/69313)
 
 * hepdata: [ins69313](https://www.hepdata.net/record/ins69313)
-* method: Direct
+* method: Energy scan
 * quotes:
 	* $|F_\pi|^2$ (tot)
 * energy \[GeV\]: 1.02
@@ -561,7 +561,7 @@ has_math: true
 <a name="inspirehep-57008"></a>[VEPP-2 (Novosibirsk), 1969](https://inspirehep.net/literature/57008)
 
 * hepdata: [ins57008](https://www.hepdata.net/record/ins57008)
-* method: Direct
+* method: Energy scan
 * quotes:
 	* $|F_\pi|^2$ (tot)
 * energy \[GeV\]: 0.575 - 1.000

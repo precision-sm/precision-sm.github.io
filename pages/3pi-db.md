@@ -30,7 +30,7 @@ has_math: true
 |ACO (Orsay)|1970| [Phys.Lett.B 32 (1970) 416-420](https://inspirehep.net/literature/63115) |[ins63115](https://www.hepdata.net/record/ins63115) |[details](#inspirehep-63115) | Finalized | 
 |ACO (Orsay)|1969| [Phys.Lett.B 28 (1969) 513-516](https://inspirehep.net/literature/56682) |[ins56682](https://www.hepdata.net/record/ins56682) |[details](#inspirehep-56682) | Finalized | 
 |DM2 (DCI, Orsay)|1992| [Z.Phys.C 56 (1992) 15-20](https://inspirehep.net/literature/339265) |[ins339265](https://www.hepdata.net/record/ins339265) |[details](#inspirehep-339265) | Finalized | 
-|DM1 (DCI, Orsay)|1980| [Nucl.Phys.B 172 (1980) 13-24](https://inspirehep.net/literature/140174) |[ins140174](https://www.hepdata.net/record/ins140174) |[details](#inspirehep-140174)| Finalized | 
+|DM1 (ACO, Orsay)|1980| [Nucl.Phys.B 172 (1980) 13-24](https://inspirehep.net/literature/140174) |[ins140174](https://www.hepdata.net/record/ins140174) |[details](#inspirehep-140174)| Finalized | 
 | | | | | | | 
 | | | | | | | 
 |SND (VEPP-2M, Novosibirsk) |2020 | [Eur.Phys.J.C 80 (2020) 10, 993](https://inspirehep.net/literature/1809286) | [ins1809286](https://www.hepdata.net/record/ins1809286) | [details](#inspirehep-1809286) | In preparation | 
@@ -111,7 +111,7 @@ has_math: true
 <a name="inspirehep-84794"></a>[GG2 (ADONE, Lab. Naz. Frascati), 1973](https://inspirehep.net/literature/84794)
 
 * hepdata: [ins84794](https://www.hepdata.net/record/ins84794)
-* method: Direct
+* method: Energy scan
 * quotes:
 	* $\sigma_{\pi^+\pi^-\pi^0}$ (stat)
 * energy\[GeV\]: 3.0
@@ -125,7 +125,7 @@ has_math: true
 <a name="inspirehep-158282"></a>[MEA (ADONE, Lab. Naz. Frascati), 1980](https://inspirehep.net/literature/158282)
 
 * hepdata: [ins158282](https://www.hepdata.net/record/ins158282)
-* method: Direct
+* method: Energy scan
 * quotes:
 	* $\sigma_{\pi^+\pi^-\pi^0}$
 * energy\[GeV\]: 1.450 - 1.875
@@ -140,7 +140,7 @@ has_math: true
 <a name="inspirehep-145867"></a>[MEA (ADONE, Lab. Naz. Frascati), 1979](https://inspirehep.net/literature/145867)
 
 * hepdata: [ins145867](https://www.hepdata.net/record/ins145867)
-* method: Direct
+* method: Energy scan
 * quotes:
 	* $\sigma_{\pi^+\pi^-\pi^0}$
 * energy\[GeV\]: 1.45 - 1.61
@@ -194,7 +194,7 @@ has_math: true
 <a name="inspirehep-63115"></a>[ACO (Orsay), 1970](https://inspirehep.net/literature/63115)
 
 * hepdata: [ins63115](https://www.hepdata.net/record/ins63115)
-* method: Direct
+* method: Energy scan
 * quotes:
 	* $\sigma_{\pi^+\pi^-\pi^0}^{bare}$ (total)
 * energy\[GeV\]: 1.02
@@ -208,7 +208,7 @@ has_math: true
 <a name="inspirehep-56682"></a>[ACO (Orsay), 1969](https://inspirehep.net/literature/56682)
 
 * hepdata: [ins56682](https://www.hepdata.net/record/ins56682)
-* method: Direct
+* method: Energy scan
 * quotes:
 	* $\sigma_{\pi^+\pi^-\pi^0}$ (stat, syst)
 * energy\[GeV\]: 0.773 - 0.803
@@ -222,7 +222,7 @@ has_math: true
 <a name="inspirehep-339265"></a>[DM2 (DCI, Orsay), 1992](https://inspirehep.net/literature/339265)
 
 * hepdata: [ins339265](https://www.hepdata.net/record/ins339265)
-* method: Direct
+* method: Energy scan
 * quotes:
 	* $\sigma_{\pi^+\pi^-\pi^0}$
 * energy\[GeV\]: 1.350 - 2.400
@@ -233,10 +233,10 @@ has_math: true
 
 ----
 
-<a name="inspirehep-140174"></a>[DM1 (DCI, Orsay), 1980](https://inspirehep.net/literature/140174)
+<a name="inspirehep-140174"></a>[DM1 (ACO, Orsay), 1980](https://inspirehep.net/literature/140174)
 
 * hepdata: [ins140174](https://www.hepdata.net/record/ins140174)
-* method: Direct
+* method: Energy scan
 * quotes:
 	* $\sigma_{\pi^+\pi^-\pi^0}$ (stat, syst)
 * energy\[GeV\]: 0.483 - 1.098
@@ -248,7 +248,7 @@ has_math: true
 <a name="inspirehep-1809286"></a>[SND (VEPP-2M, Novosibirsk), 2020](https://inspirehep.net/literature/1809286)
 
 * hepdata: [ins1809286](https://www.hepdata.net/record/ins1809286)
-* method: Direct
+* method: Energy scan
 * quotes:
 	* $\sigma_{\pi^+\pi^-\pi^0}$ (stat, syst)
 * energy\[GeV\]: 1.15 - 2.00
@@ -262,7 +262,7 @@ has_math: true
 <a name="inspirehep-619011"></a>[SND (VEPP-2M, Novosibirsk), 2003](https://inspirehep.net/literature/619011)
 
 * hepdata: [ins619011](https://www.hepdata.net/record/ins619011)
-* method: Direct
+* method: Energy scan
 * quotes:
 	* $\sigma_{\pi^+\pi^-\pi^0}$ (stat, syst)
 * energy\[GeV\]: 0.44 - 0.97
@@ -274,7 +274,7 @@ has_math: true
 <a name="inspirehep-582183"></a>[SND (VEPP-2M, Novosibirsk), 2002](https://inspirehep.net/literature/582183)
 
 * hepdata: [ins582183](https://www.hepdata.net/record/ins582183)
-* method: Direct
+* method: Energy scan
 * quotes:
 	* $\sigma_{\pi^+\pi^-\pi^0}$ (stat, syst)
 * energy\[GeV\]: 0.98 - 1.38
@@ -286,7 +286,7 @@ has_math: true
 <a name="inspirehep-533574"></a>[SND (VEPP-2M, Novosibirsk), 2001](https://inspirehep.net/literature/533574)
 
 * hepdata: [ins533574](https://www.hepdata.net/record/ins533574)
-* method: Direct
+* method: Energy scan
 * quotes:
 	* $\sigma_{\pi^+\pi^-\pi^0}$ (stat, syst)
 * energy\[GeV\]: 0.984 - 1.060
@@ -301,7 +301,7 @@ has_math: true
 <a name="inspirehep-508003"></a>[SND (VEPP-2M, Novosibirsk), 1999](https://inspirehep.net/literature/508003)
 
 * hepdata: [ins508003](https://www.hepdata.net/record/ins508003)
-* method: Direct
+* method: Energy scan
 * quotes:
 	* $\sigma_{\pi^+\pi^-\pi^0}$ (stat, syst)
 * energy\[GeV\]: 1.04 - 1.38
@@ -315,7 +315,7 @@ has_math: true
 <a name="inspirehep-1389908"></a>[SND-2k (VEPP-2000, Novosibirsk), 2015](https://inspirehep.net/literature/1389908)
 
 * hepdata: [ins1389908](https://www.hepdata.net/record/ins1389908)
-* method: Direct
+* method: Energy scan
 * quotes:
 	* $\sigma_{\pi^+\pi^-\pi^0}$ (stat, syst)
 * energy\[GeV\]: 1.05 - 2.00
@@ -329,7 +329,7 @@ has_math: true
 <a name="inspirehep-734590"></a>[CMD2 (VEPP-2M, Novosibirsk), 2006](https://inspirehep.net/literature/734590)
 
 * hepdata: [ins734590](https://www.hepdata.net/record/ins734590)
-* method: Direct
+* method: Energy scan
 * quotes:
 	* $\sigma_{\pi^+\pi^-\pi^0}^{visible}$ (stat)
 	* $\sigma_{\pi^+\pi^-\pi^0}^{Born}$ (stat)
@@ -344,7 +344,7 @@ has_math: true
 <a name="inspirehep-624947"></a>[CMD2 (VEPP-2M, Novosibirsk), 2004](https://inspirehep.net/literature/624947)
 
 * hepdata: [ins624947](https://www.hepdata.net/record/ins624947)
-* method: Direct
+* method: Energy scan
 * quotes:
 	* $\sigma_{\pi^+\pi^-\pi^0}^{measured}$ (stat, syst)
 	* $\sigma_{\pi^+\pi^-\pi^0}^{bare}$ (stat, syst)
@@ -359,7 +359,7 @@ has_math: true
 <a name="inspirehep-523691"></a>[CMD2 (VEPP-2M, Novosibirsk), 2000](https://inspirehep.net/literature/523691)
 
 * hepdata: [ins523691](https://www.hepdata.net/record/ins523691)
-* method: Direct
+* method: Energy scan
 * quotes:
 	* $\sigma_{\pi^+\pi^-\pi^0}^{measured}$ (stat, syst)
 	* $\sigma_{\pi^+\pi^-\pi^0}^{bare}$ (stat, syst)
@@ -374,7 +374,7 @@ has_math: true
 <a name="inspirehep-480170"></a>[CMD2 (VEPP-2M, Novosibirsk), 1998](https://inspirehep.net/literature/480170)
 
 * hepdata: [ins480170](https://www.hepdata.net/record/ins480170)
-* method: Direct
+* method: Energy scan
 * quotes:
 	* $\sigma_{\pi^+\pi^-\pi^0}$ (stat)
 * energy\[GeV\]: 0.994 - 1.040
@@ -386,7 +386,7 @@ has_math: true
 <a name="inspirehep-406880"></a>[CMD2 (VEPP-2M, Novosibirsk), 1995](https://inspirehep.net/literature/406880)
 
 * hepdata: [ins406880](https://www.hepdata.net/record/ins406880)
-* method: Direct
+* method: Energy scan
 * quotes:
 	* $\sigma_{\pi^+\pi^-\pi^0}$ (total)
 * energy\[GeV\]: 0.994 - 1.028
@@ -400,7 +400,7 @@ has_math: true
 <a name="inspirehep-321108"></a>[ND (VEPP-2M, Novosibirsk), 1991](https://inspirehep.net/literature/321108)
 
 * hepdata: [ins321108](https://www.hepdata.net/record/ins321108)
-* method: Direct
+* method: Energy scan
 * quotes:
 	* $\sigma_{\pi^+\pi^-\pi^0}$ (stat)
 * energy\[GeV\]: 0.661 - 1.379
@@ -414,7 +414,7 @@ has_math: true
 <a name="inspirehep-1408355"></a>[OLYA (VEPP-2M, Novosibirsk), 1984](https://inspirehep.net/literature/1408355)
 
 * hepdata: [ins1408355](https://www.hepdata.net/record/ins1408355)
-* method: Direct
+* method: Energy scan
 * quotes:
 	* $\sigma_{\pi^+\pi^-\pi^0}$ (stat, syst)
 * energy\[GeV\]: 0.782 (Table 1) - 1.020 (Table 2)
@@ -428,7 +428,7 @@ has_math: true
 <a name="inspirehep-185895"></a>[OLYA (VEPP-2M, Novosibirsk), 1982](https://inspirehep.net/literature/185895)
 
 * hepdata: [ins185895](https://www.hepdata.net/record/ins185895)
-* method: Direct
+* method: Energy scan
 * quotes:
 	* $\sigma_{\pi^+\pi^-\pi^0}$ (stat, syst)
 * energy\[GeV\]: 0.760 - 0.800
@@ -442,7 +442,7 @@ has_math: true
 <a name="inspirehep-137035"></a>[OLYA (VEPP-2M, Novosibirsk), 1978](https://inspirehep.net/literature/137035)
 
 * hepdata: [ins137035](https://www.hepdata.net/record/ins137035)
-* method: Direct
+* method: Energy scan
 * quotes:
 	* $\sigma_{\pi^+\pi^-\pi^0}$ (stat)
 * energy\[GeV\]: 1.020
@@ -456,7 +456,7 @@ has_math: true
 <a name="preprint-0954389"></a>CMD (VEPP-2M, Novosibirsk), 1989
 
 * hepdata:
-* method: Direct
+* method: Energy scan
 * quotes:
 	* $\sigma_{\pi^+\pi^-\pi^0}$ (stat, syst)
 * energy\[GeV\]: 0.84 - 1.013
@@ -471,7 +471,7 @@ has_math: true
 <a name="inspirehep-255953"></a>[CMD (VEPP-2M, Novosibirsk), 1987](https://inspirehep.net/literature/255953)
 
 * hepdata: [ins255953](https://www.hepdata.net/record/ins255953)
-* method: Direct
+* method: Energy scan
 * quotes:
 	* $\sigma_{\pi^+\pi^-\pi^0}$
 * energy\[GeV\]: 0.760 - 0.810
@@ -485,7 +485,7 @@ has_math: true
 <a name="inspirehep-69313"></a>[VEPP-2 (Novosibirsk), 1971](https://inspirehep.net/literature/69313)
 
 * hepdata: [ins69313](https://www.hepdata.net/record/ins69313)
-* method: Direct
+* method: Energy scan
 * quotes:
 	* $\sigma_{\pi^+\pi^-\pi^0}$
 * energy\[GeV\]: 1.02
